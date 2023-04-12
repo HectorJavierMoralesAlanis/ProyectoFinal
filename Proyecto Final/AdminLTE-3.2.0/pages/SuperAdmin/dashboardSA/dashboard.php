@@ -18,14 +18,14 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="./dashboard.php" class="nav-link">Home</a>
+                <a href="../dashboardSA/dashboard.php" class="nav-link">Home</a>
             </li>
         </ul>
     </nav>
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Logo --->
-        <a href="../SuperAdmin/dashboard.php" class="brand-link">
+        <a href="../dashboardSA/dashboard.php" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
