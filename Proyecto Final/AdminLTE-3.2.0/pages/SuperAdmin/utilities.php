@@ -1,6 +1,7 @@
 <?php
     include('./conexion.php');
     //Funcion para el login
+    echo "aux";
     function login($usuario,$contrasena)
     {
         global $pdo;
