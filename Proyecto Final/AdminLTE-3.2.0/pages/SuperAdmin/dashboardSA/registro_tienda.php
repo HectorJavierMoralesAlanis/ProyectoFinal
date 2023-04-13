@@ -106,7 +106,7 @@
                                             Estado:
                                         </label>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="activo" name="activo" checked>
+                                            <input class="custom-control-input" type="radio" id="activo" name="activo">
                                             <label for="customRadio4" class="custom-control-label">ACTIVADA</label>
                                         </div>
                                         <div class="custom-control custom-radio">
