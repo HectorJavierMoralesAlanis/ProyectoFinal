@@ -31,7 +31,7 @@
             <div class="card-body">
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
-            <form action="../SuperAdmin/dashboardSA/dashboard.php" method="POST">
+            <form method="POST" action="../SuperAdmin/dashboardSA/dashboard.php">
                 <div class="input-group mb-3">
                     <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario">
                     <div class="input-group-append">
@@ -59,7 +59,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
+                        <button type="submit" name="boton1" class="btn btn-primary btn-block">Iniciar sesion</button>
                     </div>
                 <!-- /.col -->
                 </div>
