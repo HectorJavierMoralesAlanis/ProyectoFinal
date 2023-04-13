@@ -1,8 +1,8 @@
 <?php
     include_once('./utilities.php');
 
-    if(isset($_POST['email'])&&isset($_POST['password'])){
-        login($_POST['email'],$_POST['password']);
+    if(isset($_POST['usuario'])&&isset($_POST['password'])){
+        login($_POST['usuairo'],$_POST['password']);
     }
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
 
             <form action="../SuperAdmin/dashboardSA/dashboard.php" method="POST">
             <div class="input-group mb-3">
-                <input name="email" id="email" type="email" class="form-control" placeholder="Email">
+                <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
