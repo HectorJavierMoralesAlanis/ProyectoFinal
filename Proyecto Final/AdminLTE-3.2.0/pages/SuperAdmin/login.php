@@ -4,7 +4,7 @@
 
     echo $resultads[0]['usuario'];
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
-        login($usuario,$contrasena);
+        login($_POST['usuario'],$_POST['contrasena']);
     }
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
             <div class="card-body">
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
-            <form method="post" action="../SuperAdmin/utilities.php">
+            <form method="post" action="../SuperAdmin/dashboardSA/dashboard.php">
                 <div class="input-group mb-3">
                     <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario" requierd>
                     <div class="input-group-append">

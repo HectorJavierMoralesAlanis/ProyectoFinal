@@ -11,7 +11,6 @@
         
         $statements-> execute();
         $results=$statements->fetchAll();
-        echo $results['usuarios'];
         if($usuario == $results[0]['usuario']&&$contrasena==$results[0]['contrasena']){
             return true;
         }else{
