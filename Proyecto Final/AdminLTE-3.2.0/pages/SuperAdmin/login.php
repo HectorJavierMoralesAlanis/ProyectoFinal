@@ -1,11 +1,3 @@
-<?php
-    include_once('./utilities.php');
-
-    if(isset($_POST['usuario'])&&isset($_POST['contrasena'])){
-        login();
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
