@@ -1,3 +1,10 @@
+<?php
+    include_once('./utilities.php');
+
+    if(isset($_POST['email'])&&isset($_POST['password'])){
+        login($_POST['email'],$_POST['password']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +31,9 @@
             <div class="card-body">
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
-            <form action="../SuperAdmin/dashboardSA/dashboard.php" method="post">
+            <form action="../SuperAdmin/dashboardSA/dashboard.php" method="POST">
             <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email">
+                <input name="email" id="email" type="email" class="form-control" placeholder="Email">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
@@ -34,7 +41,7 @@
                 </div>
             </div>
             <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
+                <input name="contrasena" id="contrasena" type="password" class="form-control" placeholder="Password">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-lock"></span>
