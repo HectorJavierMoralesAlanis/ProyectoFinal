@@ -24,7 +24,7 @@
             <div class="card-body">
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
-            <form method="get" action="./login.php">
+            <form method="post" action="./utilities.php">
                 <div class="input-group mb-3">
                     <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario" requierd>
                     <div class="input-group-append">
