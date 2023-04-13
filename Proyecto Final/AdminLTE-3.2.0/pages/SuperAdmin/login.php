@@ -3,7 +3,7 @@
     echo "aux";
     $resultads=getlogin();
 
-    echo $resultads['usuario'];
+    echo $resultads;
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
         login($usuario,$contrasena);
     }
