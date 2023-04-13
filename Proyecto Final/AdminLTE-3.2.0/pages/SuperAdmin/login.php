@@ -1,10 +1,13 @@
 <?php
     include_once('./utilities.php');
     $resultads=getlogin();
-
-    echo $resultads[0]['usuario'];
+    
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
-        login($_POST['usuario'],$_POST['contrasena']);
+        $filas=login($_POST['usuario'],$_POST['contrasena']);
+    }
+
+    if($filas>0){
+        header("Location: http://134.122.77.182/phpmyadmin/index.php?route=/sql&pos=0&db=proyecto&table=usuarios");
     }
 ?>
 <!DOCTYPE html>
@@ -33,7 +36,7 @@
             <div class="card-body">
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
-            <form method="get" action="./utilities.php">
+            <form method="get" action="">
                 <div class="input-group mb-3">
                     <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario" requierd>
                     <div class="input-group-append">
