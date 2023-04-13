@@ -5,7 +5,6 @@
         login();
     }
 
-    echo $filas;
 ?>
 <!DOCTYPE html>
 <html lang="en">
