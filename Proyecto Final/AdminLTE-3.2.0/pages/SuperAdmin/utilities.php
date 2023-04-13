@@ -8,9 +8,9 @@
     $statement->execute();
     $filas=$statement->rowCount();
     if($filas>0){
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
+        echo "si";
     }else{
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/login.php");
+        echo "no";
     }
     //Funcion para el login
     function login($usuario,$contrasena)
