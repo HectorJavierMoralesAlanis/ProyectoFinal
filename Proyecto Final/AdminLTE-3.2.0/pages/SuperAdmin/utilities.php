@@ -5,17 +5,18 @@
     {
         global $pdo;
 
-        $sql = "SELECT * from usuarios";
+        $consulta="SELECT * FROM usuarios WHERE usuario='$usuario' and contrasena='$contrasena'";
 
-        $statements = $pdo->prepare($sql);
-        
-        $statements-> execute();
-        $results=$statements->fetchAll();
-        if($usuario == $results[0]['usuario']&&$contrasena==$results[0]['contrasena']){
-            return true;
+        $statement=$pdo->prepare($consulta);
+        $statement->execute();
+        $filas =$statement->rowCount();
+
+        if($filas>0){
+            header("location:../SuperAdmin/dashboardSA/dasboard.php");
         }else{
-            return false;
+            echo "Error";
         }
+        
     }
     function getlogin(){
         global $pdo;
