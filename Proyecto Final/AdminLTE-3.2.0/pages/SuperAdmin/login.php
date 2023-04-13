@@ -1,6 +1,6 @@
 <?php
     include_once('./utilities.php');
-    
+    $boton=$_REQUEST['boton1'];
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
         login($_POST['usuario'],$_POST['password']);
     }
