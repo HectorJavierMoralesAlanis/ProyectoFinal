@@ -105,11 +105,11 @@
                                         <label>
                                             Activa:
                                             <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="activo" name="activo" >
+                                            <input class="custom-control-input" type="radio" id="activo" name="activo" disabled>
                                             <label for="customRadio4" class="custom-control-label">ACTIVADA</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="desactivado">
+                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="desactivado" disabled>
                                             <label for="customRadio5" class="custom-control-label">DESACTIVADA</label>
                                             </div>
                                         </label>
