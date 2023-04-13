@@ -6,9 +6,7 @@
         $filas=login($_POST['usuario'],$_POST['contrasena']);
     }
 
-    if($filas>0){
-        header("Location: http://134.122.77.182/phpmyadmin/index.php?route=/sql&pos=0&db=proyecto&table=usuarios");
-    }
+    echo $filas;
 ?>
 <!DOCTYPE html>
 <html lang="en">
