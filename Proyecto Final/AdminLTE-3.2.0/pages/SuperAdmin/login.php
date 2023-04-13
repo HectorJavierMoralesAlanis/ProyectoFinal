@@ -1,9 +1,9 @@
 <?php
     include_once('./utilities.php');
     echo "aux";
-    $resultados=getlogin();
+    $resultads=getlogin();
 
-    echo $resultados['usuario'];
+    echo $resultads['usuario'];
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
         login($usuario,$contrasena);
     }
