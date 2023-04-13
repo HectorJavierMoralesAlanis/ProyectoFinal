@@ -1,13 +1,3 @@
-<?php
-    include_once('./utilities.php');
-    $resultads=getlogin();
-    
-    if(isset($_POST['usuario'])&&isset($_POST['contrasena'])){
-        $filas=login($_POST['usuario'],$_POST['contrasena']);
-    }
-
-    echo $filas;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
