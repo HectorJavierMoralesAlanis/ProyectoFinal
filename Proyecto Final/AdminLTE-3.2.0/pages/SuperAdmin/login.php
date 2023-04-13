@@ -1,8 +1,8 @@
 <?php
     include_once('./utilities.php');
     
-    if(isset($_POST['usuario'])&&isset($_POST['password'])){
-        login($_POST['usuario'],$_POST['password']);
+    if(isset($_POST['usuario'])&&isset($_POST['password'])&&isset($_POST['boton1'])){
+        login($_POST['usuario'],$_POST['password'],$_POST['boton1']);
     }
 ?>
 <!DOCTYPE html>

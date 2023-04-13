@@ -1,10 +1,9 @@
 <?php
     include('./conexion.php');
     //Funcion para el login
-    function login($usuario,$contrasena)
+    function login($usuario,$contrasena,$boton)
     {
         global $pdo;
-        $boton = $_REQUEST['boton1'];
 
         $sql = "SELECT * from usuarios WHERE 'id==1' ";
 
