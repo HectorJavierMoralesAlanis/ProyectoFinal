@@ -1,6 +1,6 @@
 <?php
     include_once('./utilities.php');
-    
+    echo "aux";
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
         login($usuario,$contrasena);
     }
