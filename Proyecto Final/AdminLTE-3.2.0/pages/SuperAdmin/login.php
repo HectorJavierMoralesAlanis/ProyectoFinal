@@ -1,6 +1,5 @@
 <?php
     include_once('./utilities.php');
-    echo "aux";
     $resultads=getlogin();
 
     echo $resultads[0]['usuario'];
