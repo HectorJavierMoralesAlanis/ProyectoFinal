@@ -2,7 +2,7 @@
     include_once('./utilities.php');
     $resultads=getlogin();
     
-    if(isset($_POST['usuario'])&&isset($_POST['password'])){
+    if(isset($_POST['usuario'])&&isset($_POST['contrasena'])){
         $filas=login($_POST['usuario'],$_POST['contrasena']);
     }
 
