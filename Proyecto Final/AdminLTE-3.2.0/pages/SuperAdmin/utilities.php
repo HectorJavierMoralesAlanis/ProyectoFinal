@@ -22,7 +22,7 @@
     function getlogin(){
         global $pdo;
 
-        $sql = "SELECT * from usuarios WHERE 'id==1'";
+        $sql = "SELECT * from usuarios WHERE id==1";
 
         $statements=$pdo->prepare($sql);
 
