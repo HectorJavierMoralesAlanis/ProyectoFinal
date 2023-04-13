@@ -12,11 +12,11 @@
         
         $statements-> execute();
         $results=$statements->fetchAll();
-        $boton=false;
+        echo $boton;
         if($usuario == $results['usuarios']&&$contrasena==$results['contrasena']){
-            return $boton=true;
+            return true;
         }else{
-            return $boton=false;
+            return false;
         }
     }
 ?>
