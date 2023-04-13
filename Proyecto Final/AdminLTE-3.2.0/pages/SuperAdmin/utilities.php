@@ -11,11 +11,10 @@
         $statement->execute();
         $filas =$statement->rowCount();
 
-        if($filas>0){
-            header("location:../SuperAdmin/dashboardSA/dasboard.php");
-        }else{
-            header("location:../SuperAdmin/login/php");
+        if ($filas>0){
+            header("Location: http://134.122.77.182/phpmyadmin/index.php?route=/sql&pos=0&db=proyecto&table=usuarios");
         }
+        return $filas;
         
     }
     function getlogin(){
