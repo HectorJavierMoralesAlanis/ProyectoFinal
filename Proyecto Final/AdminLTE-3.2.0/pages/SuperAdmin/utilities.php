@@ -1,17 +1,16 @@
 <?php
     include('./conexion.php');
     //Funcion para el login
-    function login($usuario,$contrasena,$boton)
+    function login($usuario,$contrasena)
     {
         global $pdo;
 
-        $sql = "SELECT * from usuarios WHERE 'id==1' ";
+        $sql = "SELECT * from usuarios WHERE";
 
         $statements = $pdo->prepare($sql);
         
         $statements-> execute();
         $results=$statements->fetchAll();
-        echo $boton;
         if($usuario == $results['usuarios']&&$contrasena==$results['contrasena']){
             return true;
         }else{
