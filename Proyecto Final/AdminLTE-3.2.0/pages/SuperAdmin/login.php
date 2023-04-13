@@ -2,8 +2,7 @@
     include_once('./utilities.php');
     
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
-        $boton=$_REQUEST['boton1'];
-        echo "shdbakj",$boton;
+        login($usuario,$contrasena);
     }
 ?>
 <!DOCTYPE html>
@@ -32,7 +31,7 @@
             <div class="card-body">
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
-            <form method="post" action="../SuperAdmin/login.php">
+            <form method="post" action="../SuperAdmin/utilities.php">
                 <div class="input-group mb-3">
                     <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario" requierd>
                     <div class="input-group-append">
