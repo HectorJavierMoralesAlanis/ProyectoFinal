@@ -31,9 +31,9 @@
             <div class="card-body">
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
-            <form method="POST" action="../SuperAdmin/dashboardSA/dashboard.php">
+            <form method="post" action="../SuperAdmin/dashboardSA/dashboard.php">
                 <div class="input-group mb-3">
-                    <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario">
+                    <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario" requierd>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input name="contrasena" id="contrasena" type="password" class="form-control" placeholder="Password">
+                    <input name="contrasena" id="contrasena" type="password" class="form-control" placeholder="Password" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
