@@ -3,7 +3,7 @@
     
     if(isset($_POST['usuario'])&&isset($_POST['password'])){
         $boton=$_REQUEST['boton1'];
-        echo $boton;
+        echo "shdbakj",$boton;
     }
 ?>
 <!DOCTYPE html>
