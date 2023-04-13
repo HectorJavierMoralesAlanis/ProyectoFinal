@@ -10,6 +10,7 @@
     if($filas>0){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
     }else{
+        echo "Error los datos son erroneos";
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/login.php");
     }
     //Funcion para el login
