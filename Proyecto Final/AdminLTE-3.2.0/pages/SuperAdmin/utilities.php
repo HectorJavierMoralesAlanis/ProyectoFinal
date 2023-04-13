@@ -14,7 +14,7 @@
         if($filas>0){
             header("location:../SuperAdmin/dashboardSA/dasboard.php");
         }else{
-            echo "Error";
+            header("location:../SuperAdmin/login/php");
         }
         
     }
