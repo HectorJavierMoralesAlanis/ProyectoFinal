@@ -122,7 +122,7 @@
                                     <tbody>
                                         <?php foreach($tiendas as $id => $tienda){?>
                                             <tr>
-                                                <td><?php echo $tienda['id']?></td>
+                                                <td></td>
                                                 <td><?php echo $tienda['nombre']?></td>
                                                 <td><?php echo $tienda['estado']?></td>
                                                 <td><?php echo "<a href='./editar_tienda.php' class='btn btn-block btn-warning'>Editar</a>"?></td>
