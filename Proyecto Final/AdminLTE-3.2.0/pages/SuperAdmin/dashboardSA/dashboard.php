@@ -1,6 +1,11 @@
 <?php
-    include_once("../utilities3.php");
-    $tiendas=getTienda();
+    
+    global $pdo;
+    $sql="SELECT * from tienda";
+    $statement=$pdo->prepare($sql);
+    $statement->execute();
+    $tiendas=$statement->fetchAll();
+
 ?>
 <html>
 <head>
