@@ -5,12 +5,7 @@
         echo "<h2 style='float: right;'>Si tiene valor</h2>";
         echo "<h2 style='float: right;'>$_POST[nombre]</h2>";
         echo "<h2 style='float: right;'>$_POST[estado]</h2>";
-        /*
-        if($_POST['estado']=='on'){
-            echo "<h2 style='float: right;'>Paso Activo</h2>";
-        }else if($_POST['estado']=='off'){
-            echo "<h2 style='float: right;'>Paos desactivo</h2>";
-        }*/
+        addTienda($_POST['nombre'],$_POST['estado']);
     }
 ?>
 <html>
@@ -121,11 +116,11 @@
                                             Estado:
                                         </label>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="activo" name="estado" value="activo">
+                                            <input class="custom-control-input" type="radio" id="activo" name="estado" value="Activo">
                                             <label for="activo" class="custom-control-label">ACTIVADA</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" value="desactivado">
+                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" value="Desactivado">
                                             <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
                                         </div>
                                     </div>
