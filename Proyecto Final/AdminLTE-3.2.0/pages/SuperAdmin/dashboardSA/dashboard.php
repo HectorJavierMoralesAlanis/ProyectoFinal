@@ -125,9 +125,9 @@
                                                 <td></td>
                                                 <td><?php echo $tienda['nombre']?></td>
                                                 <td><?php echo $tienda['estado']?></td>
-                                                <td><?php echo "<a href='./editar_tienda.php' class='btn btn-block btn-warning'>Editar</a>"?></td>
-                                                <td><?php echo "<a class='btn btn-block btn-danger'>Borrar</a>"?></td>
-                                                <td><?php echo "<a class='btn btn-block btn-success'></a>"?></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                         <?php }?>
                                     </tbody>
