@@ -121,11 +121,11 @@
                                             Estado:
                                         </label>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="activo" name="estado">
+                                            <input class="custom-control-input" type="radio" id="activo" name="estado" value="activo">
                                             <label for="activo" class="custom-control-label">ACTIVADA</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado">
+                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" value="desactivado">
                                             <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
                                         </div>
                                     </div>
