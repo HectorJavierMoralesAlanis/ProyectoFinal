@@ -1,13 +1,21 @@
 <?php
     include_once('./conexion.php');
 
-    function addTienda($nombre,$estado){
+    function addTienda(){
         global $pdo;
         
+        $nombre=$_POST['nombre'];
+        $estado=$_POST['estado'];
+
         //Definir sql
-        $sql = "INSERT INTO tienda VALUES(' ','$nombre','$estado')";
+        $sql = "INSERT INTO tienda (nombre,estado)VALUES(:nombre,:estado)";
         $statement = $pdo->prepare($sql);
-        $statement->execute();
+        $statement->bindParam(":nombre",$nombre);
+        $statement->bindParam(":estado",$estado);
+        
+        if($statement->execute()){
+            header("Location: ./registro_tienda.php");
+        }else print("Error en la consulta");
 
     }
 ?>
