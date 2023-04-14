@@ -19,15 +19,4 @@
             print("Error en la consulta");
         }
     }
-    function getTienda(){
-        global $pdo;
-
-        $sql = "SELECT * from tienda";
-
-        $statement=$pdo->prepare($sql);
-        $statement->execute();
-        $results=$statement->fetchAll();
-
-        return $results;
-    }
 ?>
