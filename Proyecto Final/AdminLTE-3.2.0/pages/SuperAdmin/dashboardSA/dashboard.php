@@ -1,5 +1,5 @@
 <?php
-    echo "aux";
+    echo "<h2 style='center'>aux</h2>";
 ?>
 <html>
 <head>
