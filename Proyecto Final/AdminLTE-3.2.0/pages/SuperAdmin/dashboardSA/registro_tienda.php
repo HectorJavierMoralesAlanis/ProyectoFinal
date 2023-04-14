@@ -95,7 +95,7 @@
                             </div>
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
-                                <form method="" action="../utilities2.php">
+                                <form method="POST" action="../utilities2.php">
                                     <div class="form-group">
                                         <label>
                                             Nombre
