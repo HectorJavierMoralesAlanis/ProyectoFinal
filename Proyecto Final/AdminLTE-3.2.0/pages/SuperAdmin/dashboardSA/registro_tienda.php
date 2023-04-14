@@ -118,7 +118,7 @@
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input class="custom-control-input custom-control-input-danger" type="radio" id="estado" name="estado">
-                                            <label for="estado" class="custom-control-label">DESACTIVADA</label>
+                                            <label for="estado" class="custom-control-label">DESACTIVAD</label>
                                         </div>
                                     </div>
                                     <div class="btn-group" style="float: right;">
