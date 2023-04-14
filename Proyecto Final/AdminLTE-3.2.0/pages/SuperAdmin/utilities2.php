@@ -4,7 +4,7 @@
     if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
         global $pdo;
         
-        $id=" ";
+        $id="1";
         $nombre=$_REQUEST['nombre'];
         $estado=$_REQUEST['estado'];
         //Definir sql
