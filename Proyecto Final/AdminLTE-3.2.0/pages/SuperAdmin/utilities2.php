@@ -9,8 +9,8 @@
         $statement = $pdo->prepare($sql);
 
         //Declaracion de las variables
-        $nombreT = $nombre;
-        $estadoT = $estado;
+        $nombreT = "Walmart";
+        $estadoT = "Activo";
 
         //Agregar los valores a la base
         $statement->bindParam(':nombre',$nombreT);
