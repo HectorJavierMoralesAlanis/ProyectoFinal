@@ -5,7 +5,7 @@
         global $pdo;
         
         //Definir sql
-        $sql = "INSERT INTO tienda  VALUES('$nombre','$estado')";
+        $sql = "INSERT INTO tienda  VALUES(' ','$nombre','$estado')";
         $statement = $pdo->prepare($sql);
         $statement->execute();
 
