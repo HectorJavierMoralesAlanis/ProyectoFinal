@@ -5,11 +5,12 @@
         echo "<h2 style='float: right;'>Si tiene valor</h2>";
         echo "<h2 style='float: right;'>$_POST[nombre]</h2>";
         echo "<h2 style='float: right;'>$_POST[estado]</h2>";
+        /*
         if($_POST['estado']=='on'){
             echo "<h2 style='float: right;'>Paso Activo</h2>";
         }else if($_POST['estado']=='off'){
             echo "<h2 style='float: right;'>Paos desactivo</h2>";
-        }
+        }*/
     }
 ?>
 <html>
