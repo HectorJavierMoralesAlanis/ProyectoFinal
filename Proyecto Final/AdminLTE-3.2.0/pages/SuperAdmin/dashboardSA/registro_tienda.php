@@ -2,7 +2,7 @@
     include_once("../utilities2.php");
 
     if(isset($_POST['nombre'])&&isset($_POST['estado'])){
-        echo "Si tiene valor";
+        echo "<h2 style='center'>Si tiene valor</h2>";
     }
 ?>
 <html>
