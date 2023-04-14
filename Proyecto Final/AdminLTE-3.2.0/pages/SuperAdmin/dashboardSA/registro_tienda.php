@@ -120,12 +120,12 @@
                                             Estado:
                                         </label>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="estado" name="estado">
-                                            <label for="estado" class="custom-control-label">ACTIVADA</label>
+                                            <input class="custom-control-input" type="radio" id="activo" name="estado">
+                                            <label for="activo" class="custom-control-label">ACTIVADA</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="estado" name="estado">
-                                            <label for="estado" class="custom-control-label">DESACTIVADA</label>
+                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado">
+                                            <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
                                         </div>
                                     </div>
                                     <div class="btn-group" style="float: right;">
