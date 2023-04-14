@@ -3,14 +3,13 @@
 
     if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
         global $pdo;
-        
-        $id=1;
+
         $nombre=$_REQUEST['nombre'];
         $estado=$_REQUEST['estado'];
         //Definir sql
-        $sql = "INSERT INTO tienda (id,nombre,estado)VALUES(:id,:nombre,:estado)";
+        $sql = "INSERT INTO tienda (nombre,estado)VALUES(:nombre,:estado)";
         $statement = $pdo->prepare($sql);
-        $statement->bindParam(":id",$id);
+
         $statement->bindParam(":nombre",$nombre);
         $statement->bindParam(":estado",$estado);
             
