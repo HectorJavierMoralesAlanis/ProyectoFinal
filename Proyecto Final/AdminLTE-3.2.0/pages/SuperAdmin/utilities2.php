@@ -3,8 +3,8 @@
 
     global $pdo;
         
-    $nombre=$_POST['nombre'];
-    $estado=$_POST['estado'];
+    $nombre=$_REQUEST['nombre'];
+    $estado=$_REQUEST['estado'];
     $id=" ";
     //Definir sql
     $sql = "INSERT INTO tienda (id,nombre,estado)VALUES(:id,:nombre,:estado)";
@@ -15,6 +15,8 @@
         
     if($statement->execute()){
         header("Location: ./registro_tienda.php");
-    }else print("Error en la consulta");
+    }else {
+        print("Error en la consulta");
+    }
 
 ?>
