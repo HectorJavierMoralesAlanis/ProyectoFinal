@@ -13,7 +13,7 @@
         $statement->bindParam(":estado",$estado);
             
         if($statement->execute()){
-            header("Location: ./registro_tienda.php");
+            header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
         }else {
             print("Error en la consulta");
         }
