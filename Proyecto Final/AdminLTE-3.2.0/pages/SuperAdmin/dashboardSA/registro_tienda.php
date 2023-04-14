@@ -118,11 +118,11 @@
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input class="custom-control-input custom-control-input-danger" type="radio" id="estado" name="estado">
-                                            <label for="estado" class="custom-control-label">DESACTIVAD</label>
+                                            <label for="estado" class="custom-control-label">DESACTIVADA</label>
                                         </div>
                                     </div>
                                     <div class="btn-group" style="float: right;">
-                                    <button type="button" class="btn btn-block btn-success" style="float: right;">REGISTRAR</button>
+                                    <button type="submit" class="btn btn-block btn-success" style="float: right;">REGISTRAR</button>
                                     </div>
                             </div>
                         </div>
