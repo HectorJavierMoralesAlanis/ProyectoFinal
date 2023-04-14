@@ -1,13 +1,4 @@
-<?php
-    
-    global $pdo;
-    $sql="SELECT * from tienda";
-    $statement=$pdo->prepare($sql);
-    $statement->execute();
-    $tiendas=$statement->fetchAll();
-    echo $tiendas;
 
-?>
 <html>
 <head>
     <title>Tiendas</title>
