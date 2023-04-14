@@ -1,9 +1,3 @@
-<?php
-    include_once('../utilities2.php');
-    if(isset($_POST['nombre'])&&isset($_POST['estado'])){
-        addTienda();
-    }
-?>
 <html>
 <head>
     <title>Tiendas</title>
@@ -101,7 +95,7 @@
                             </div>
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
-                                <form method="POST" action="../dashboardSA/registro_tienda.php">
+                                <form method="" action="../utilities2.php">
                                     <div class="form-group">
                                         <label>
                                             Nombre
