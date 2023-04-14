@@ -1,5 +1,5 @@
 <?php
-    include("../utilities2.php");
+    include_once("../utilities2.php");
     if(isset($_POST['nombre'])&&isset($_POST['estado'])){
         addTienda($_POST['nombre'],$_POST['estado']);
     }

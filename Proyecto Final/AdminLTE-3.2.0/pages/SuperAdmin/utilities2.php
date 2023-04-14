@@ -1,5 +1,5 @@
 <?php
-    include('./conexion.php');
+    include_once('./conexion.php');
 
     function addTienda($nombre,$estado){
         global $pdo;
@@ -15,7 +15,7 @@
         //Agregar los valores a la base
         $statement->bindParam(':nombre',$nombreT);
         $statement->bindParam(':estado',$estadoT);
-        
+
         $statement->execute();
 
     }
