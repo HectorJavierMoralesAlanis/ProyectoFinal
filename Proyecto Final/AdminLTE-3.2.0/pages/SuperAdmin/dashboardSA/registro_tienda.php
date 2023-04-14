@@ -101,7 +101,7 @@
                             </div>
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
-                                <form method="get" action="./registro_tienda.php">
+                                <form method="" action="./registro_tienda.php">
                                     <div class="form-group">
                                         <label>
                                             Nombre
