@@ -115,15 +115,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($tiendas as $id => $tienda){?>
-                                            <tr>
-                                                <td><?php echo $tienda['id']?></td>
-                                                <td><?php echo $tienda['nombre']?></td>
-                                                <td><?php echo $tienda['estado']?></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        <?php }?>
+                                        
                                     </tbody>
                                 </table>
                             </div>
