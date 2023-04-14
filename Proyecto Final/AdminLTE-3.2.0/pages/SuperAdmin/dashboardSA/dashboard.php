@@ -1,4 +1,6 @@
-
+<?php
+    echo "aux";
+?>
 <html>
 <head>
     <title>Tiendas</title>
