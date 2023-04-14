@@ -5,6 +5,7 @@
     $statement=$pdo->prepare($sql);
     $statement->execute();
     $tiendas=$statement->fetchAll();
+    echo $tiendas;
 
 ?>
 <html>
@@ -119,18 +120,7 @@
                                             <th>Ingresar?</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <?php foreach($tiendas as $id => $tienda){?>
-                                            <tr>
-                                                <td></td>
-                                                <td><?php echo $tienda['nombre']?></td>
-                                                <td><?php echo $tienda['estado']?></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        <?php }?>
-                                    </tbody>
+
                                 </table>
                             </div>
                         </div>
