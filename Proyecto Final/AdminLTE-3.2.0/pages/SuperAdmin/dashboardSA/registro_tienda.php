@@ -4,6 +4,7 @@
     if(isset($_POST['nombre'])&&isset($_POST['estado'])){
         echo "<h2 style='float: right;'>Si tiene valor</h2>";
         echo "<h2 style='float: right;'>$_POST[nombre]</h2>";
+        echo "<h2 style='float: right;'>$_POST[estado]</h2>";
     }
 ?>
 <html>
@@ -114,11 +115,11 @@
                                             Estado:
                                         </label>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="estado" name="estado">
+                                            <input class="custom-control-input" type="radio" id="estado" name="estado" value="Activo">
                                             <label for="estado" class="custom-control-label">ACTIVADA</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="estado" name="estado">
+                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="estado" name="estado" value="Desactivado">
                                             <label for="estado" class="custom-control-label">DESACTIVADA</label>
                                         </div>
                                     </div>
