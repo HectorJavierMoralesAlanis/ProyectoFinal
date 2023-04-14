@@ -1,7 +1,7 @@
 <?php
     include('./conexion.php');
 
-    function addTienda($nombre,$estado){
+    function addTienda(){
         global $pdo;
         
         $sql = "INSERT INTO tienda VALUES(' ','Walmart','Activo')";

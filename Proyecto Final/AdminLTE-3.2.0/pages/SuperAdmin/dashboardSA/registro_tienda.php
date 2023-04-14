@@ -2,7 +2,7 @@
     include("../utilities2.php");
 
     if(isset($_POST['nombre'])&&isset($_POST['estado'])){
-        addTienda($_POST['nombre'],$_POST['estado']);
+        addTienda();
     }
 ?>
 <html>
