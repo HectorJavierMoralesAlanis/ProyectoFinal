@@ -4,7 +4,7 @@
     function getlogin(){
         global $pdo;
 
-        $sql = "SELECT * from usuarios";
+        $sql = "SELECT * FROM `tienda`";
 
         $statements=$pdo->prepare($sql);
 
