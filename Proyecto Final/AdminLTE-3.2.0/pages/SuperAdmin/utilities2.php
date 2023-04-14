@@ -4,7 +4,7 @@
     function addTienda($nombre,$estado){
         global $pdo;
         
-        $sql = "INSERT INTO tienda VALUES('','$nombre,$estado)";
+        $sql = "INSERT INTO tienda VALUES('','$nombre','$estado')";
 
         $statement = $pdo->prepare($sql);
         $statement->execute();
