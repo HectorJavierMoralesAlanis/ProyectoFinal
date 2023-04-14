@@ -1,6 +1,5 @@
 <?php
     include_once('../utilities3.php');
-    $aux=getlogin();
     echo "<h2 style='float:right;'>aux</h2>";
 ?>
 <html>
