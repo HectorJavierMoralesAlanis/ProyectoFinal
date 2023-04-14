@@ -2,9 +2,6 @@
     include_once("../utilities2.php");
 
     if(isset($_POST['nombre'])&&isset($_POST['estado'])){
-        echo "<h2 style='float: right;'>Si tiene valor</h2>";
-        echo "<h2 style='float: right;'>$_POST[nombre]</h2>";
-        echo "<h2 style='float: right;'>$_POST[estado]</h2>";
         addTienda($_POST['nombre'],$_POST['estado']);
     }
 ?>
