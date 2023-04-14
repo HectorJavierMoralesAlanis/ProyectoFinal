@@ -34,7 +34,7 @@
         <!-- Logo --->
         <a href="../dashboardSA/dashboard.php" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Admin</span>
+            <span class="brand-text font-weight-light">SuperAdmin</span>
         </a>
         <!-- Sidebar -->
         <div class="sidebar">
