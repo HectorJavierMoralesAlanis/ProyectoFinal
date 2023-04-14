@@ -1,8 +1,15 @@
 <?php
     include_once('./conexion.php');
 
-    global $pdo;
-    $sql="SELECT * FROM tienda";
-    $statement=$pdo->prepare($sql);
-    $statement->execute();
+    function getlogin(){
+        global $pdo;
+
+        $sql = "SELECT * from usuarios";
+
+        $statements=$pdo->prepare($sql);
+
+        $statements->execute();
+        $results=$statements->fetchAll();
+        return $results;
+    };
 ?>
