@@ -1,3 +1,10 @@
+<?php
+    include_once("../utilities2.php");
+
+    if(isset($_POST['nombre'])&&isset($_POST['estado'])){
+        addTienda($_POST['nombre'],$_POST['estado']);
+    }
+?>
 <html>
 <head>
     <title>Tiendas</title>
@@ -95,23 +102,23 @@
                             </div>
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
-                                <form>
+                                <form method="POST" action="./registro_tienda.php">
                                     <div class="form-group">
                                         <label>
                                             Nombre
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="nombre" id="nombre">
                                         <label>
                                             Estado:
                                         </label>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="activo" name="radioButton">
-                                            <label for="activo" class="custom-control-label">ACTIVADA</label>
+                                            <input class="custom-control-input" type="radio" id="estado" name="estado">
+                                            <label for="estado" class="custom-control-label">ACTIVADA</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="radioButton">
-                                            <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
+                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="estado" name="estado">
+                                            <label for="estado" class="custom-control-label">DESACTIVADA</label>
                                         </div>
                                     </div>
                                     <div class="btn-group" style="float: right;">
