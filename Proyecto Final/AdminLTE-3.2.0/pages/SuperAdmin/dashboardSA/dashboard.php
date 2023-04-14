@@ -1,5 +1,6 @@
 <?php
     include('../utilities3.php');
+    $tiendas= getTienda();
     echo "<h2 style='float:right;'>aux</h2>";
 ?>
 <html>
