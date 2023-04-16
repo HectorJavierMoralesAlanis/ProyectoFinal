@@ -43,6 +43,7 @@
             //Definir la consulata
             $sql = "INSERT INTO tienda (nombre,estado)VALUES(:nombre,:estado)";
             $statement = $pdo->prepare($sql);
+            
             echo $statement;
             //Se agregan a la consulta los valores de las variables
             $statement->bindParam(":nombre",$nombre);
