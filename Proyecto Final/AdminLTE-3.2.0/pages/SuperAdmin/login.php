@@ -1,5 +1,5 @@
 <?php
-    if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
+    if(!empty($_POST['nombre'])&&!empty($_POST['constrasena'])){
         addTienda();
     }
 ?>
