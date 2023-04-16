@@ -1,7 +1,9 @@
 <?php
     include('../utilities.php');
+    $nombre = $_POST['nombre'];
     if(isset($_POST['enviar'])){
-        echo "Entro";
+        echo "<h2 style='float =right;'>Entro</h2>";
+        echo "<h2 style='float = right;'>$nombre<h2>";
     }
 ?>
 <html>
