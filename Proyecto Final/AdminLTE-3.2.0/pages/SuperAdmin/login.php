@@ -1,6 +1,7 @@
 <?php
     echo "<h2>$_POST[nombre]</h2>";
-    if(!empty($_POST['nombre'])&&!empty($_POST['constrasena'])){
+    if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
+        //login($_POST['nombre'],$_POST['contrasena']);
         login();
     }
 ?>
