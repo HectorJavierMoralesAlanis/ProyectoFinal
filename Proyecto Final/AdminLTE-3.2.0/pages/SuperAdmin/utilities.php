@@ -33,7 +33,6 @@
     };
 
     function addTienda(){
-        global $pdo;
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             global $pdo;
             echo "dentro del post";
