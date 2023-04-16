@@ -2,7 +2,7 @@
     echo 'hoola';
     include('./utilities.php');
     //login();
-    echo "<h2>$_REQUIRED[nombre]</h2>";
+    echo "$_REQUIRED[nombre]";
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
         login();
