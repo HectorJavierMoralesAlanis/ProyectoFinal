@@ -2,7 +2,7 @@
     echo 'hoola';
     include('./utilities.php');
     //login();
-    echo 'HOLA'.htmlspecialchars($_POST["nombre"]);
+    echo '<h2 style="float: right;">$_POST[nombre]</h2>';
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
         login();
