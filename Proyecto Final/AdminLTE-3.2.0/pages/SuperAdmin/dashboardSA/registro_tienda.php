@@ -102,7 +102,7 @@
                             <div class="card-body">
                                 <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
                                     <div class="form-group">
-                                        <!-- Label donde imprime el nombre -->
+                                        <!-- Label donde imprime el nombre-->
                                         <label>
                                             Nombre
                                         </label>
