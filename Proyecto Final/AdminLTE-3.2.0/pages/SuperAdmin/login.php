@@ -1,10 +1,11 @@
 <?php
-    include_once('./utilities.php');
-    echo "<h2>$_POST[nombre]</h2>";
+    echo 'hoola';
+    include('./utilities.php');
+    /*echo "<h2>$_POST[nombre]</h2>";
     if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
         login();
-    }
+    }*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
