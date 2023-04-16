@@ -3,9 +3,11 @@
     include('./utilities.php');
     //login();
     if(isset($_POST['enviar'])){
+        /*
         $nombre=$_POST['usuario'];
         $contrasenas=$_POST['contrasena'];
-        echo $nombre.$contrasenas;
+        echo $nombre.$contrasenas;*/
+        login();
     }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
