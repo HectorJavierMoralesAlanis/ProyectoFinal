@@ -36,7 +36,7 @@
         global $pdo;
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             global $pdo;
-            echo $_POST['nombre'];
+            echo "dentro del post";
             //Variables para guardar los valoes del nombre y el estado de la tienda
             $nombre=$_REQUEST['nombre'];
             $estado=$_REQUEST['estado'];
