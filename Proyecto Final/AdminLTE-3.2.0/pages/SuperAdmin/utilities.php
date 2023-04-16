@@ -43,6 +43,7 @@
             */
             //Definir la consulata
             /*$sql = "INSERT INTO tienda VALUES(' ',$_POST[nombre],$_POST[estado])";*/
+            
             $statement = $pdo->prepare("INSERT INTO tienda VALUES (' ',$_POST[nombre],$_POST[estado]");
 
             /*
