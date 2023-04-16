@@ -39,12 +39,13 @@
             //Variables para guardar los valoes del nombre y el estado de la tienda
             /*
             $nombre=$_REQUEST['nombre'];
-            $estado=$_REQUEST['estado'];
+            $estado=$_REQUEST['estado']
             */
             //Definir la consulata
             $sql = "INSERT INTO tienda VALUES(' ',$_POST[nombre],$_POST[estado])";
             echo $sql;
             $statement = $pdo->prepare($sql);
+
             /*
             echo $statement;
             Se agregan a la consulta los valores de las variables
