@@ -3,7 +3,7 @@
     include('./utilities.php');
     //login();
     if(isset($_POST['enviar'])){
-        $nombre="jhopal";
+        $nombre=$_POST['enviar'];
         echo $nombre;
     }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
