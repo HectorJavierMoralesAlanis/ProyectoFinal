@@ -4,7 +4,7 @@
     //login();
     if(isset($_POST['enviar'])){
         $nombre=$_POST['usuario'];
-        echo '<h2 style="float: right;">$nombre</h2>';
+        echo '<h2 style="float: right;">{$nombre}</h2>';
     }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
