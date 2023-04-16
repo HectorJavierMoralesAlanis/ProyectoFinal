@@ -4,7 +4,7 @@
     //login();
     if(isset($_POST['enviar'])){
         $nombre="jhopal";
-        echo '<h2 style="float: right;">{$nombre}</h2>';
+        echo $nombre;
     }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
