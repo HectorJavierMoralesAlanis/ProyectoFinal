@@ -4,7 +4,7 @@
     //login();
     if(isset($_POST['enviar'])){
         $nombre=$_POST['usuario'];
-        $contrasena=$_POST['contrasena'];
+        $contrasenas=$_POST['contrasena'];
         echo $nombre;
         echo $contrasenas;
     }
