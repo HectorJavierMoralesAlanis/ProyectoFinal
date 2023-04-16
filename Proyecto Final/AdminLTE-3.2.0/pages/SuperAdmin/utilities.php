@@ -34,7 +34,7 @@
     };
 
     function addTienda(){
-        if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
+        if(!empty($_REQUEST['nombre'])&&!empty($_REQUEST['estado'])){
             global $pdo;
 
             //Variable para guardar los valores del nombre y el estado de la tienda
