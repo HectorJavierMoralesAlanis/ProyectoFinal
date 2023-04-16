@@ -1,4 +1,5 @@
 <?php
+    echo $_Post['nombre'];
     if(!empty($_POST['nombre'])&&!empty($_POST['constrasena'])){
         addTienda();
     }
