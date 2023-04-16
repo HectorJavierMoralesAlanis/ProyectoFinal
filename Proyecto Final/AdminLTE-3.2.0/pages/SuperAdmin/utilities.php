@@ -48,7 +48,7 @@
             //Se agregan a la consulta los valores de las variables
             $statement->bindParam(":nombre",$nombre);
             $statement->bindParam(":estado",$estado);
-                
+            echo "entro";
             //Condicional donde si se ejecuta la consulta exitosa te redirecciona al dashboard y guarda los valores si es falsa se manda un mensaje de error
             if($statement->execute()){
                 echo "entro";
