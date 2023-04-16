@@ -126,7 +126,7 @@
                                     </div>
                                     <!-- Boton para registrar la tienda-->
                                     <div class="btn-group" style="float: right;">
-                                    <button type="submit" class="btn btn-block btn-success" style="float: right;" name="enviar">REGISTRAR</button>
+                                        <button type="submit" class="btn btn-block btn-success" style="float: right;" name="enviar">REGISTRAR</button>
                                     </div>
                             </div>
                         </div>
