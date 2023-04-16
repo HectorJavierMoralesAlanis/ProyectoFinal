@@ -2,8 +2,10 @@
     echo 'hoola';
     include('./utilities.php');
     //login();
-    $nombre=$_POST['usuario'];
-    echo '<h2 style="float: right;">$nombre</h2>';
+    if(isset($_POST['enviar'])){
+        $nombre=$_POST['usuario'];
+        echo '<h2 style="float: right;">$nombre</h2>';
+    }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
         login();
@@ -67,7 +69,7 @@
                     <!-- /.col -->
                     <!-- Boton para iniciar sesion -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
+                        <button type="submit" class="btn btn-primary btn-block" name="enviar">Iniciar sesion</button>
                     </div>
                 <!-- /.col -->
                 </div>
