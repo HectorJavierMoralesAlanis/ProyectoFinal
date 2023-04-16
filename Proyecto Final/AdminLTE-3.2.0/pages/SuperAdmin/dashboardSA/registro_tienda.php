@@ -1,3 +1,8 @@
+<?php
+    if(isset($_POST['enviar'])){
+        addTienda();
+    }
+?>
 <html>
 <head>
     <title>Tiendas</title>
@@ -95,7 +100,7 @@
                             </div>
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
-                                <form method="POST" action="../utilities2.php">
+                                <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
                                     <div class="form-group">
                                         <!-- Label donde imprime el nombre -->
                                         <label>
@@ -120,7 +125,7 @@
                                     </div>
                                     <!-- Boton para registrar la tienda-->
                                     <div class="btn-group" style="float: right;">
-                                    <button type="submit" class="btn btn-block btn-success" style="float: right;">REGISTRAR</button>
+                                    <button type="submit" class="btn btn-block btn-success" style="float: right;" name="enviar">REGISTRAR</button>
                                     </div>
                             </div>
                         </div>

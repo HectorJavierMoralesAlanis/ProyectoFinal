@@ -4,7 +4,6 @@
     function login(){
         global $pdo;
 
-        
         //Consulta para traer las filas que coincidan
         $consulta="SELECT * FROM usuarios WHERE usuario='$_REQUEST[usuario]' and contrasena='$_REQUEST[contrasena]'";
         
