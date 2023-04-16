@@ -1,9 +1,6 @@
 <?php
-    include('../utilities.php');
-    $nombre = $_POST['nombre'];
+    include_once('../utilities.php');
     if(isset($_POST['enviar'])){
-        echo "<h2 style='float :right;'>Entro</h2>";
-        echo "<h2 style='float :right;'>$nombre<h2>";
         addTienda();
     }
 ?>
