@@ -3,7 +3,7 @@
     include('./utilities.php');
     //login();
     if(isset($_POST['enviar'])){
-        $nombre=$_POST['usuario'];
+        $nombre=$_POST['usuarios'];
         echo $nombre;
     }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
