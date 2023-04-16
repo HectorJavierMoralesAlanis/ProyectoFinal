@@ -1,7 +1,7 @@
 <?php
     echo "<h2>$_POST[nombre]</h2>";
     if(!empty($_POST['nombre'])&&!empty($_POST['constrasena'])){
-        login();
+        login()
     }
 ?>
 <!DOCTYPE html>
