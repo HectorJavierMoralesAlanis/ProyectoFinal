@@ -37,18 +37,21 @@
             global $pdo;
             echo "dentro del post";
             //Variables para guardar los valoes del nombre y el estado de la tienda
+            /*
             $nombre=$_REQUEST['nombre'];
             $estado=$_REQUEST['estado'];
-
+            */
             //Definir la consulata
-            $sql = "INSERT INTO tienda (nombre,estado)VALUES(:nombre,:estado)";
+            $sql = "INSERT INTO tienda VALUES(' ',$_POST[nombre],$_POST[estado])";
+            echo $sql;
             $statement = $pdo->prepare($sql);
-            
+            /*
             echo $statement;
             //Se agregan a la consulta los valores de las variables
             $statement->bindParam(":nombre",$nombre);
             $statement->bindParam(":estado",$estado);
             echo "entro";
+            */
             //Condicional donde si se ejecuta la consulta exitosa te redirecciona al dashboard y guarda los valores si es falsa se manda un mensaje de error
             if($statement->execute()){
                 echo "entro";
