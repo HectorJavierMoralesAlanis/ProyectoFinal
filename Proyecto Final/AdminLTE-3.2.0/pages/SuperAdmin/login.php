@@ -3,7 +3,7 @@
     include('./utilities.php');
     //login();
     if(isset($_POST['enviar'])){
-        $nombre=$_POST['usuario'];
+        $nombre="jhopal";
         echo '<h2 style="float: right;">{$nombre}</h2>';
     }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
