@@ -47,7 +47,7 @@
             $statement = $pdo->prepare($sql);
             /*
             echo $statement;
-            //Se agregan a la consulta los valores de las variables
+            Se agregan a la consulta los valores de las variables
             $statement->bindParam(":nombre",$nombre);
             $statement->bindParam(":estado",$estado);
             echo "entro";
