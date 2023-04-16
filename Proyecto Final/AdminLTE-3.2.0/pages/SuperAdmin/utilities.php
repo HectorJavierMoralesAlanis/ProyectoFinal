@@ -41,7 +41,7 @@
         $estado=$_REQUEST['estado'];
             
         //Definir la consulta
-        $sql = "INSERT INTO tienda (nombre,estado) VALUES (:nombre,:estad)";
+        $sql = "INSERT INTO tienda (nombre,estado) VALUES (:nombre,:estado)";
             $statement = $pdo->prepare($sql);
 
         //Se agrega a la consulta los valores de las variables
