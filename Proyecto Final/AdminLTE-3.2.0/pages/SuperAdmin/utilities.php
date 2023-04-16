@@ -42,9 +42,8 @@
             $estado=$_REQUEST['estado']
             */
             //Definir la consulata
-            $sql = "INSERT INTO tienda VALUES(' ',$_POST[nombre],$_POST[estado])";
-            echo $sql;
-            $statement = $pdo->prepare($sql);
+            /*$sql = "INSERT INTO tienda VALUES(' ',$_POST[nombre],$_POST[estado])";*/
+            $statement = $pdo->prepare("INSERT INTO tienda VALUES (' ',$_POST[nombre],$_POST[estado]");
 
             /*
             echo $statement;
