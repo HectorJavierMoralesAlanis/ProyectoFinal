@@ -4,6 +4,7 @@
     if(isset($_POST['enviar'])){
         echo "<h2 style='float :right;'>Entro</h2>";
         echo "<h2 style='float :right;'>$nombre<h2>";
+        addTienda();
     }
 ?>
 <html>
