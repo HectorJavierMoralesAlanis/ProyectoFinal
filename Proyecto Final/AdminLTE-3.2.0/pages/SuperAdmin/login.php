@@ -1,3 +1,8 @@
+<?php
+    if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
+        addTienda();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +30,7 @@
             <p class="login-box-msg">Ingrese los datos para el Inicio de sesion</p>
 
             <form method="post" action="./utilities.php">
+                <!-- Campo para ingresar el nombre de usuario -->
                 <div class="input-group mb-3">
                     <input name="usuario" id="usuario" type="text" class="form-control" placeholder="usuario" requierd>
                     <div class="input-group-append">
@@ -33,6 +39,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Campo para ingresar la contraseña del usuario-->
                 <div class="input-group mb-3">
                     <input name="contrasena" id="contrasena" type="password" class="form-control" placeholder="Password" required>
                     <div class="input-group-append">
@@ -51,6 +59,7 @@
                         </div>
                     </div>
                     <!-- /.col -->
+                    <!-- Boton para iniciar sesion -->
                     <div class="col-4">
                         <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
                     </div>

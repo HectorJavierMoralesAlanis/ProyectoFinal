@@ -97,14 +97,18 @@
                             <div class="card-body">
                                 <form method="POST" action="../utilities2.php">
                                     <div class="form-group">
+                                        <!-- Label donde imprime el nombre -->
                                         <label>
                                             Nombre
                                         </label>
                                         <br>
+                                        <!-- Input para ingresar el nombre -->
                                         <input type="text" class="form-control" name="nombre" id="nombre">
+                                        <!-- Label para donde imprime estado-->
                                         <label>
                                             Estado:
                                         </label>
+                                        <!-- Radio Buttons para marcar si la tienda esta activada o desactivada-->
                                         <div class="custom-control custom-radio">
                                             <input class="custom-control-input" type="radio" id="activo" name="estado" value="Activo">
                                             <label for="activo" class="custom-control-label">ACTIVADA</label>
@@ -114,6 +118,7 @@
                                             <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
                                         </div>
                                     </div>
+                                    <!-- Boton para registrar la tienda-->
                                     <div class="btn-group" style="float: right;">
                                     <button type="submit" class="btn btn-block btn-success" style="float: right;">REGISTRAR</button>
                                     </div>
