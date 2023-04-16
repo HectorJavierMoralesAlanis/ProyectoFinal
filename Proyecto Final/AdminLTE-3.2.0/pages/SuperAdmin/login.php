@@ -2,7 +2,8 @@
     echo 'hoola';
     include('./utilities.php');
     //login();
-    echo '<h2 style="float: right;">$_POST[usuario]</h2>';
+    $nombre=$_POST['usuario'];
+    echo '<h2 style="float: right;">$nombre</h2>';
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
         login();
