@@ -6,7 +6,7 @@
         $nombre=$_POST['usuario'];
         $contrasenas=$_POST['contrasena'];
         echo $nombre;
-        echo $contrasena;
+        echo $contrasenas;
     }
     /*if(!empty($_POST['nombre'])&&!empty($_POST['contrasena'])){
         //login($_POST['nombre'],$_POST['contrasena']);
