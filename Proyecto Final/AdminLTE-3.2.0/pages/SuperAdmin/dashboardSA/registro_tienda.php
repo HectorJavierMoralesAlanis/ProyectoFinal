@@ -1,6 +1,10 @@
 <?php
     include_once('../PDO/DAO.php');
     $dao = new DAO();
+    if(isset($_POST['enviar'])){
+        $consulta="INSERT INTO tiendas VALUES $_POST[nombre],$_POST[estado]";
+        $dao->insertarConsulta($consulta);
+    }
 ?>
 <html>
 <head>
