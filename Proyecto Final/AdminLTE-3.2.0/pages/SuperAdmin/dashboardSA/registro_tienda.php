@@ -3,8 +3,8 @@
 
     $dao=new DAO();
 
-    $consulta="INSERT INTO tienda (id,nombre,estado) VALUES (' ',Cotsco,activo)";
-    
+    $consulta="INSERT INTO tienda (nombre,estado) VALUES ('Cotsco','activo')";
+
     $resultado=$dao->insertarConsulta($consulta);
 
 ?>
