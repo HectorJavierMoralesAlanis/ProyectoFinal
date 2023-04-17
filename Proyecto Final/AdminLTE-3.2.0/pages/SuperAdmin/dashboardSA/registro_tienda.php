@@ -12,7 +12,6 @@
             $resultado=$dao->insertarConsulta($consulta,$parametros);
 
             if($resultado>=0){
-                echo "operacion exitosa";
             }else{
                 echo"error";
             }
