@@ -36,30 +36,6 @@
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             global $pdo;
             echo "dentro del post";
-            //Variables para guardar los valoes del nombre y el estado de la tienda
-            /*
-            $nombre=$_REQUEST['nombre'];
-            $estado=$_REQUEST['estado']
-            */
-            //Definir la consulata
-            $sql = "SELECT * FROM tienda";
-
-            
-            $statement = $pdo->prepare($sql);
-
-            /*
-            Se agregan a la consulta los valores de las variables
-            $statement->bindParam(":nombre",$nombre);
-            $statement->bindParam(":estado",$estado);
-            echo "entro";
-            */
-            //Condicional donde si se ejecuta la consulta exitosa te redirecciona al dashboard y guarda los valores si es falsa se manda un mensaje de error
-            if($statement->execute()){
-                echo "<h2>entro</h2>";
-                header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/registro_tienda.php");
-            }else {
-                echo "Error en la consulta";
-            }
         }
     }
 
