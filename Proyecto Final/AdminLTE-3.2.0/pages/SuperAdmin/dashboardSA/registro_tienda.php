@@ -1,9 +1,10 @@
 <?php
     include_once('../PDO/DAO.php');
 
+    echo "<h2 style='float:right;'>$_POST[nombre]</h2>";
     $dao=new DAO();
 
-    $consulta="INSERT INTO tienda (nombre,estado) VALUES ('Cotsco','activo')";
+    $consulta="INSERT INTO tienda VALUES ('Cotsco','activo')";
 
     $resultado=$dao->insertarConsulta($consulta);
 
