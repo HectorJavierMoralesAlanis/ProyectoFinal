@@ -5,8 +5,8 @@
     $dao=new DAO();
 
     $consulta="INSERT INTO tienda (id,nombre,estado) VALUES (:id,:nombre,:estado)";
-    
-    $parametros=array("id"=>" ","nombre"=>"$_POST[nombre]","esatdo"=>"$_POST[estado]");
+
+    $parametros=array("id"=>" ","nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
 
     $resultado=$dao->insertarConsulta($consulta);
 
