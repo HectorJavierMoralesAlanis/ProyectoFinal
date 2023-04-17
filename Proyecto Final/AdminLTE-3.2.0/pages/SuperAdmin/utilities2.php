@@ -2,7 +2,6 @@
     include_once('./conexion.php');
 
     if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
-        global $pdo;
 
         //Variables para guardar los valoes del nombre y el estado de la tienda
         $nombre=$_REQUEST['nombre'];
