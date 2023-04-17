@@ -1,8 +1,5 @@
 <?php
-    include_once('../utilities.php');
-    $tiendas=gettiendas();
-
-
+    include_once('../utilitie3.php');
 ?>
 <html>
 <head>
@@ -117,15 +114,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($tiendas as $id => $tienda){?>
-                                            <tr>
-                                                <td><?php echo $tienda['nombre']?></td>
-                                                <td><?php echo $tienda['estado']?></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        <?php }?>
+
                                     </tbody>
                                 </table>
                             </div>
