@@ -3,6 +3,7 @@
 
     echo "<h2 style='float:right;'>$_POST[nombre]</h2>";
     if(isset($_POST['enviar'])){
+        
         $dao=new DAO();
 
         $consulta="INSERT INTO tienda (nombre,estado)"."VALUES (:nombre,:estado)";
