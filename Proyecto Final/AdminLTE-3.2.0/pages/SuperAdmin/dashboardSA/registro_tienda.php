@@ -1,10 +1,10 @@
 <?php
     include_once('../PDO/DAO.php');
-    if(isset($_POST['enviar'])){
-        $dao=new DAO();
-        $consulta="INSERT INTO tiendas (id,nombre,estado) VALUES (' ',Cotsco,activo)";
-        $resultado=$dao->insertarConsulta($consulta);
-    }
+
+    $dao=new DAO();
+    $consulta="INSERT INTO tiendas (id,nombre,estado) VALUES (' ',Cotsco,activo)";
+    $resultado=$dao->insertarConsulta($consulta);
+
 ?>
 <html>
 <head>
