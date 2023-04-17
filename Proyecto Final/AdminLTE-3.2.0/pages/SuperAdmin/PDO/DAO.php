@@ -1,13 +1,9 @@
 <?php
-    include_once './parametros.php';
     class DAO{
-        private $cadenaConexion;
         private $conexion;
-        
         public function __construct(){
             try{
-                $this->cadenaConexion="mysql:host=".BD_SERVIDOR.";dbname=".BD_NOMBRE;
-                $this->conexion = new PDO($this->cadenaConexion,BD_USUARIO,BD_PASS);
+                $this->conexion = new PDO("mysql:host=localhost;dbname=proyecto","admin","2e19c301ddae0c83a59446303955909e093fd240fe36561b");
                 echo "conexion";
             }catch (Exception $ex){
                 echo $ex->getMessage();
