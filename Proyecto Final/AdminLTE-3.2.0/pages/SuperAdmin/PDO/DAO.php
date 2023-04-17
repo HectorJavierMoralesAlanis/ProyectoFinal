@@ -4,7 +4,6 @@
         public function __construct(){
             try{
                 $this->conexion = new PDO("mysql:host=localhost;dbname=proyecto","admin","2e19c301ddae0c83a59446303955909e093fd240fe36561b");
-                echo "conexion";
             }catch (Exception $ex){
                 echo $ex->getMessage();
             }
@@ -18,6 +17,7 @@
                 return $resultados;
             }
         }
+        
     }
     
 ?>

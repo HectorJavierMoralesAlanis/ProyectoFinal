@@ -1,8 +1,6 @@
 <?php
-    include_once('../PDO/DAO.php');
-    $dao = new DAO();
-    $consulta="SELECT * FROM tienda";
-    $tiendas=$dao->ejecutarConsulta($consulta);
+    include_once('../PDO/utilitiesU.php');
+    $tiendas=getTiendas();
 ?>
 <html>
 <head>

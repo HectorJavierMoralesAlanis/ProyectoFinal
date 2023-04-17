@@ -1,5 +1,6 @@
 <?php
-    include_once('../utilities2.php');
+    include_once('../PDO/DAO.php');
+    $dao = new DAO();
 ?>
 <html>
 <head>
