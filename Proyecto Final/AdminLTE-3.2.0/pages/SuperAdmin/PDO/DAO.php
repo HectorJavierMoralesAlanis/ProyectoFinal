@@ -24,7 +24,7 @@
                     $this->conexion->beginTransaction();
                     $consulta=$this->conexion->prepare($sql);
                     $consulta->execute($valores);
-                    if(intval($consulta->errorCode())==0){
+                    if(intval($consulta->errorCode())===0){
                         $this->conexion->commit();//confirma la accion realizada
                         $filasAfectadas=$consulta->rowCount();
                         return $filasAfectadas;
