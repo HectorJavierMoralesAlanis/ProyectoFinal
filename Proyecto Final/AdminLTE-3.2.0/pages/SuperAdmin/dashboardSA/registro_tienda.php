@@ -1,7 +1,7 @@
 <?php
     include_once('../utilities.php');
     if(isset($_POST['enviar'])){
-        $aux=mostrarTienda();
+        addTienda();
     }
 ?>
 <html>
