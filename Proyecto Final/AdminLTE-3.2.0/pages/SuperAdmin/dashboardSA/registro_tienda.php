@@ -1,7 +1,6 @@
 <?php
     include_once('../utilities.php');
     if(isset($_POST['enviar'])){
-        addTienda();
     }
 ?>
 <html>
