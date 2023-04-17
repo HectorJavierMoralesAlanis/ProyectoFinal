@@ -4,9 +4,9 @@
     echo "<h2 style='float:right;'>$_POST[nombre]</h2>";
     $dao=new DAO();
 
-    $consulta="INSERT INTO tienda (id,nombre,estado)"."VALUES (:id,:nombre,:estado)";
+    $consulta="INSERT INTO tienda (nombre,estado)"."VALUES (:nombre,:estado)";
 
-    $parametros=array("id"=>" ","nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
+    $parametros=array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
 
     $resultado=$dao->insertarConsulta($consulta,$parametros);
 
