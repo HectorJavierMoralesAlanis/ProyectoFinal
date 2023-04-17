@@ -1,7 +1,7 @@
 <?php
     include('./utilities.php');
     if(isset($_POST['enviar'])){
-        login(1);
+        login(0);
     }
 ?>
 <!DOCTYPE html>
