@@ -1,6 +1,6 @@
 <?php
     include('./conexion.php');
-    
+
     function login(){
         global $pdo;
 
