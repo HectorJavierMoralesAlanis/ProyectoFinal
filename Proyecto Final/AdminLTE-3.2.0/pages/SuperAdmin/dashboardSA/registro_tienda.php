@@ -10,6 +10,12 @@
 
     $resultado=$dao->insertarConsulta($consulta);
 
+    if($resultado>=0){
+        echo "operacion exitosa";
+    }else{
+        echo"error";
+    }
+
 ?>
 <html>
 <head>
