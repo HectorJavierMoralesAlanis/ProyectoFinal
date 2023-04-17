@@ -7,7 +7,7 @@
         try{
             $datos=$dao->ejecutarConsulta($consulta);
             if(isset($datos)&&!empty($datos)&&sizeof($datos)>0){
-                $tiendas=$datos;
+                return $datos;
             }
         }catch(Exception $ex){
 
