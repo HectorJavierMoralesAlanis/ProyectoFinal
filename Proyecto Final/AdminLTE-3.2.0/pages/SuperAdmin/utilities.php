@@ -23,7 +23,7 @@
     
 
         if("opcion".$aux=="opcion1"){
-            $sql = "SELECT * FROM tienda";
+            $sql = "SELECT nombre,estado FROM tienda";
             $statements=$pdo->prepare($sql);
             $statements->execute();
             $results=$statements->fetchAll();
