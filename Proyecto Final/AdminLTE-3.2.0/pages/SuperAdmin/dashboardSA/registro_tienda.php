@@ -3,7 +3,7 @@
     $dao = new DAO();
     if(isset($_POST['enviar'])){
         $consulta="INSERT INTO tiendas VALUES $_POST[nombre],$_POST[estado]";
-        $dao->insertarConsulta($consulta);
+        $dao->ejecutarConsulta($consulta);
     }
 ?>
 <html>
