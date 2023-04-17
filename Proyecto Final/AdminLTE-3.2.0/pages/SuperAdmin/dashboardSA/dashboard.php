@@ -1,6 +1,6 @@
 <?php
     include_once('../utilities.php');
-    $tiendas=login(1);
+    $tiendas=gettiendas();
 
 
 ?>

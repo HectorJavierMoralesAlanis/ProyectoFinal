@@ -1,7 +1,7 @@
 <?php
     include('./conexion.php');
 
-    function login($aux){
+    function login(){
         global $pdo;
 
         //Consulta para traer las filas que coincidan
@@ -16,18 +16,20 @@
 
         //Si coincide mas de una 
         if($filas>0){
+
             header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
         }else{
             header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/login.php");
         }
-    
+    }
 
-        if("opcion".$aux=="opcion1"){
-            $sql = "SELECT (id, nombre, estado) FROM tienda";
-            $statements=$pdo->prepare($sql);
-            $statements->execute();
-            $results=$statements->fetchAll();
-            return $results;
-        }
+    function gettiendas(){
+        global $pdo;
+
+        $sql = "SELECT * FROM usuarios";
+        $statements=$pdo->prepare($sql);
+        $statements->execute();
+        $results=$statements->fetchAll();
+        return $results;
     }
 ?>
