@@ -4,7 +4,7 @@
     echo "<h2 style='float:right;'>$_POST[nombre]</h2>";
     $dao=new DAO();
 
-    $consulta="INSERT INTO tienda VALUES ('Cotsco','activo')";
+    $consulta="INSERT INTO tienda VALUES ($_POST[nombre],'activo')";
 
     $resultado=$dao->insertarConsulta($consulta);
 
