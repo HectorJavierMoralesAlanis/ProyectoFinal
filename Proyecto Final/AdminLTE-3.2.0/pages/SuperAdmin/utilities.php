@@ -42,10 +42,10 @@
             $estado=$_REQUEST['estado']
             */
             //Definir la consulata
-            /*$sql = "INSERT INTO tienda VALUES(' ',$_POST[nombre],$_POST[estado])";*/
+            $sql = "SELECT * FROM tienda";
 
             
-            $statement = $pdo->prepare("INSERT INTO tienda VALUES (' ',$_POST[nombre],$_POST[estado]");
+            $statement = $pdo->prepare($sql);
 
             /*
             echo $statement;
@@ -56,8 +56,8 @@
             */
             //Condicional donde si se ejecuta la consulta exitosa te redirecciona al dashboard y guarda los valores si es falsa se manda un mensaje de error
             if($statement->execute()){
-                echo "entro";
-                header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
+                echo "<h2>entro</h2>";
+                header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/registro_tienda.php");
             }else {
                 echo "Error en la consulta";
             }
