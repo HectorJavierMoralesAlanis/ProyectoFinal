@@ -122,9 +122,9 @@
                                                 <td><?php echo $tienda['id']?></td>
                                                 <td><?php echo $tienda['nombre']?></td>
                                                 <td><?php echo $tienda['estado']?></td>
-                                                <td><button class="btn btn-block btn-warning">Editar</button></td>
-                                                <td><button class="btn btn-block btn-danger">Eliminar</button></td>
-                                                <td><button class="btn btn-block btn-success">Ingresar</button></td>
+                                                <td><a href="./editar_tienda.php" method="POST" class="btn btn-block btn-warning">Editar</a></td>
+                                                <td><a class="btn btn-block btn-danger">Eliminar</a></td>
+                                                <td><a class="btn btn-block btn-success">Ingresar</a></td>
                                         </tr>
                                         <?php }?>
                                     </tbody>
