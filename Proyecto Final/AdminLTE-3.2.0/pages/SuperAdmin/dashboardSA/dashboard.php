@@ -1,6 +1,8 @@
 <?php
     include_once('../utilities.php');
     $tiendas=gettiendas();
+
+    
 ?>
 <html>
 <head>
