@@ -9,7 +9,7 @@
                 echo $ex->getMessage();
             }
         }
-/*
+
         public function ejecutarConsulta($sql="",$valores=array()){
             if($sql!=""&&strlen($sql)>0){
                 $consulta = $this->conexion->prepare($sql);
@@ -18,8 +18,6 @@
                 return $resultados;
             }
         }
-    */
     }
     
-    $aux=new DAO();
 ?>
