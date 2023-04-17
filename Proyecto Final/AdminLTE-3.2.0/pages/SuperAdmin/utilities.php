@@ -40,9 +40,8 @@
             echo "<h2 style='float: right;'>$_POST[nombre]</h2>";
             echo "<h2 style='float: right;'>$_POST[estado]</h2>";
             $consulta = "SELECT * FROM tienda";
-            $declaracion=$pdo->prepare($consulta);
-            $declaracion->execute();
-
+            //$declaracion=$pdo->prepare($consulta);
+            //$declaracion->execute();
         }
     }
 
