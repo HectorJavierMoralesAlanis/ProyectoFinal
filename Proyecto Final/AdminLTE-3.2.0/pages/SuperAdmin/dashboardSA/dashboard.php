@@ -111,9 +111,9 @@
                                             <th>Id</th>
                                             <th>Nombre</th>
                                             <th>Activa</th>
-                                            <th>Editar?</th>
-                                            <th>Eliminar?</th>
-                                            <th>Ingresar?</th>
+                                            <th>¿Editar?</th>
+                                            <th>¿Eliminar?</th>
+                                            <th>Ingresar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
