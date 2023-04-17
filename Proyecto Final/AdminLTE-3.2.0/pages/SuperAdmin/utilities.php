@@ -36,6 +36,8 @@
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             global $pdo;
             echo "<h2 style='float: right;'>dentro del post</h2>";
+            echo "<h2 style='float: right;'>$_POST[nombre]</h2>";
+            echo "<h2 style='float: right;'>$_POST[estado]</h2>";
         }
     }
 
