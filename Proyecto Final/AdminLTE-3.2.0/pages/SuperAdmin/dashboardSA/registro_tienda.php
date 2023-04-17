@@ -1,6 +1,5 @@
 <?php
     include_once('../utilities2.php');
-
 ?>
 <html>
 <head>
