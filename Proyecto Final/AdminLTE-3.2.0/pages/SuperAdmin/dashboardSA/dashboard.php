@@ -122,8 +122,9 @@
                                                 <td><?php echo $tienda['id']?></td>
                                                 <td><?php echo $tienda['nombre']?></td>
                                                 <td><?php echo $tienda['estado']?></td>
-                                                <td></td>
-                                            <td></td>
+                                                <td><button class="btn btn-block btn-warning">Editar</button></td>
+                                                <td><button class="btn btn-block btn-danger">Eliminar</button></td>
+                                                <td><button class="btn btn-block btn-success">Ingresar</button></td>
                                         </tr>
                                         <?php }?>
                                     </tbody>
