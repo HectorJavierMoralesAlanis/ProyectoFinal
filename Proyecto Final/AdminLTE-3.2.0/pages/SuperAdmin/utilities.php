@@ -35,7 +35,7 @@
     function addTienda(){
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             global $pdo;
-            echo "dentro del post";
+            echo "<h2 style='float: right;'>dentro del post</h2>";
         }
     }
 
