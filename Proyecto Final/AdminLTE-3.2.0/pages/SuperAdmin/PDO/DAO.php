@@ -4,7 +4,7 @@
         private $cadenaConexion;
         private $conexion;
         
-        public function __construc(){
+        public function __construct(){
             try{
                 $this->cadenaConexion="mysql:host=".BD_SERVIDOR.";dbname=".BD_NOMBRE;
                 $this->conexion = new PDO($this->cadenaConexion,BD_USUARIO,BD_PASS);
