@@ -6,7 +6,7 @@
 
     $consulta="INSERT INTO tienda (id,nombre,estado)"."VALUES (:id,:nombre,:estado)";
 
-    $parametros=array("id"=>" ","nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
+    $parametros=array("id"=>"11","nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
 
     $resultado=$dao->insertarConsulta($consulta);
 
