@@ -2,7 +2,7 @@
     include_once('../PDO/DAO.php');
 
     $dao=new DAO();
-    $consulta="INSERT INTO tiendas (id,nombre,estado) VALUES (' ',Cotsco,activo)";
+    $consulta="INSERT INTO tienda (id,nombre,estado) VALUES (' ',Cotsco,activo)";
     $resultado=$dao->insertarConsulta($consulta);
 
 ?>
