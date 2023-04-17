@@ -117,8 +117,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
-
+                                        <?php foreach($tiendas as $id =>$tienda){?>
+                                            <tr><?php echo $tienda['id']?></tr>
+                                            <tr><?php echo $tienda['nombre']?></tr>
+                                            <tr><?php echo $tienda['estado']?></tr>
+                                            <tr></tr>
+                                            <tr></tr>
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
