@@ -20,8 +20,22 @@
         
         public function insertarConsulta($sql="",$valores=array()){
             if($sql!=""&&strlen($sql)>0){
-                $consulta=$this->conexion->prepare($sql);
-                $consulta->execute($valores);
+                try{
+                    $this->conexion->beginTransaction();
+                    $consulta=$this->conexion->prepare($sql);
+                    $consulta->execute($valores);
+                    if(intval($consulta->errorCode()==0)){
+                        $this->conexion->commit();//confirma la accion realizada
+                        $filasAfectadas=$consulta->rowCount();
+                        return $filasAfectadas;
+                    }else{
+                        $this->conexion->rollBack();
+                        return -1;
+                    }
+                }catch(Exception $ex){
+                    $this->conexion->rollBack();//regresa a un estado anterior
+                    return $this->conexion->errorInfo();
+                }
             }
         }
     }
