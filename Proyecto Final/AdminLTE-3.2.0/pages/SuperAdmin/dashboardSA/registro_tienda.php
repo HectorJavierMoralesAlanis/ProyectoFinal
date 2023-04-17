@@ -1,21 +1,21 @@
 <?php
     include_once('../PDO/DAO.php');
 
-    echo "<h2 style='float:right;'>$_POST[nombre]</h2>";
     if(isset($_POST['enviar'])){
-        
-        $dao=new DAO();
+        if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
+            $dao=new DAO();
 
-        $consulta="INSERT INTO tienda (nombre,estado)"."VALUES (:nombre,:estado)";
+            $consulta="INSERT INTO tienda (nombre,estado)"."VALUES (:nombre,:estado)";
 
-        $parametros=array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
+            $parametros=array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
 
-        $resultado=$dao->insertarConsulta($consulta,$parametros);
+            $resultado=$dao->insertarConsulta($consulta,$parametros);
 
-        if($resultado>=0){
-            echo "operacion exitosa";
-        }else{
-            echo"error";
+            if($resultado>=0){
+                echo "operacion exitosa";
+            }else{
+                echo"error";
+            }
         }
     }
 ?>
