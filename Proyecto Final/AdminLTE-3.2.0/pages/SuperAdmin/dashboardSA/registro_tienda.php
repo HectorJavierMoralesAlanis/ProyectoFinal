@@ -8,7 +8,7 @@
 
     $parametros=array("id"=>"11","nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
 
-    $resultado=$dao->insertarConsulta($consulta);
+    $resultado=$dao->insertarConsulta($consulta,$parametros);
 
     if($resultado>=0){
         echo "operacion exitosa";
