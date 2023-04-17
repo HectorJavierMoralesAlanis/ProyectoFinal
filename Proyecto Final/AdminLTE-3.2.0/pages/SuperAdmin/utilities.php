@@ -1,6 +1,5 @@
 <?php
     include('./conexion.php');
-    
     function login(){
         global $pdo;
 
@@ -34,14 +33,14 @@
     };
 
     function addTienda(){
+        global $pdo;
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
-            global $pdo;
             echo "<h2 style='float: right;'>dentro del post</h2>";
             echo "<h2 style='float: right;'>$_POST[nombre]</h2>";
             echo "<h2 style='float: right;'>$_POST[estado]</h2>";
             $consulta = "SELECT * FROM tienda";
-            //$declaracion=$pdo->prepare($consulta);
-            //$declaracion->execute();
+            $declaracion=$pdo->prepare($consulta);
+            $declaracion->execute();
         }
     }
 
