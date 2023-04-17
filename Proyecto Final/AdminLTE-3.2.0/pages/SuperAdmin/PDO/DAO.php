@@ -1,5 +1,5 @@
 <?php
-    require_once './parametros.php';
+    include_once './parametros.php';
     class DAO{
         private $cadenaConexion;
         private $conexion;
