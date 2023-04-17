@@ -1,5 +1,5 @@
 <?php
-    include_once('./conexion.php');
+    include('./conexion.php');
 
     if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
         global $pdo;
