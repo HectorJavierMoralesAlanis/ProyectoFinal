@@ -50,7 +50,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
                         <li class="nav-item">
-                            <a href="../tienda/inventario/inventario.php" class="nav-link active">
+                            <a href="../PDO/DAO.php" class="nav-link active">
                                 <p>
                                     Dashboard
                                 </p>
@@ -115,7 +115,7 @@
                                     </thead>
                                     <tbody>
                                         
-                                    
+
                                     </tbody>
                                 </table>
                             </div>
