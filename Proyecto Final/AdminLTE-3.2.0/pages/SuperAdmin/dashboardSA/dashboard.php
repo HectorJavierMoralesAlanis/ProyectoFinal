@@ -1,6 +1,15 @@
 <?php
-    include_once('../utilities3.php');
-    echo "<h2 style='float:right;'>aux</h2>";
+    include_once('../PDO/DAO.php');
+    $dao = new DAO();
+    $consulta = "SELECT * FROM tienda";
+    try{
+        $datos=$dao->ejecutarConsulta($consulta);
+        if(isset($datos) && !empty($datos) && sizeof($datos)>0){
+            $tiendas=$datos;
+        }
+    }catch(Exception $ex){
+
+    }
 ?>
 <html>
 <head>
@@ -115,7 +124,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                        <?php foreach($tiendas as $id => $tienda){?>
+                                            <tr>
+                                                <td><?php echo $tienda['nombre']?></td>
+                                                <td><?php echo $tienda['estado']?></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
