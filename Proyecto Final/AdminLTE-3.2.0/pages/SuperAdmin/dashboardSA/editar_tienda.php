@@ -123,7 +123,7 @@
                                                 <label for="activo" class="custom-control-label">ACTIVADA</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" <?php if($tiendas['estado']=='Desactivado'){?>checked<?php }?>
+                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" <?php if($tiendas['estado']=='Desactivado'){?>checked<?php }?>>
                                                 <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
                                             </div>
 
