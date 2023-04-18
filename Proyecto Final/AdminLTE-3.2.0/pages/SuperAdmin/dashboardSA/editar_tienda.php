@@ -108,6 +108,7 @@
                                 <form>
                                     <?php foreach($tienda as $id => $tiendas){?>
                                         <div class="form-group">
+                                            
                                             <label>
                                                 Nombre
                                             </label>
