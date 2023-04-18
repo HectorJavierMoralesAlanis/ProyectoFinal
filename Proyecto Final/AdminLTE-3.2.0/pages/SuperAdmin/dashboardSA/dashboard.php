@@ -105,30 +105,32 @@
                             </div>
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Nombre</th>
-                                            <th>Activa</th>
-                                            <th>¿Editar?</th>
-                                            <th>¿Eliminar?</th>
-                                            <th>Ingresar</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach($tiendas as $id =>$tienda){?>
+                                <form method="POST">
+                                    <table class="table table-bordered">
+                                        <thead>
                                             <tr>
-                                                <td><?php echo $tienda['id']?></td>
-                                                <td><?php echo $tienda['nombre']?></td>
-                                                <td><?php echo $tienda['estado']?></td>
-                                                <td><a href="./editar_tienda.php" method="POST" class="btn btn-block btn-warning">Editar</a></td>
-                                                <td><a class="btn btn-block btn-danger">Eliminar</a></td>
-                                                <td><a class="btn btn-block btn-success">Ingresar</a></td>
-                                        </tr>
-                                        <?php }?>
-                                    </tbody>
-                                </table>
+                                                <th>Id</th>
+                                                <th>Nombre</th>
+                                                <th>Activa</th>
+                                                <th>¿Editar?</th>
+                                                <th>¿Eliminar?</th>  
+                                                <th>Ingresar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach($tiendas as $id =>$tienda){?>
+                                                <tr>
+                                                    <td><?php echo $tienda['id']?></td>
+                                                    <td><?php echo $tienda['nombre']?></td>
+                                                    <td><?php echo $tienda['estado']?></td>
+                                                    <td><a href="./editar_tienda.php" method="POST" class="btn btn-block btn-warning">Editar</a></td>
+                                                    <td><a class="btn btn-block btn-danger">Eliminar</a></td>
+                                                    <td><a class="btn btn-block btn-success">Ingresar</a></td>
+                                            </tr>
+                                            <?php }?>
+                                        </tbody>
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>

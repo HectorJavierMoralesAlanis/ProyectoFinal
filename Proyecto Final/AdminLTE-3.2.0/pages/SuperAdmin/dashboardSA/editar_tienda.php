@@ -1,4 +1,5 @@
 <?php
+    
     echo "hola";
     echo "<h2 style='float:right;'>$_POST[nombre]</h2>";
 ?>
