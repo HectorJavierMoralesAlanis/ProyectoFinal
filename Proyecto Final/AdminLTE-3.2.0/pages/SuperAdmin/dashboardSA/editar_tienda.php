@@ -12,6 +12,7 @@
 
             $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=:id";
             $id2=$_GET['id'];
+            
             $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]","id"=>$id);
 
             $resultado=$dao2->insertarConsulta($consulta2,$parametros2);
