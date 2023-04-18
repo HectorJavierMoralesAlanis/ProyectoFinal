@@ -2,6 +2,7 @@
     include_once('../PDO/DAO.php');
     $dao=new DAO();
     $id=$_GET['id'];
+    
     echo "<h2 style='float:right;'>$id</h2>";
 ?>
 
