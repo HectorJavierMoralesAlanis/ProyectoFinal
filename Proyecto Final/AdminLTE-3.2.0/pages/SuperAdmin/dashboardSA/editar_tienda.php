@@ -6,6 +6,7 @@
     $consulta="SELECT (nombre,estado)"."FROM tienda WHERE id=:id";
     $parametros = array("id"=>$id);
     $tienda=$dao->ejecutarConsulta($consulta,$parametros);
+    
     echo $tienda;
 ?>
 
