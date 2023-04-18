@@ -3,9 +3,10 @@
     $dao=new DAO();
     $id=$_GET['id'];
     echo "<h2 style='float:right;'>$id</h2>";
-    $consulta="SELECT (nombre,estado) FROM tienda WHERE id=:id";
+    $consulta="SELECT (nombre,estado)"."FROM tienda WHERE id=:id";
     $parametros = array("id"=>$id);
     $tienda=$dao->ejecutarConsulta($consulta,$parametros);
+    echo $tienda;
 ?>
 
 <html>
