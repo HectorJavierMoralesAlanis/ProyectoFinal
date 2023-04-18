@@ -10,7 +10,7 @@
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             $dao2=new DAO();
             echo $_GET['id'];
-            $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=1";
+            $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=:id";
             
             $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
 
