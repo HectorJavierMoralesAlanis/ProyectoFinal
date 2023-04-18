@@ -3,8 +3,6 @@
     $dao = new DAO();
     $consulta="SELECT * FROM tienda";
     $tiendas=$dao->ejecutarConsulta($consulta);
-    $id=$tiendas['id'];
-    echo $id;
 ?>
 <html>
 <head>
@@ -125,7 +123,7 @@
                                                     <td><?php echo $tienda['id']?></td>
                                                     <td><?php echo $tienda['nombre']?></td>
                                                     <td><?php echo $tienda['estado']?></td>
-                                                    <td><a href="./editar_tienda.php?id=<?php echo($id)?>" method="POST" class="btn btn-block btn-warning">Editar</a></td>
+                                                    <td><a href="./editar_tienda.php?id=<?php echo($tienda['id'])?>" method="POST" class="btn btn-block btn-warning">Editar</a></td>
                                                     <td><a class="btn btn-block btn-danger">Eliminar</a></td>
                                                     <td><a class="btn btn-block btn-success">Ingresar</a></td>
                                                 </tr>
