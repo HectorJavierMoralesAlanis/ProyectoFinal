@@ -1,6 +1,6 @@
 <?php
     echo "hola";
-    echo "<h2 style='float:right;'>$_POST[nombre]</h2>";
+    echo "<h2 style='float:right;'>$tienda[nombre]</h2>";
 ?>
 
 <html>
