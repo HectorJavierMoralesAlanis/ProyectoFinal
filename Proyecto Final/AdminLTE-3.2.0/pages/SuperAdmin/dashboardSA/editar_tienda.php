@@ -119,7 +119,7 @@
                             </div>
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
-                                <form>
+                                <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
                                     <?php foreach($tienda as $id => $tiendas){?>
                                         <div class="form-group">
 
@@ -144,7 +144,7 @@
                                         </div>
                                     <?php }?>
                                     <div class="btn-group" style="float: right;">
-                                    <button type="button" class="btn btn-block btn-success" style="float: right;">ACTUALIZAR</button>
+                                    <button type="submit" class="btn btn-block btn-success" style="float: right;" name="enviar">ACTUALIZAR</button>
                                     </div>
                             </div>
                         </div>
