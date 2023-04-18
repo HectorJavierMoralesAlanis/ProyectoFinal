@@ -118,7 +118,7 @@
                                             <label>
                                                 Activa:
                                                 <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="estado" name="estado" checked>
+                                                <input class="custom-control-input" type="radio" id="estado" name="estado" value="on">
                                                 <label for="customRadio4" class="custom-control-label">ACTIVADA</label>
                                                 </div>
                                                 <div class="custom-control custom-radio">
