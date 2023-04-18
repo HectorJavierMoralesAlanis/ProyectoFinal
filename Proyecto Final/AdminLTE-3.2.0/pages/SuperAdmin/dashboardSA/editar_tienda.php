@@ -128,6 +128,7 @@
                                             </label>
                                             <br>
                                             <input type="text" class="form-control" value="<?php echo($tiendas['nombre'])?>" name="nombre" id="nombre">
+                                            
                                             <label>
                                                 Estado:
                                             </label>
