@@ -126,7 +126,7 @@
                                                     <td><a href="./editar_tienda.php" method="POST" class="btn btn-block btn-warning">Editar</a></td>
                                                     <td><a class="btn btn-block btn-danger">Eliminar</a></td>
                                                     <td><a class="btn btn-block btn-success">Ingresar</a></td>
-                                            </tr>
+                                                </tr>
                                             <?php }?>
                                         </tbody>
                                     </table>
