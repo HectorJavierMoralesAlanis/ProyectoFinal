@@ -1,3 +1,18 @@
+<?php
+include_once('../../PDO/DAO.php');
+$dao = new DAO();
+$consulta = "SELECT *FROM tienda";
+$productos=$dao->ejecutarConsulta();
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    //deleteproduc($id);
+    header("Location: inventario.php");
+}
+
+?>
+
+
 <html>
 <head>
     <title>Tiendas</title>
@@ -139,6 +154,7 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
+
                                             <th>Codigo</th>
                                             <th>Nombre</th>
                                             <th>Fecha Agregado</th>
@@ -150,6 +166,20 @@
                                             <th></th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                    <!-- EXTRAE TODOS LOS DATOS DE LA TABLA EN LA BASE DE DATOS Y LOS MUESTRA AQUI -->
+                                    <?php foreach ($productos as $invetario) { ?>
+                                    <tr>
+                                        <td><?php echo $invetario['codigo_inventario']; ?></td>
+                                        <td><?php echo $invetario['nombre_producto']; ?></td>
+                                        <td><?php echo $invetario['fechaA_inventario']; ?></td>
+                                        <td><?php echo $invetario['precioProducto_inventario']; ?></td>
+                                        <td><?php echo $invetario['id_categoria_producto']; ?></td>
+                                        <td><?php echo $invetario['stock']; ?></td>
+                                        <td class="align-middle"><a href="editarInventario.php?id2=<?php echo($invetario['id_inventario']); ?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
+                                        <td class="align-middle"><a href="inventario.php?id2=<?php echo($invetario['id_inventario']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
+                                    </tr>
+                                    <?php } ?>
                                 </table>
                             </div>
                         </div>

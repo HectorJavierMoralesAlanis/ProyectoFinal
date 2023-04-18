@@ -53,7 +53,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
                         <li class="nav-item">
-                            <a href="../PDO/DAO.php" class="nav-link active">
+                            <a href="../dashboardSA/dashboard.php" class="nav-link active">
                                 <p>
                                     Dashboard
                                 </p>
@@ -125,7 +125,7 @@
                                                     <td><?php echo $tienda['estado']?></td>
                                                     <td><a href="./editar_tienda.php?id=<?php echo($tienda['id']);?>" method="POST" class="btn btn-block btn-warning">Editar</a></td>
                                                     <td><a class="btn btn-block btn-danger">Eliminar</a></td>
-                                                    <td><a class="btn btn-block btn-success">Ingresar</a></td>
+                                                    <td><a href="../tienda/inventario/inventario.php?id=<?php echo($tienda['id']);?>" class="btn btn-block btn-success">Ingresar</a></td>
                                                 </tr>
                                             <?php }?>
                                         </tbody>

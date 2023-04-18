@@ -1,3 +1,17 @@
+<?php
+include_once('../../db/utilities.php');
+
+
+$user_access = fill_sel();   
+
+//Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
+if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
+    add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
+    header("location: inventario.php");
+  }
+  ?>
+
+
 <html>
 <head>
     <title>Tiendas</title>
@@ -134,13 +148,14 @@
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form>
+                        
+                                <form method="POST" action="agregarInverntario.php">
                                     <div class="form-group">
                                         <label>
                                             Codigo del producto:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="codigo_inventario" name="codigo_inventario">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -148,7 +163,7 @@
                                             Nombre:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -156,29 +171,31 @@
                                             Precio:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="precioProducto_inventario" name="precioProducto_inventario">
                                     </div>
                                     <br>
+                                    <div class="form-group">
+                                    <label class="form-label" for="id_categoria">categoria:</label>
+                                        <br>
+                                        <?php 
+                                            echo '<select id="id_categoria" name="id_categoria" class="custom-select form-control-border">';
+                                            foreach ($user_access as $row) {
+                                            echo '<option value="' . $row['id_categoria'] . '">' . $row['descripcion_categoria'] . '</option>';
+                                            }
+                                            echo '</select>';
+                                        ?>
+                                    </div>
                                     <div class="form-group">
                                         <label>
                                             Stock:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="stock" name="stock">
                                     </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label>
-                                            Categoria:
-                                        </label>
-                                        <br>
-                                        <select class="custom-select form-control-border">
-                                            <option>Valor</option>
-                                        </select>
-                                    </div>
+                                
                                     <br>
                                     <div class="btn-group" style="float:right;">
-                                        <button type="button" class="btn btn-block btn-success" style="float: right;">
+                                        <button type="submit" class="btn btn-block btn-success" style="float: right;">
                                         Guardar
                                         </button>
                                     </div>
