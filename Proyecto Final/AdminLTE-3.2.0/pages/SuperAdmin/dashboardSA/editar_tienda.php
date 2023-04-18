@@ -117,16 +117,17 @@
                                             <label>
                                                 Estado:
                                             </label>
-
+                                            <?php if($tiendas['estado']=='Activado'){?>
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="activo" name="estado" <?php if($tiendas['estado']=='Activado'){?>checked<?php  }?> >
+                                                <input class="custom-control-input" type="radio" id="activo" name="estado" checked> 
                                                 <label for="activo" class="custom-control-label">ACTIVADA</label>
                                             </div>
+                                            <?php }else if($tiendas['estado']=='Desactivado'){?>
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado">
+                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" checked>
                                                 <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
                                             </div>
-
+                                            <?php }?>
                                         </div>
                                     <?php }?>
                                     <div class="btn-group" style="float: right;">
