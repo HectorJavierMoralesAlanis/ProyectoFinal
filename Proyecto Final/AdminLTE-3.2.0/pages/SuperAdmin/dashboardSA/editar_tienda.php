@@ -116,7 +116,7 @@
                                             <br>
                                             <input type="text" class="form-control" placeholder="<?php echo($tiendas['nombre'])?>">
                                             <label>
-                                                Activa:
+                                                Estado:
                                             </label>
                                             <div class="custom-control custom-radio">
                                                 <input class="custom-control-input" type="radio" id="activo" name="estado">
