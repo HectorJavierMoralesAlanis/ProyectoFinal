@@ -3,6 +3,7 @@ include_once('../../PDO/DAO.php');
 $dao = new DAO();
 $consulta = "SELECT *FROM tienda";
 $productos=$dao->ejecutarConsulta();
+echo $_GET['id'];
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
