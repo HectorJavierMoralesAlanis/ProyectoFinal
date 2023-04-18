@@ -1,15 +1,25 @@
 <?php
-include_once('../../db/utilities.php');
-
-
-$user_access = fill_sel();   
+include_once('../../PDO/DAO.php');
+$id=$_GET['id'];
+//$user_access = fill_sel();   
 
 //Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
-    add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
+    $dao = new DAO();
+    $consulta="INSERT INTO inventario (codigo,nombre,fechaA,precioProducto,categoria,stock)"."VALUES (:codigo,:nombre,:precioProducto,:id,:stock)";
+
+    $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","precioProducto"=>"$_POST[precioProducto_inventario]","id"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]");
+
+    $resultados=$dao->insertarConsulta($consulta,$parametros);
+    if($resultados>=0){
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/editar_tienda.php?id=$id");
+    }else{
+        echo "error";
+    }
+    //add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
     header("location: inventario.php");
-  }
-  ?>
+}
+?>
 
 
 <html>
