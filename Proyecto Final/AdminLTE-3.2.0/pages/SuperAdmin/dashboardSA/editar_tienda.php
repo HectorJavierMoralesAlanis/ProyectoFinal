@@ -119,7 +119,7 @@
                                             </label>
 
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="activo" name="estado" on>
+                                                <input class="custom-control-input" type="radio" id="activo" name="estado" activate>
                                                 <label for="activo" class="custom-control-label">ACTIVADA</label>
                                             </div>
                                             <div class="custom-control custom-radio">
