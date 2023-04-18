@@ -1,4 +1,5 @@
 <?php
+    include_once('../dashboardSA/dashboard.php');
     echo "<h2 style='float:right;'>hola</h2><br>";
     echo "<h2 style='float:right;'>$tienda[nombre]</h2><br>";
     echo "<h2 style='float:right;'>$tienda[estado]</h2>";
