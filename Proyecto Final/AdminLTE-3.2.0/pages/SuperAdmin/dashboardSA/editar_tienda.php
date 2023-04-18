@@ -2,12 +2,10 @@
     include_once('../PDO/DAO.php');
     $dao=new DAO();
     $id=$_GET['id'];
-    echo "<h2 style='float:right;'>$id</h2>";
     $consulta="SELECT * "."FROM tienda WHERE id=:id";
     $parametros = array("id"=>$id);
     $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 
-    echo $tienda;
 ?>
 
 <html>
@@ -115,13 +113,13 @@
                                             </label>
                                             <br>
                                             <input type="text" class="form-control" placeholder="<?php echo($tiendas['nombre'])?>">
-                                            
+
                                             <label>
                                                 Estado:
                                             </label>
 
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="activo" name="estado">
+                                                <input class="custom-control-input" type="radio" id="activo" name="estado" on>
                                                 <label for="activo" class="custom-control-label">ACTIVADA</label>
                                             </div>
                                             <div class="custom-control custom-radio">
