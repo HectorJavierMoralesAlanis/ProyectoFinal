@@ -9,9 +9,9 @@
     if(isset($_POST['enviar'])){
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             $dao2=new DAO();
-            $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=1";
-
-            $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
+            $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=:id2";
+            $id2=$_GET['id'];
+            $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]","id2"=>$id2);
 
             $resultado=$dao2->insertarConsulta($consulta2,$parametros2);
             if($resultados>=0){
@@ -136,11 +136,11 @@
                                             </label>
 
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="activo" name="estado" <?php if($tiendas['estado']=='Activo'){?>checked<?php }?>>
+                                                <input value="Activo" class="custom-control-input" type="radio" id="activo" name="estado" <?php if($tiendas['estado']=='Activo'){?>checked<?php }?>>
                                                 <label for="activo" class="custom-control-label">ACTIVADA</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" <?php if($tiendas['estado']=='Desactivado'){?>checked<?php }?>>
+                                                <input value="Desactivado" class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado" <?php if($tiendas['estado']=='Desactivado'){?>checked<?php }?>>
                                                 <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
                                             </div>
 
