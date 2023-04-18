@@ -114,7 +114,7 @@
                                                 Nombre
                                             </label>
                                             <br>
-                                            <input type="text" class="form-control" <?php echo($tiendas['nombre']);?>>
+                                            <input type="text" class="form-control" <?php echo($tiendas['nombre'])?>>
                                             <label>
                                                 Activa:
                                                 <div class="custom-control custom-radio">
