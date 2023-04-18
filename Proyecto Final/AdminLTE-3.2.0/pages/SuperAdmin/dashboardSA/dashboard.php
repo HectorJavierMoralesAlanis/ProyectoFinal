@@ -117,6 +117,7 @@
                                                 <th>Ingresar</th>
                                             </tr>
                                         </thead>
+                                        
                                         <tbody>
                                             <?php foreach($tiendas as $id =>$tienda){?>
                                                 <tr>
