@@ -145,7 +145,7 @@ if(isset($_GET['id'])){
                                 <h3 class="card-title">Agregar producto</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <a href="./agregarInverntario.php" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
+                                    <a href="./agregarInverntario.php?id=<?php echo($invetario['id_inventario']); ?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
                                     <br>
                                     <a href="./editarInverntario.php">Editar</a>
                                 </div>
