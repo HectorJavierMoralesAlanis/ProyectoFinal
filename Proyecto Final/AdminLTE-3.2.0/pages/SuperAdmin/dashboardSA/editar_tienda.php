@@ -9,10 +9,10 @@
     if(isset($_POST['enviar'])){
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
             $dao2=new DAO();
-            $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=:id";
+            $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=1";
 
-            $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]","id"=>$id);
-            
+            $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
+
             $resultado=$dao2->insertarConsulta($consulta2,$parametros2);
             if($resultados>=0){
                 header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
