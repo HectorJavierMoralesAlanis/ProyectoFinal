@@ -118,11 +118,11 @@
                                             <label>
                                                 Activa:
                                                 <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="activo" name="estado" checked>
+                                                <input class="custom-control-input" type="radio" id="estado" name="estado" checked>
                                                 <label for="customRadio4" class="custom-control-label">ACTIVADA</label>
                                                 </div>
                                                 <div class="custom-control custom-radio">
-                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado">
+                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="estado" name="estado">
                                                 <label for="customRadio5" class="custom-control-label">DESACTIVADA</label>
                                                 </div>
                                             </label>
