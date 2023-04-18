@@ -4,6 +4,7 @@
     $consulta="SELECT * FROM tienda";
     $tiendas=$dao->ejecutarConsulta($consulta);
     $id=$tiendas['id'];
+    echo $id;
 ?>
 <html>
 <head>
