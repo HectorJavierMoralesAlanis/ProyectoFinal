@@ -108,7 +108,7 @@
                                 <form>
                                     <?php foreach($tienda as $id => $tiendas){?>
                                         <div class="form-group">
-                                            
+
                                             <label>
                                                 Nombre
                                             </label>
@@ -119,7 +119,7 @@
                                             </label>
 
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="activo" name="estado" checked>
+                                                <input class="custom-control-input" type="radio" id="activo" name="estado" <?php if($tiendas['estado']=='Activado'){?>checked<?php }?>>
                                                 <label for="activo" class="custom-control-label">ACTIVADA</label>
                                             </div>
                                             <div class="custom-control custom-radio">
