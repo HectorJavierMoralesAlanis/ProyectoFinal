@@ -12,7 +12,6 @@
             $id2=$_GET['id'];
             $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=:id2";
             $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]","id2"=>$id2);
-
             $resultado=$dao2->insertarConsulta($consulta2,$parametros2);
             if($resultados>=0){
                 header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
