@@ -117,15 +117,16 @@
                                             <input type="text" class="form-control" placeholder="<?php echo($tiendas['nombre'])?>">
                                             <label>
                                                 Activa:
-                                                <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" id="activo" name="estado">
-                                                <label for="customRadio4" class="custom-control-label">ACTIVADA</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado">
-                                                <label for="customRadio5" class="custom-control-label">DESACTIVADA</label>
-                                                </div>
                                             </label>
+                                            <div class="custom-control custom-radio">
+                                                <input class="custom-control-input" type="radio" id="activo" name="estado">
+                                                <label for="activo" class="custom-control-label">ACTIVADA</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado">
+                                                <label for="desactivado" class="custom-control-label">DESACTIVADA</label>
+                                            </div>
+
                                         </div>
                                     <?php }?>
                                     <div class="btn-group" style="float: right;">
