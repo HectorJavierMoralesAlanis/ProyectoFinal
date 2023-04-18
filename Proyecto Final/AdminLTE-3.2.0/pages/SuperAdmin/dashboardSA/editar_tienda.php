@@ -1,5 +1,11 @@
 <?php
-    echo "<h2 style='float:right;'>hola</h2><br>";
+    include_once('../PDO/DAO.php');
+    $dao=new DAO();
+    $id=$_GET['id'];
+    echo $id;
+    $consulta="SELECT (nombre,estado)"." FROM tienda WHERE id=:id";
+    $parametros = array("id"=>$id);
+    $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 ?>
 
 <html>
