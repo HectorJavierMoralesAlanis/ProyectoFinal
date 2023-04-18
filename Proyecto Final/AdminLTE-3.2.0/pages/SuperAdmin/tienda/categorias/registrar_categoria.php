@@ -1,3 +1,14 @@
+<?php
+include_once('../../db/utilities.php');
+
+
+//Se revisa que las variables se esten recibiendo para continuar con la insercion de los valores ingresados 
+if(isset($_POST['nombre'], $_POST['descripcion'])){
+  add_cat($_POST['nombre'], $_POST['descripcion']);
+  header("location: categoria.php");
+}
+?>
+
 <html>
 <head>
     <title>Tiendas</title>
@@ -18,14 +29,14 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../../dashboardSA/dashboard.php" class="nav-link">Home</a>
+                <a href="dashboardSA/dashboard.php" class="nav-link">Home</a>
             </li>
         </ul>
     </nav>
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Logo --->
-        <a href="../../dashboardSA/dashboard.php" class="brand-link">
+        <a href="dashboardSA/dashboard.php" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
@@ -126,18 +137,18 @@
                         <div class="card">
                             <!-- Header del contenido-->
                             <div class="card-header">
-                                <h3 class="card-title">Editar Categoria</h3>
+                                <h3 class="card-title">Registrar Categoria</h3>
 
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form>
+                            <form method="POST" action="registrar_categoria.php">
                                     <div class="form-group">
                                         <label>
                                             Nombre
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="nombre" name="nombre">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -145,11 +156,11 @@
                                             Descripcion
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="descripcion" name="descripcion">
                                     </div>
                                     <br>
                                     <div class="btn-group" style="float: right;">
-                                        <button type="button" class="btn btn-block btn-success" style="float: right;">REGISTRAR</button>
+                                        <button type="submit" class="btn btn-block btn-success" style="float: right;">REGISTRAR</button>
                                     </div>
                                 </form>
                             </div>
@@ -160,7 +171,7 @@
         </section>
 </div>
 
-    <!-- REQUIRED SCRIPTS -->
+        <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../../../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->

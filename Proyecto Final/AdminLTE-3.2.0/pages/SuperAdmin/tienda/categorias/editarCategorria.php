@@ -1,3 +1,22 @@
+<?php
+include_once('../../db/utilities.php');
+
+$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
+$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
+
+
+//Se revisa que la variable se encuentre definida
+if(isset($_POST['nombre'],$_POST['descripcion'])){
+
+  //Se realiza la actualizacion del registro 
+  updateCAT($id,$_POST['nombre'],$_POST['descripcion']);
+
+  //Al termino de la actualizacion se redirige a la pagina categoria
+  header("location: categoria.php");
+  
+}
+?>
+
 <html>
 <head>
     <title>Tiendas</title>
@@ -129,18 +148,25 @@
                                 <h3 class="card-title">Editar Categoria</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <button type="button" class="btn btn-block btn-success" style="float: right;">Agregar nueva categoria</button>
+                                <button type="button" class="btn btn-block btn-success" style="float: right;"  onclick="window.location.href='registrar_categoria.php'">Agregar nueva categoria</button>
                                 </div>
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <form>
                                     <div class="form-group">
+                                    <?php echo('<form method="POST" action="editarCategorria.php?id_categoria='.$id.'">');?>
+                                        <label class="form-label" for="id_categoria">
+                                            Id:
+                                        </label>
+
+                                        <input type="text" class="form-control" name="id_categoria" value="<?php echo($r['id'])?>" disabled>
+                                        <br>
                                         <label>
                                             Nombre
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($r['nombre'])?>">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -148,11 +174,11 @@
                                             Descripcion
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($r['descripcion'])?>">
                                     </div>
                                     <br>
                                     <div class="btn-group" style="float: right;">
-                                        <button type="button" class="btn btn-block btn-success" style="float: right;">Guardar</button>
+                                        <button type="submit" class="btn btn-block btn-success" style="float: right;" onClick="wait();">Modificar</button>
                                     </div>
                                 </form>
                             </div>

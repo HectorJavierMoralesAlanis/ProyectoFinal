@@ -126,7 +126,7 @@
                                                     <td><?php echo $tienda['estado']?></td>
                                                     <td><a href="./editar_tienda.php?id=<?php echo($tienda['id']);?>" method="POST" class="btn btn-block btn-warning">Editar</a></td>
                                                     <td><a class="btn btn-block btn-danger">Eliminar</a></td>
-                                                    <td><a href="../tienda/inventario/inventario.php?id=<?php echo($tienda['id']);?>" method="POST" class="btn btn-block btn-success">Ingresar</a></td>
+                                                    <td><a href="../tienda/categorias/categoria.php?id=<?php echo($tienda['id']);?>" method="POST" class="btn btn-block btn-success">Ingresar</a></td>
                                                 </tr>
                                             <?php }?>
                                         </tbody>

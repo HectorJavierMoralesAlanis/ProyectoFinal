@@ -1,3 +1,19 @@
+<?php
+include_once('../../PDO/DAO.php');
+$dao = new DAO();
+$consulta="SELECT * FROM categoria";
+$arrcategorias = $dao->ejecutarConsulta($consulta);
+//$arrcategorias = getAllCategorias();
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    //deletecat($id);
+    header("Location: categoria.php");
+}
+
+?>
+
+
 <html>
 <head>
     <title>Tiendas</title>
@@ -129,7 +145,8 @@
                                 <h3 class="card-title">Categoria</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <button type="button" class="btn btn-block btn-success" style="float: right;">Agregar nueva categoria</button>
+                                    <button type="button" class="btn btn-block btn-success" style="float: right;"  onclick="window.location.href='registrar_categoria.php'">Agregar nueva categoria</button>
+
                                 </div>
                             </div>
                             <!-- Cuerpo de la tabla-->
@@ -144,6 +161,18 @@
                                             <th>Eliminar?</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        <?php foreach ($arrcategorias as $categoria) { ?>
+                                        <tr>
+                                        <td><?php echo $categoria['nombre_categoria']; ?></td>
+                                        <td><?php echo $categoria['descripcion_categoria']; ?></td>
+                                        <td><?php echo $categoria['fecha_categoria']; ?></td>
+                                        <td class="align-middle"><a href="editarCategorria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
+                                        <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
+                                        </div>
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
                                 </table>
                             </div>
                         </div>
