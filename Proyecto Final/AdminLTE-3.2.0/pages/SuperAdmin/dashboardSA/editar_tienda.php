@@ -108,24 +108,26 @@
                             <!-- Cuerpo de la tabla-->
                             <div class="card-body">
                                 <form>
-                                    <div class="form-group">
-                                        <label>
-                                            Nombre
-                                        </label>
-                                        <br>
-                                        <input type="text" class="form-control">
-                                        <label>
-                                            Activa:
-                                            <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" id="activo" name="activo" >
-                                            <label for="customRadio4" class="custom-control-label">ACTIVADA</label>
-                                            </div>
-                                            <div class="custom-control custom-radio">
-                                            <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="desactivado">
-                                            <label for="customRadio5" class="custom-control-label">DESACTIVADA</label>
-                                            </div>
-                                        </label>
-                                    </div>
+                                    <?php foreach($tienda as $id => $tiendas){?>
+                                        <div class="form-group">
+                                            <label>
+                                                Nombre
+                                            </label>
+                                            <br>
+                                            <input type="text" class="form-control" <?php echo($tiendas['nombre']);?>>
+                                            <label>
+                                                Activa:
+                                                <div class="custom-control custom-radio">
+                                                <input class="custom-control-input" type="radio" id="activo" name="estado" checked>
+                                                <label for="customRadio4" class="custom-control-label">ACTIVADA</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                <input class="custom-control-input custom-control-input-danger" type="radio" id="desactivado" name="estado">
+                                                <label for="customRadio5" class="custom-control-label">DESACTIVADA</label>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    <?php }?>
                                     <div class="btn-group" style="float: right;">
                                     <button type="button" class="btn btn-block btn-success" style="float: right;">ACTUALIZAR</button>
                                     </div>
