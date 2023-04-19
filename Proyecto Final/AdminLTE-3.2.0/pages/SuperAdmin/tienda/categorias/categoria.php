@@ -148,7 +148,7 @@ if(isset($_GET['id'])){
 
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <button type="button" class="btn btn-block btn-success" style="float: right;" onclick="window.location.href='registrar_categoria.php?id=<?php echo $id?>'">Agregar nueva categoria</button>
+                                    <button type="button" class="btn btn-block btn-success" style="float: right;" onclick="window.location.href='registrar_categoria.php?id=<?php echo $id?> '">Agregar nueva categoria</button>
                                 </div>
                             </div>
                             <!-- Cuerpo de la tabla-->
