@@ -178,33 +178,25 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                         </label>
                                         <br>
                                         <input type="text" class="form-control" id="codigo_inventario" name="codigo_inventario" value="<?php echo $inv['codigo']?>">
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
+                                        <br>
                                         <label>
                                             Nombre:
                                         </label>
                                         <br>
                                         <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="<?php echo $inv['nombre']?>">
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
+                                        <br>
                                         <label>
                                             Precio:
                                         </label>
                                         <br>
                                         <input type="text" class="form-control" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo $inv['precioProducto']?>">
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
+                                        <br>
                                         <label>
                                             Stock:
                                         </label>
                                         <br>
                                         <input type="text" class="form-control" id="stock" name="stock" value="<?php echo $inv['stock']?>">
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
+                                        <br>
                                         <label>
                                             Categoria:
                                         </label>
