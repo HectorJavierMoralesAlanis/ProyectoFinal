@@ -11,18 +11,27 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id=$_GET['id'];
-
+    
     $consulta="INSERT INTO inventario (codigo,nombre,fechaA,precioProducto,categoria,stock,tiendaId)"."VALUES (:codigo,:nombre,:fecha,:precioProducto,:id,:stock,:idTienda)";
     $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","id"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idTienda"=>$id);
+
     $resultados=$dao->insertarConsulta($consulta,$parametros);
     if($resultados>=0){
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$_GET[id]");
+        echo $_POST['codigo_inventario'];
+        echo "<br>";
+        echo $_POST['nombre_producto'];
+        echo "<br>";
+        echo $fecha;
+        echo "<br>";
+        echo $_POST['precioProdcuto_inventario'];
+        echo "<br>";
+        echo $_POST['id_categoria'];
+        echo "<br>";
+        echo $_POST['stock'];
+        //header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$id");
     }else{
-        
         echo "error";
-    
     }
-    
     //add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
 }
 ?>
