@@ -22,7 +22,7 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
     $id2=$_GET['id'];
     $consulta1="UPDATE inventario SET nombre=:nombre, fechaA=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE codigo=:idP";
     
-    $parametros1=array("nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","cateogria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
+    $parametros1=array("nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","categoria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
     $resultados=$dao->insertarConsulta($consulta1,$parametros1);
     
     if($resultados>=0){
