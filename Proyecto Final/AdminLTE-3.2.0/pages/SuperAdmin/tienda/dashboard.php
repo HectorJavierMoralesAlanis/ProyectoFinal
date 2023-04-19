@@ -8,7 +8,9 @@ $dao = new DAO();
 $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
 
 $parametros=array("id"=>$id);
+
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
+
 //$inv=$arrcategoria->rowCount();
 
 if(isset($_GET['id'])){
