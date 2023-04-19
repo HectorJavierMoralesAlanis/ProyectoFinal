@@ -17,6 +17,7 @@ if($resultados>=0){
     echo $resultados[0];
 
 }else{
+
     echo "error";
 }
 
