@@ -8,6 +8,7 @@ $parametros=array("id"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 //$arrcategorias = getAllCategorias();
 if(isset($_GET['id'])){
+    
     $id = $_GET['id'];
     //deletecat($id);
     //header("Location: categoria.php");
