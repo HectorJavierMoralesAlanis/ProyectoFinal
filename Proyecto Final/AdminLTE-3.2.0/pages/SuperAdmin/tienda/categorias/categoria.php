@@ -171,7 +171,8 @@ if(isset($_GET['id'])){
                                         <td class="align-middle"><a href="./editarCategorria.php?=<?php echo($_GET['id']);?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
                                         
                                         <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
-                                        </div>
+                                        
+                                    </div>
                                         </td>
                                     </tr>
                                     <?php } ?>
