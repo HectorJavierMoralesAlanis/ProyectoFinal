@@ -5,7 +5,7 @@ $dao = new DAO();
 
 $id = $_GET['id'];
 echo $id;
-$consulta = "SELECT * FROM categoria";
+$consulta = "SELECT * FROM tienda";
 $parametros = array("id"=>$pro);
 $categorias = $dao->ejecutarConsulta($consulta,$parametros);
 
