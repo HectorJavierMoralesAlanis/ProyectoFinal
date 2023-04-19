@@ -1,3 +1,17 @@
+<?php
+include_once("../../PDO/DAO.php");
+$dao=new DAO();
+$id=$_GET['i'];
+$consulta="SELECT * FROM inventario WHERE id=:id";
+$parametros=array("id"=>$id);
+$tienda=$dao->ejecutarConsulta($consulta,$parametros);
+
+if(isset($_POST['enviar'])){
+    if(!empty($_POST['nombre'])&&!empty($_POST['precioProducto'])&&!empty($_POST)){
+
+    }
+}
+?>
 <html>
 <head>
     <title>Tiendas</title>
