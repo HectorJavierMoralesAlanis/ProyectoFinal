@@ -25,9 +25,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
         echo "error";
     }
   //Se realiza la actualizacion del registro 
-
   //updateCAT($id,$_POST['nombre'],$_POST['descripcion']);
-
   //Al termino de la actualizacion se redirige a la pagina categoria
   //header("location: categoria.php");
 }
