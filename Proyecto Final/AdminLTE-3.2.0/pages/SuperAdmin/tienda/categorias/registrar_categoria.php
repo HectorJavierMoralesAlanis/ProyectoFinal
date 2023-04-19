@@ -7,14 +7,15 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
   //add_cat($_POST['nombre'], $_POST['descripcion']);
         $dao=new DAO();
         $fecha=date('Y-m-d H:i:s');
-        $consulta="INSERT INTO categoria (nombre,descripcion,fecha)"."VALUES (:nombre,:descripcion,:fecha)";
+        $id=$_GET['id'];
+        $consulta="INSERT INTO categoria (nombre,descripcion,fecha)"."VALUES (:nombre,:descripcion,:fecha)"."WHERE tiendaId=:idTienda";
 
-        $parametros=array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha);
+        $parametros=array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"idTienda"=>$id);
 
-        $resultado=$dao->insertarConsulta($consulta,$parametros);
+        $resultado=$dao->insertarConsulta($consulta,$parametros,$fecha);
 
         if($resultado>=0){
-            header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php");
+            header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
         }else{
             echo"error";
         }
