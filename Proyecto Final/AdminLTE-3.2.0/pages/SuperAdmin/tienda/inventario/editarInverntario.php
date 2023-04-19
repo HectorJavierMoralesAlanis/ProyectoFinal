@@ -213,7 +213,6 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                         Guardar
                                         </button>
                                     </div>
-                                    
                                 </form>
                                 <?php }?>
                             </div>
