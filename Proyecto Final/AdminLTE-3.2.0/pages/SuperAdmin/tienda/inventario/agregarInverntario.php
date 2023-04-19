@@ -20,6 +20,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     }else{
         
         echo "error";
+    
     }
     //add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
 }
