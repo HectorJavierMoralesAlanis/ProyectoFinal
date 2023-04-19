@@ -188,7 +188,6 @@ if(isset($_GET['id'])){
             </div>
         </section>
 </div>
-
     <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../../../../plugins/jquery/jquery.min.js"></script>
