@@ -168,24 +168,24 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&?pro=<?php echo $_GET['pro']?>">
-                                    <div class="form-group">
-                                        <?php foreach($categorias as $id => $categoria){?>
-                                            <label>
-                                                Nombre
-                                            </label>
-                                            <br>
-                                            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($categoria['nombre'])?>">
-                                            <br>
-                                            <label>
-                                                Descripcion
-                                            </label>
-                                            <br>
-                                            <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($categoria['descripcion'])?>">
-                                    </div>
-                                    <br>
-                                    <div class="btn-group" style="float: right;">
-                                        <button type="submit" class="btn btn-block btn-success" style="float: right;" onClick="wait();">Modificar</button>
-                                    </div>
+                                    <?php foreach($categorias as $id => $categoria){?>
+                                        <div class="form-group">
+                                                <label>
+                                                    Nombre
+                                                </label>
+                                                <br>
+                                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($categoria['nombre'])?>">
+                                                <br>
+                                                <label>
+                                                    Descripcion
+                                                </label>
+                                                <br>
+                                                <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($categoria['descripcion'])?>">
+                                        </div>
+                                        <br>
+                                        <div class="btn-group" style="float: right;">
+                                            <button type="submit" class="btn btn-block btn-success" style="float: right;" onClick="wait();">Modificar</button>
+                                        </div>
                                     <?php }?>
                                 </form>
                             </div>
