@@ -1,6 +1,5 @@
 <?php
 include_once('../../PDO/DAO.php');
-echo $_GET['id'];
 $id=$_GET['id'];
 $dao = new DAO();
 $consulta="SELECT * FROM categoria WHERE tiendaId=:id";
