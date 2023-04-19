@@ -12,7 +12,6 @@ $consulta="SELECT * FROM categoria WHERE id=:id";
 $parametros=array("id"=>$id);
 
 $resultados=$dao->ejecutarConsulta($consulta,$parametros);
-
 /* Comprobacion si regresa resultados la consulta
 if($resultados>=0){
 
