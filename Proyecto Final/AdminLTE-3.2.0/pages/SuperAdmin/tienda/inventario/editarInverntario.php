@@ -152,7 +152,6 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                 </div>
             </div>
         </div>
-    
     <!-- Contenido -->
         <section class="content">
             <div class="container-fluid">
