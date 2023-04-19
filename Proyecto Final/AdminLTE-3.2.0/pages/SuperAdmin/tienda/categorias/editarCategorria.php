@@ -9,7 +9,11 @@ echo $id;
 $consulta="SELECT nombre,descripcion FROM categoria WHERE id=:id";
 $parametros=array("id"=>$id);
 $resultados=$dao->ejecutarConsulta($consulta,$parametros);
-echo $resultados[1];
+if($resultados>=0){
+    echo "si";
+}else{
+    echo "error";
+}
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 
