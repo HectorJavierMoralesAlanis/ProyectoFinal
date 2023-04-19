@@ -15,6 +15,7 @@ if($resultados>=0){
 }else{
     echo "error";
 }
+
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 
