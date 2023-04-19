@@ -27,7 +27,6 @@ if($resultados>=0){
 */
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
-
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
     
