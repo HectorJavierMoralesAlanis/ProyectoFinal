@@ -11,6 +11,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id=$_GET['id'];
+    
     $consulta="INSERT INTO inventario (codigo,nombre,fechaA,precioProducto,categoria,stock,tiendaId)"."VALUES (:codigo,:nombre,:fecha,:precioProducto,:id,:stock,:idTienda)";
     $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","id"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idTienda"=>$id);
 
