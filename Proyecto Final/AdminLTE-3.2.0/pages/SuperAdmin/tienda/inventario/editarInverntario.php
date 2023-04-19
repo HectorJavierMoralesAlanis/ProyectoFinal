@@ -203,6 +203,7 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
                                             <?php }?>
                                         </select>
                                     </div>
+                                    
                                     <div class="btn-group" style="float:right;">
                                         <button type="submit" class="btn btn-block btn-success" style="float: right;">
                                         Guardar
