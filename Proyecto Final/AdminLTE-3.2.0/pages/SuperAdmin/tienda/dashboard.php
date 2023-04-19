@@ -9,7 +9,7 @@ $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
 
 $parametros=array("id"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
-$inv=$arrcategoria->rowCount();
+//$inv=$arrcategoria->rowCount();
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -144,7 +144,7 @@ if(isset($_GET['id'])){
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                            
+
                             <!-- Header del contenido-->
                             <div class="card-header">
                                 <h3 class="card-title">Dashboard</h3>
