@@ -6,15 +6,15 @@ $dao=new DAO();
 $id=$_GET['id'];
 $consulta="SELECT * FROM inventario WHERE codigo=:id";
 $parametros=array("id"=>$id);
-$tienda=$dao->ejecutarConsulta($consulta,$parametros);
+$inventario=$dao->ejecutarConsulta($consulta,$parametros);
+
 //Para mostrar categorias
-/*
-$id2=$_GET['id'];
+foreach($inventario as $id => $in){
 $dao2=new DAO();
 $consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
-$parametros2= array("id2"=>$id2);
+$parametros2= array("id2"=>$in['tiendaId']);
 $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
-*/
+}
 //Para Actualizar los datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
     /*
@@ -170,13 +170,14 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form>
+                                <?php foreach($inventario as $id =>$inv){?>
+                                <form method="POST" action="./editarInverntario.php?id=<?php echo $inv['tiendaId']?>">
                                     <div class="form-group">
                                         <label>
                                             Codigo del producto:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="codigo_inventario" name="codigo_inventario" value="<?php echo $inv['codigo']?>">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -184,7 +185,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                             Nombre:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="<?php echo $inv['nombre']?>">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -192,7 +193,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                             Precio:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo $inv['precioProducto']?>">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -200,7 +201,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                             Stock:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="stock" name="stock" value="<?php echo $inv['stock']?>">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -208,17 +209,22 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                             Categoria:
                                         </label>
                                         <br>
-                                        <select class="custom-select form-control-border">
-                                            <option>Valor</option>
+                                        <select class="custom-select form-control-border" id="id_categoria" name="id_categoria">
+                                            <option value="<?php echo $inv['categoria']?>" selected><?php echo $inv['categoria']?></option>
+                                            <?php foreach($user_access as $id => $row){?>
+                                                <option value="<?php echo $row['nombre']?>"><?php echo $row['descripcion']?></option>
+                                            <?php }?>
                                         </select>
                                     </div>
                                     <br>
+                                
                                     <div class="btn-group" style="float:right;">
                                         <button type="button" class="btn btn-block btn-success" style="float: right;">
                                         Guardar
                                         </button>
                                     </div>
                                 </form>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
