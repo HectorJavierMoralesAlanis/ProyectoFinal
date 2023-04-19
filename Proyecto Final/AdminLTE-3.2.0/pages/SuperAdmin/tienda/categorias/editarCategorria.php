@@ -13,6 +13,7 @@ $parametros=array("id"=>$id);
 
 $resultados=$dao->ejecutarConsulta($consulta,$parametros);
 
+/* Comprobacion si regresa resultados la consulta
 if($resultados>=0){
 
     echo "si";
@@ -23,25 +24,24 @@ if($resultados>=0){
 
     echo "error";
 }
-
+*/
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
     
-    /*
-    $dao2 = new DAO();
+    $dao2 = new DAO(); 
+    $fecha=date('Y-m-d H:i:s');
     $id2 = $_GET['id'];
-    $pro2 = $_GET['pro'];
-    $consulta2 = "UPDATE categoria SET nombre = :nombre, descripcion=:descripcion"."WHERE id=:idProducto AND tiendaId=:id";
-    $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","idProducto"=>$pro2,"id"=>$id2);
-    $resultados=$dao->insertarConsulta($consulta2,$parametros2);
-    if($resultados>=0){
+    $consulta2 = "UPDATE categoria SET nombre = :nombre,descripcion=:descripcion,fecha=:fecha"."WHERE id=:id2";
+    $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>"fecha","id2"=>$id2);
+    $resultados2 = $dao->insertarConsulta($consulta2,$parametros2);
+    if($resultados2>=0){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
     }else{
         echo "error";
-    }*/
+    }
   //Se realiza la actualizacion del registro 
   //updateCAT($id,$_POST['nombre'],$_POST['descripcion']);
   //Al termino de la actualizacion se redirige a la pagina categoria
@@ -190,7 +190,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                                 </label>
                                                 <br>
                                                 <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo ($r['nombre'])?>">
-                                                
+
                                                 <br>
                                                 <label>
                                                     Descripcion
