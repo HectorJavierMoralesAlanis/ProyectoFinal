@@ -1,19 +1,21 @@
 <?php
 include_once('../../PDO/DAO.php');
 
-
 $id=$_GET['id'];
 
-$dao=new DAO();
+$dao = new DAO();
+
 $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
+
 $parametros=array("id"=>$id);
-$productos=$dao->ejecutarConsulta($consulta,$parametros);
+$arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
+$inv=$arrcategoria->rowCount();
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-    //deleteproduc($id);
-    //header("Location: inventario.php");
+    //deletecat($id);
+    //header("Location: categoria.php");
 }
-
 ?>
 
 
@@ -37,7 +39,7 @@ if(isset($_GET['id'])){
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../../dashboardSA/dashboard.php" class="nav-link">Home</a>
+                <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Home</a>
             </li>
         </ul>
     </nav>
@@ -60,20 +62,19 @@ if(isset($_GET['id'])){
                 </div>
             </div>
         
-        
             <!-- Menu lateral-->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
                         <li class="nav-item">
-                            <a href="../dashboard.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="./dashboard.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php?id=<?php echo $id?>" class="nav-link active">
+                            <a href="../inventario/inventario.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
@@ -87,7 +88,7 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link active">
                                 <p>
                                     Categorias
                                 </p>
@@ -119,6 +120,7 @@ if(isset($_GET['id'])){
         </div>
     </aside>
     <!-- Fin del menu lateral -->
+
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -128,12 +130,14 @@ if(isset($_GET['id'])){
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Inventario</li>
+                            <li class="breadcrumb-item active">Categorias</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
+    
+
     <!-- Contenido -->
         <section class="content">
             <div class="container-fluid">
@@ -142,45 +146,19 @@ if(isset($_GET['id'])){
                         <div class="card">
                             <!-- Header del contenido-->
                             <div class="card-header">
-                                <h3 class="card-title">Agregar producto</h3>
-                                <!--Div para que el boton este a la derecha-->
-                                <div class="btn-group" style="float: right;">
-                                    <a href="./agregarInverntario.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
-                                    <br>
-                                    <a href="./editarInverntario.php">Editar</a>
-                                </div>
+                                <h3 class="card-title">Categoria</h3>
                             </div>
-                            <!-- Cuerpo del formulario-->
-                            <div class="card-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Codigo</th>
-                                            <th>Nombre</th>
-                                            <th>Fecha Agregado</th>
-                                            <th>Precio Producto</th>
-                                            <th>Categoria</th>
-                                            <th>Stock</th>
-                                            <th>Editar?</th>
-                                            <th>Eliminar?</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <!-- EXTRAE TODOS LOS DATOS DE LA TABLA EN LA BASE DE DATOS Y LOS MUESTRA AQUI -->
-                                    <?php foreach ($productos as $invetario) { ?>
-                                    <tr>
-                                        <td><?php echo $invetario['codigo']; ?></td>
-                                        <td><?php echo $invetario['nombre']; ?></td>
-                                        <td><?php echo $invetario['fechaA']; ?></td>
-                                        <td><?php echo $invetario['precioProducto']; ?></td>
-                                        <td><?php echo $invetario['categoria'];?></td>
-                                        <td><?php echo $invetario['stock']; ?></td>
-                                        <td class="align-middle"><a href="./editarInverntario.php?id=<?php echo $invetario['codigo']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="./inventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
-                                    </tr>
-                                    <?php }?>
-                                </table>
+                            <!-- Caja de inventario-->
+                            <div class="row">
+                                <div class="col-lg-3 col-6">
+                                    <div class="inner">
+                                        <h3><?php echo $inv?></h3>
+                                        <p>Inventario</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -188,6 +166,7 @@ if(isset($_GET['id'])){
             </div>
         </section>
 </div>
+
     <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../../../../plugins/jquery/jquery.min.js"></script>
