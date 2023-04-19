@@ -1,6 +1,6 @@
 <?php
 include_once('../PDO/DAO.php');
-
+//Obtencion del id de la tienda
 $id=$_GET['id'];
 
 //Obtencion de los datos de la tabla inventario
