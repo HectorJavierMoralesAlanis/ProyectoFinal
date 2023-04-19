@@ -1,6 +1,7 @@
 <?php
 include_once('../../PDO/DAO.php');
 echo $_GET['id'];
+echo date('Y-m-d H:i:s');
 /*
 //Se revisa que las variables se esten recibiendo para continuar con la insercion de los valores ingresados 
 if(isset($_POST['nombre'], $_POST['descripcion'])){
