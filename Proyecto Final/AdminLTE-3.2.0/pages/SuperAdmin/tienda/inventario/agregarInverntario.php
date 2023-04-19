@@ -17,19 +17,8 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
 
     $resultados=$dao->insertarConsulta($consulta,$parametros);
     if($resultados>=0){
-        
-        echo $_POST['codigo_inventario'];
-        echo "<br>";
-        echo $_POST['nombre_producto'];
-        echo "<br>";
-        echo $fecha;
-        echo "<br>";
-        echo $_POST['precioProducto_inventario'];
-        echo "<br>";
-        echo $_POST['id_categoria'];
-        echo "<br>";
-        echo $_POST['stock'];
-        //header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$id");
+
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$id");
     }else{
         echo "error";
     }
