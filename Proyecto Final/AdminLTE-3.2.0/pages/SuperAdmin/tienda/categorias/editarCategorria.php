@@ -1,5 +1,6 @@
 <?php
 include_once('../../PDO/DAO.php');
+/*
 $dao = new DAO();
 $id = $_GET['id'];
 $pro = $_GET['pro'];
@@ -28,7 +29,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
 
   //Al termino de la actualizacion se redirige a la pagina categoria
   //header("location: categoria.php");
-}
+}*/
 ?>
 
 <html>
