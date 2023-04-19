@@ -10,7 +10,7 @@ $parametros = array("idProducto"=>$pro,"id"=>$id);
 $categorias = $dao->ejecutarConsulta($consulta,$parametros);
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
-/*
+
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
     $dao2 = new DAO();
@@ -30,7 +30,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
 
   //Al termino de la actualizacion se redirige a la pagina categoria
   //header("location: categoria.php");
-}*/
+}
 ?>
 
 <html>
