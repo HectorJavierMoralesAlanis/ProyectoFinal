@@ -2,11 +2,20 @@
 include_once('../PDO/DAO.php');
 
 $id=$_GET['id'];
+
+//Obtencion de los datos de la tabla inventario
 $dao = new DAO();
 $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
 $parametros=array("id"=>$id);
-$arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
-$inv=count($arrcategorias);
+$arrinventario = $dao->ejecutarConsulta($consulta,$parametros);
+$inv=count($arrinventario);
+
+//Obtencion de los datos de la tabla categoria
+$dao2= new DAO();
+$consulta2="SELECT * FROM categoria WHERE tiendaId=:id";
+$parametros2=array("id"=>$id);
+$arrcategorias=$dao2->ejecutarConsulta($consulta2,$parametros2);
+$categorias=count($arrcategorias);
 ?>
 
 
@@ -141,19 +150,53 @@ $inv=count($arrcategorias);
                                 <h3 class="card-title">Dashboard</h3>
                             </div>
                             
-                            <!-- Caja de inventario-->
+                            <!-- Caja de dashboard-->
                             <div class="row">
+                                <!-- Caja de inventario -->
                                 <div class="col-lg-3 col-6">
                                     <div class="small-box bg-info">
                                         <div class="inner">
-                                            <h3><?php echo $inv?></h3>
+                                            <h2><?php echo $inv?></h2>
                                             <p>Inventario</p>
                                         </div>
                                         <div class="icon">
                                             <i class="fas fa-shopping-cart"></i>
                                         </div>
+                                        <a href="./inventario/inventario.php<?php echo $_GET['id']?>" class="small-box-footer">
+                                        Mostrar <i class="fas fa-arrow-circle-right"></i>
+                                        </a>
                                     </div>
                                 </div>
+                                <!-- Caja de categorias -->
+                                <div class="col-lg-3 col-6">
+                                    <div class="small-box bg-info">
+                                        <div class="inner">
+                                            <h2><?php echo $categorias?></h2>
+                                            <p>Categorias</p>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="ion ion-stats-bars"></i>
+                                        </div>
+                                        <a href="./categorias/categoria.php?id=<? echo $_GET['id']?>" class="small-box-footer">
+                                        Mostrar <i class="fas fa-arrow-cricle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Caja de usuarios 
+                                <div class="col-lg-3 col-6">
+                                    <div class="small-box bg-warning">
+                                        <div class="inner">
+                                            <h2><?php echo $usuarios?></h2>
+                                            <p>Usuarios</p>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <a href="./usuarios/usuarios.php?id=<?echo $_GET['id']?>">
+                                        Mostrar <i class="fas fa-arrow-circle-ricght"></i>
+                                        </a>
+                                    </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
