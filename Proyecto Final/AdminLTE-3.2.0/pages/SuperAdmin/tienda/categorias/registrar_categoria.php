@@ -2,7 +2,7 @@
 include_once('../../PDO/DAO.php');
 echo $_GET['id'];
 echo date('Y-m-d H:i:s');
-/*
+
 //Se revisa que las variables se esten recibiendo para continuar con la insercion de los valores ingresados 
 if(isset($_POST['nombre'], $_POST['descripcion'])){
   //add_cat($_POST['nombre'], $_POST['descripcion']);
@@ -13,14 +13,14 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
 
         $parametros=array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"idTienda"=>$id);
 
-        $resultado=$dao->insertarConsulta($consulta,$parametros,$fecha);
+        $resultado=$dao->insertarConsulta($consulta,$parametros);
 
         if($resultado>=0){
             header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
         }else{
             echo"error";
         }
-}*/
+}
 ?>
 
 <html>
@@ -156,7 +156,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                            <form method="POST" action="registrar_categoria.php">
+                            <form method="POST" action="registrar_categoria.php?id=<?php echo $id?>">
                                     <div class="form-group">
                                         <label>
                                             Nombre
