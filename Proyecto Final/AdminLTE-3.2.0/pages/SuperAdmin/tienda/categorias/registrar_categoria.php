@@ -9,7 +9,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
         $dao=new DAO();
         $fecha=date('Y-m-d H:i:s');
         $id=$_GET['id'];
-        $consulta="INSERT INTO categoria (nombre,descripcion,fecha,tiendaId)"."VALUES (:nombre,:descripcion,:fecha)"."WHERE tiendaId=:idTienda";
+        $consulta="INSERT INTO categoria (nombre,descripcion,fecha,tiendaId)"."VALUES (:nombre,:descripcion,:fecha,:idTienda)";
 
         $parametros=array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"idTienda"=>$id);
 
