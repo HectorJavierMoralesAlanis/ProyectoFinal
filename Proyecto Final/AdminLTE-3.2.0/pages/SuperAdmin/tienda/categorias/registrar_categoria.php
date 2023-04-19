@@ -156,7 +156,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                            <form method="POST" action="registrar_categoria.php?id=<?php echo $id?>">
+                            <form method="POST" action="registrar_categoria.php?id=<?php echo $_GET['id']?>">
                                     <div class="form-group">
                                         <label>
                                             Nombre
