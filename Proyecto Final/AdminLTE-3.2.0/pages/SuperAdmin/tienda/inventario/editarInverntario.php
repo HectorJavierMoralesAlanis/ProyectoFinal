@@ -18,7 +18,6 @@ $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 
 //Para Actualizar los datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
-    
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
