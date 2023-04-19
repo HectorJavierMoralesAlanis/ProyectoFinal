@@ -25,7 +25,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
     $dao2 = new DAO(); 
     $fecha=date('Y-m-d H:i:s');
     $id2 = $_GET['id'];
-    $consulta2 = "UPDATE categoria SET nombre = :nombre, descripcion=:descripcion, fecha=:fecha"."WHERE id=1";
+    $consulta2 = "UPDATE categoria SET nombre = :nombre, descripcion=:descripcion, fecha=:fecha WHERE id=1";
     $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha);
     $resultados2 = $dao2->insertarConsulta($consulta2,$parametros2);
     if($resultados2>=0){
