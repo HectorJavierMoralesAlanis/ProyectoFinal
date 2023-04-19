@@ -163,6 +163,7 @@ if(isset($_GET['id'])){
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
                                         <?php foreach ($arrcategorias as $id => $categoria) { ?>
                                         <tr>
                                         <td><?php echo $categoria['nombre_categoria']; ?></td>
@@ -172,7 +173,7 @@ if(isset($_GET['id'])){
                                         
                                         <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                         
-                                    </div>
+                                        </div>
                                         </td>
                                     </tr>
                                     <?php } ?>
