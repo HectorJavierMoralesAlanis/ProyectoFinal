@@ -26,7 +26,7 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
     $resultados=$dao->insertarConsulta($consulta1,$parametros1);
     
     if($resultados>=0){
-        foreach($resultados as $id =>$tie){
+        foreach($inventario as $id =>$tie){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
         }
     }else{
