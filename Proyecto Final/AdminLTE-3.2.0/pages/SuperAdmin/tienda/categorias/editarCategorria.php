@@ -24,11 +24,12 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
     $dao2 = new DAO(); 
     $fecha=date('Y-m-d H:i:s');
     $id2 = $_GET['id'];
+    $id3 = $_GET['tie'];
     $consulta2 = "UPDATE categoria SET nombre = :nombre, descripcion=:descripcion, fecha=:fecha WHERE id=:id2";
     $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"id2"=>$id2);
     $resultados2 = $dao2->insertarConsulta($consulta2,$parametros2);
     if($resultados2>=0){
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id2");
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id3");
     }else{
         echo "error";
     }
