@@ -23,7 +23,6 @@ if($resultados>=0){
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
-    
     $dao2 = new DAO(); 
     $fecha=date('Y-m-d H:i:s');
     $id2 = $_GET['id'];
@@ -193,7 +192,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                         </div>
                                         <br>
                                         <div class="btn-group" style="float: right;">
-                                            <button type="submit" class="btn btn-block btn-success" style="float: right;" onClick="wait();">Modificar</button>
+                                            <button type="submit" class="btn btn-block btn-success" style="float: right;">Modificar</button>
                                         </div>
                                 <?php }?>
                                 </form>
