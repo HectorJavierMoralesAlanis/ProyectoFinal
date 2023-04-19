@@ -8,7 +8,7 @@ $pro = $_GET['pro'];
 $consulta = "SELECT *"."FROM categoria WHERE id=:idProducto AND tiendaId=:id";
 $parametros = array("idProducto"=>$pro,"id"=>$id);
 $categorias = $dao->ejecutarConsulta($consulta,$parametros);
-echo $categorias;
+
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 
@@ -169,6 +169,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&?pro=<?php echo $_GET['pro']?>">
+                                    <?php foreach($categorias as $id => $categoria){?>
                                         <div class="form-group">
                                                 <label>
                                                     Nombre
@@ -186,6 +187,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                         <div class="btn-group" style="float: right;">
                                             <button type="submit" class="btn btn-block btn-success" style="float: right;" onClick="wait();">Modificar</button>
                                         </div>
+                                    <?php }?>
                                 </form>
                             </div>
                         </div>
