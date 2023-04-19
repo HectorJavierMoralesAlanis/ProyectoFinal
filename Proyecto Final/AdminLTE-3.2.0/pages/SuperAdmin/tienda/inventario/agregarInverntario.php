@@ -8,7 +8,7 @@ $parametros2= array("id2"=>$id2);
 $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 //Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
-    /*$dao = new DAO();
+    $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id=$_GET['id'];
     $consulta="INSERT INTO inventario (codigo,nombre,fechaA,precioProducto,categoria,stock,tiendaId)"."VALUES (:codigo,:nombre,:precioProducto,:id,:stock,:idTienda)";
@@ -22,7 +22,6 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
         echo "error";
     }
     //add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
-    header("location: inventario.php");*/
 }
 ?>
 
