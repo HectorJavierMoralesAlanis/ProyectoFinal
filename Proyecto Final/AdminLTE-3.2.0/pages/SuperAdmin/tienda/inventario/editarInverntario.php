@@ -19,8 +19,8 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
-    $consulta="UPDATE inventario SET codigo = :codigo, nombre =:nombre,fechaA =:fecha,precioProducto=:precioProducto,categoria=:id,stock=:stock,tiendaId = :idTienda WHERE id=:idP";
-    $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","id"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idTienda"=>$id,"idP"=>$id2);
+    $consulta="UPDATE inventario SET codigo=:codigo,nombre=:nombre,fecha=:fecha,precioProducto=:precioProducto,categoria=:categoria,stock=:stock WHERE codigo=:idP";
+    $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","cateogria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
     $resultados=$dao->insertarConsulta($consulta,$parametros);
     if($resultados>=0){
         foreach($resultados as $id =>$tie){
