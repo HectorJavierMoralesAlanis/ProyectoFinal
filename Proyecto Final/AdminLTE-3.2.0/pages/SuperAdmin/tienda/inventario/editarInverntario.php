@@ -8,15 +8,17 @@ $parametros=array("id"=>$id);
 $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 
 //Para mostrar categorias
+/*
 $id2=$_GET['id']; 
 $dao2=new DAO();
 $consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
 $parametros2= array("id2"=>$id2);
 $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
-
+*/
 
 //Para Actualizar los datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
+    /*
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id=$_GET['id'];
@@ -30,7 +32,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
         }
     }else{
         echo "error";
-    }
+    }*/
 }
 ?>
 <html>
