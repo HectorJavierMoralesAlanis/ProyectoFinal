@@ -5,6 +5,7 @@ $id2=$_GET['id'];
 $dao2=new DAO();
 $consulta2="SELECT * FROM categorias WHERE tiendaId=id2";
 $user_access= array("id2"=>$id2);
+
 //Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
     $dao = new DAO();
