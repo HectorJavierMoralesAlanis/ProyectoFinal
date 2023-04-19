@@ -167,6 +167,7 @@ if(isset($_GET['id'])){
                                         <?php foreach ($arrcategorias as $id => $categoria) { ?>
                                             
                                         <tr>
+                                            
                                         <td><?php echo $categoria['nombre_categoria']; ?></td>
                                         <td><?php echo $categoria['descripcion_categoria']; ?></td>
                                         <td><?php echo $categoria['fecha_categoria']; ?></td>
