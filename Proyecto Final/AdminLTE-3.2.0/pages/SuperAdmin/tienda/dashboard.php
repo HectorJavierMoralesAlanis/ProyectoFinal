@@ -6,7 +6,6 @@ $dao = new DAO();
 $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
 $parametros=array("id"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
-$inv=$arrcategoria->rowCount();
 
 ?>
 
@@ -147,7 +146,7 @@ $inv=$arrcategoria->rowCount();
                                 <div class="col-lg-3 col-6">
                                     <div class="small-box bg-info">
                                         <div class="inner">
-                                            <h3><?php echo $inv?></h3>
+                                            <h3><?php echo $arrcategorias?></h3>
                                             <p>Inventario</p>
                                         </div>
                                         <div class="icon">
