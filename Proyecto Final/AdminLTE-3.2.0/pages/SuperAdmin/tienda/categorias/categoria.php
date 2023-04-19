@@ -8,7 +8,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta);
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     //deletecat($id);
-    header("Location: categoria.php");
+    //header("Location: categoria.php");
 }
 
 ?>
