@@ -22,6 +22,7 @@ if($resultados>=0){
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
+    echo $_POST['nombre'];
     $dao2 = new DAO(); 
     $fecha=date('Y-m-d H:i:s');
     $id2 = $_GET['id'];
