@@ -5,8 +5,8 @@ $dao = new DAO();
 
 $id = $_GET['id'];
 $pro = $_GET['pro'];
-$consulta = "SELECT *"."FROM categoria WHERE id=:id";
-$parametros = array("id"=>$pro);
+$consulta = "SELECT *"."FROM categoria WHERE tiendaId=:id";
+$parametros = array("id"=>$id);
 $categorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
