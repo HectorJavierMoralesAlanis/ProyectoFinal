@@ -5,9 +5,9 @@ $dao = new DAO();
 
 $id = $_GET['id'];
 echo $id;
-$consulta = "SELECT * FROM tienda";
-$parametros = array("id"=>$pro);
-$categorias = $dao->ejecutarConsulta($consulta,$parametros);
+//$consulta = "SELECT * FROM tienda";
+//$parametros = array("id"=>$pro);
+//$categorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
@@ -170,7 +170,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&?pro=<?php echo $_GET['pro']?>">
+                                <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>">
                                         <div class="form-group">
                                                 <label>
                                                     Nombre
