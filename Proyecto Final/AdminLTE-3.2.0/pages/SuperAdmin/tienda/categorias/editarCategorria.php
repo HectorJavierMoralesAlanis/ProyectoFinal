@@ -180,20 +180,19 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             <div class="card-body">
                                 <form method="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>">
                                 <?php foreach($resultados as $id => $r){?>
-                                    
+
                                         <div class="form-group">
                                                 <label>
                                                     Nombre
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control" id="nombre" name="nombre">
-
+                                                <input type="text" class="form-control" id="nombre" name="nombre" values="<?php echo $r['nombre']?>">
                                                 <br>
                                                 <label>
                                                     Descripcion
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control"id="descripcion" name="descripcion">
+                                                <input type="text" class="form-control"id="descripcion" name="descripcion" values="<?php echo $r['descripcion']?>">
                                         </div>
                                         <br>
                                         <div class="btn-group" style="float: right;">
