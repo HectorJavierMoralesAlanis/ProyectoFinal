@@ -4,7 +4,6 @@ include_once('../../PDO/DAO.php');
 $dao = new DAO();
 
 $id = $_GET['id'];
-echo $_GET['tie'];
 $consulta="SELECT * FROM categoria WHERE id=:id";
 $parametros=array("id"=>$id);
 $resultados=$dao->ejecutarConsulta($consulta,$parametros);
@@ -25,7 +24,6 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
     $dao2 = new DAO(); 
     $fecha=date('Y-m-d H:i:s');
     $id2 = $_GET['id'];
-    $id3 = $_GET['tie'];
     $consulta2 = "UPDATE categoria SET nombre = :nombre, descripcion=:descripcion, fecha=:fecha WHERE id=:id2";
     $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"id2"=>$id2);
     $resultados2 = $dao2->insertarConsulta($consulta2,$parametros2);

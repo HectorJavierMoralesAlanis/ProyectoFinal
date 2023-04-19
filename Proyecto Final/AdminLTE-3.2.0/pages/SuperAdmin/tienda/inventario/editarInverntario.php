@@ -1,14 +1,36 @@
 <?php
 include_once("../../PDO/DAO.php");
+//Para mostrar los datos en los campos
 $dao=new DAO();
 $id=$_GET['i'];
 $consulta="SELECT * FROM inventario WHERE id=:id";
 $parametros=array("id"=>$id);
 $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 
-if(isset($_POST['enviar'])){
-    if(!empty($_POST['nombre'])&&!empty($_POST['precioProducto'])&&!empty($_POST)){
+//Para mostrar categorias
+$id2=$_GET['id']; 
+$dao2=new DAO();
+$consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
+$parametros2= array("id2"=>$id2);
+$user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 
+
+//Para Actualizar los datos
+if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
+    $dao = new DAO();
+    $fecha=date('Y-m-d H:i:s');
+    $id=$_GET['id'];
+    $consulta="UPDATE inventario SET codigo = :codigo, nombre =:nombre,fechaA =:fecha,precioProducto=:precioProducto,categoria=:id,stock=:stock,tiendaId = :idTienda WHERE id=:idP";
+
+    $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","id"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idTienda"=>$id,"idP"=>$id);
+
+    $resultados=$dao->insertarConsulta($consulta,$parametros);
+    if($resultados>=0){
+        foreach($resultados as $id =>$tie){
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
+        }
+    }else{
+        echo "error";
     }
 }
 ?>

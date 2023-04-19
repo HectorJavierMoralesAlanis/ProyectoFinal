@@ -1,7 +1,7 @@
 <?php
 include_once('../../PDO/DAO.php');
 $id2=$_GET['id'];
-//$user_access = fill_sel();   
+
 $dao2=new DAO();
 $consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
 $parametros2= array("id2"=>$id2);
@@ -21,7 +21,6 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     }else{
         echo "error";
     }
-    //add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
 }
 ?>
 
