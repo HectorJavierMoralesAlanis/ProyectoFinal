@@ -174,7 +174,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                         
-                                <form method="POST" action="agregarInverntario.php<?php echo $_GET['id']?>">
+                                <form method="POST" action="agregarInverntario.php?id=<?php echo $_GET['id']?>">
                                     <div class="form-group">
                                         <label>
                                             Codigo del producto:
