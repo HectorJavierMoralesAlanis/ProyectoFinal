@@ -195,7 +195,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                         <?php 
                                             echo '<select id="id_categoria" name="id_categoria" class="custom-select form-control-border">';
                                             foreach ($user_access as $row) {
-                                            echo '<option value="' . $row['id_categoria'] . '">' . $row['descripcion_categoria'] . '</option>';
+                                            echo '<option value="' . $row['nombre'] . '">' . $row['descripcion'] . '</option>';
                                             }
                                             echo '</select>';
                                         ?>
