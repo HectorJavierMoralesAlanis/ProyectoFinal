@@ -1,6 +1,7 @@
 <?php
 include_once("../../PDO/DAO.php");
 //Para mostrar los datos en los campos
+/*
 $dao=new DAO();
 $id=$_GET['id'];
 $consulta="SELECT * FROM inventario"."WHERE id=:id";
@@ -27,7 +28,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
         foreach($resultados as $id =>$tie){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
         }
-        
+
     }else{
         echo "error";
     }*/
