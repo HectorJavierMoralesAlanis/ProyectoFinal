@@ -5,9 +5,10 @@ $dao = new DAO();
 
 $id = $_GET['id'];
 echo $id;
-//$consulta = "SELECT * FROM tienda";
-//$parametros = array("id"=>$pro);
-//$categorias = $dao->ejecutarConsulta($consulta,$parametros);
+
+$consulta="SELECT nombre,descripcion FROM categoria WHERE id=:id";
+$parametros=array("id"=>$id);
+$resultados=$dao->ejecutarConsulta($consulta,$parametros);
 
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
