@@ -15,7 +15,6 @@ $consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
 $parametros2= array("id2"=>$in['tiendaId']);
 $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 }
-
 //Para Actualizar los datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
     $dao = new DAO();
