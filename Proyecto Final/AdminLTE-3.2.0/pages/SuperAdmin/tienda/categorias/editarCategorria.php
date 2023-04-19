@@ -19,7 +19,6 @@ if($resultados>=0){
     echo "si";
     
     echo $resultados[0];
-
 }else{
 
     echo "error";
