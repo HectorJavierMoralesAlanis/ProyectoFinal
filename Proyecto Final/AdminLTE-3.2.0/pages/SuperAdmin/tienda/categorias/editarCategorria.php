@@ -176,7 +176,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                                     Nombre
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php foreach($categorias as $id => $categoria){echo $categoria['nombre'];}?>">
+                                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $categoria['nombre'] ?>">
 
                                                 <br>
                                                 <label>
