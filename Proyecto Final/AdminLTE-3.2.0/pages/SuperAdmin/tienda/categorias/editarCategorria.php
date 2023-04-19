@@ -4,7 +4,7 @@ include_once('../../PDO/DAO.php');
 $dao = new DAO();
 
 $pro = $_GET['pro'];
-$consulta = "SELECT *"."FROM categoria WHERE id=1";
+$consulta = "SELECT *"."FROM categoria";
 $parametros = array("id"=>$pro);
 $categorias = $dao->ejecutarConsulta($consulta,$parametros);
 
