@@ -3,7 +3,7 @@ include_once("../../PDO/DAO.php");
 //Para mostrar los datos en los campos
 $dao=new DAO();
 $id=$_GET['id'];
-$consulta="SELECT * FROM inventario WHERE id=:id";
+$consulta="SELECT * FROM inventario"."WHERE id=:id";
 $parametros=array("id"=>$id);
 $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 //Para mostrar categorias
