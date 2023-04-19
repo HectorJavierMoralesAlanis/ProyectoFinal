@@ -3,7 +3,7 @@ include_once('../../PDO/DAO.php');
 echo $_GET['id'];
 $id=$GET['id'];
 $dao = new DAO();
-$consulta="SELECT nombre "."FROM categoria WHERE tiendaId=:idTienda";
+$consulta="SELECT *"."FROM categoria";
 $parametros=array("idTienda"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 
