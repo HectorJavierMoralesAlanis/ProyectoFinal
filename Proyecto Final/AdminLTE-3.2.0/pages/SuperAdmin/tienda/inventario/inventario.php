@@ -134,7 +134,6 @@ if(isset($_GET['id'])){
                 </div>
             </div>
         </div>
-    
     <!-- Contenido -->
         <section class="content">
             <div class="container-fluid">
