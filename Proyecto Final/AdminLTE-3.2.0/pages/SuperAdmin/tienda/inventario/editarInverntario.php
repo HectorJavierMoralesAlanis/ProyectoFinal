@@ -13,6 +13,7 @@ $id2=$_GET['id'];
 $dao2=new DAO();
 
 $consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
+
 $parametros2= array("id2"=>$id2);
 $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 */
