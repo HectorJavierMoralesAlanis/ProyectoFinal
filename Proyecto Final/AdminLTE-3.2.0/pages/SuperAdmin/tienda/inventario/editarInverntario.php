@@ -19,7 +19,7 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
-    $consulta1="UPDATE inventario SET nombre=:nombre, fecha=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE codigo=:idP";
+    $consulta1="UPDATE inventario SET nombre=:nombre, fechaA=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE codigo=:idP";
     
     $parametros1=array("nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","cateogria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
 
