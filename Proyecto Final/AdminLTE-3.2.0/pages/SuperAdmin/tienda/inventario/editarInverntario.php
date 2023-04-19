@@ -170,7 +170,6 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-
                                 <form method="POST" action="./editarInverntario.php?id=<?php echo $in['tiendaId']?>">
                                 <?php foreach($inventario as $id => $inv){?>    
                                     <div class="form-group">
