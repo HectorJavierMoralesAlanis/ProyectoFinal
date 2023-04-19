@@ -23,7 +23,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
         echo "<br>";
         echo $fecha;
         echo "<br>";
-        echo $_POST['precioProdcuto_inventario'];
+        echo $_POST['precioProducto_inventario'];
         echo "<br>";
         echo $_POST['id_categoria'];
         echo "<br>";
@@ -210,7 +210,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                             <?php foreach($user_access as $row){?>
                                                 <option value="<?php echo $row['nombre']?>"><?php echo $row['descripcion']?></option>
                                             <?php }?>
-                                            
+
                                         </select>
                                     </div>
                                     <div class="form-group">
