@@ -119,7 +119,6 @@ if(isset($_GET['id'])){
         </div>
     </aside>
     <!-- Fin del menu lateral -->
-
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
