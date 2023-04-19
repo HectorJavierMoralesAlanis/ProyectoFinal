@@ -6,7 +6,6 @@ $id=$_GET['id'];
 $consulta="SELECT * FROM inventario WHERE id=:id";
 $parametros=array("id"=>$id);
 $tienda=$dao->ejecutarConsulta($consulta,$parametros);
-
 //Para mostrar categorias
 /*
 $id2=$_GET['id']; 
