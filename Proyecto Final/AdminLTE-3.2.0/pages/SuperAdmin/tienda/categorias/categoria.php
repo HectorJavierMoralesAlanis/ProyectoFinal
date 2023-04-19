@@ -176,6 +176,7 @@ if(isset($_GET['id'])){
                                         <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                         
                                         </div>
+                                        
                                         </td>
                                     </tr>
                                     <?php } ?>
