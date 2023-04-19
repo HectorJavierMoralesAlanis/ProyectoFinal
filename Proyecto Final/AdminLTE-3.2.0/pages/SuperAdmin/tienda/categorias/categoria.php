@@ -5,7 +5,6 @@ $dao = new DAO();
 $consulta="SELECT * FROM categoria";
 $arrcategorias = $dao->ejecutarConsulta($consulta);
 //$arrcategorias = getAllCategorias();
-
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     //deletecat($id);
