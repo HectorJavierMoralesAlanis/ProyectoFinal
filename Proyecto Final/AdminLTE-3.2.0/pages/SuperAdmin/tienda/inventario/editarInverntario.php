@@ -17,7 +17,7 @@ $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 }
 //Para Actualizar los datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
-    /*
+    
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id=$_GET['id'];
@@ -31,7 +31,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
 
     }else{
         echo "error";
-    }*/
+    }
 }
 ?>
 <html>
@@ -167,7 +167,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                     <button type="button" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</button>
                                 </div>
                             </div>
-                            
+
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <form method="POST" action="./editarInverntario.php?id=<?php echo $in['tiendaId']?>">
