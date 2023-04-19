@@ -8,6 +8,7 @@ $pro = $_GET['pro'];
 $consulta = "SELECT *"."FROM categoria WHERE id=:idProducto AND tiendaId=:id";
 $parametros = array("idProducto"=>$pro,"id"=>$id);
 $categorias = $dao->ejecutarConsulta($consulta,$parametros);
+echo $categorias;
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
 //$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 
