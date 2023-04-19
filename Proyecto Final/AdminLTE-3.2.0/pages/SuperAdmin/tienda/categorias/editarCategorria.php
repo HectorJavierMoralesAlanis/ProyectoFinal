@@ -163,10 +163,6 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             <!-- Header del contenido-->
                             <div class="card-header">
                                 <h3 class="card-title">Editar Categoria</h3>
-                                <!--Div para que el boton este a la derecha-->
-                                <div class="btn-group" style="float: right;">
-                                <button type="button" class="btn btn-block btn-success" style="float: right;"  onclick="window.location.href='registrar_categoria.php'">Agregar nueva categoria</button>
-                                </div>
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
