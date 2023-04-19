@@ -160,7 +160,6 @@ if(isset($_GET['id'])){
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-
                                             <th>Codigo</th>
                                             <th>Nombre</th>
                                             <th>Fecha Agregado</th>
