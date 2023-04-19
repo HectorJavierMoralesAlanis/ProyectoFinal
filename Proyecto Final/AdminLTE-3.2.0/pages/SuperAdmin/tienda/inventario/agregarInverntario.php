@@ -17,6 +17,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
 
     $resultados=$dao->insertarConsulta($consulta,$parametros);
     if($resultados>=0){
+        
         echo $_POST['codigo_inventario'];
         echo "<br>";
         echo $_POST['nombre_producto'];
