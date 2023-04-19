@@ -158,6 +158,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                 <div class="row">
                     <div class="col">
                         <div class="card">
+                            
                             <!-- Header del contenido-->
                             <div class="card-header">
                                 <h3 class="card-title">Editar producto</h3>
