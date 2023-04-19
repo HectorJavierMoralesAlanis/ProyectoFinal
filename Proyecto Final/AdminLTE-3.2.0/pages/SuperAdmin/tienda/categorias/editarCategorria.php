@@ -1,19 +1,34 @@
 <?php
-include_once('../../db/utilities.php');
-
-$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
-$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
+include_once('../../PDO/DAO.php');
+$dao = new DAO();
+$id = $_GET['id'];
+$pro = $_GET['pro'];
+$consulta = "SELECT *"."FROM categorias WHERE id=:idProducto AND tiendaId=:id";
+$parametros = array("idProducto"=>$pro,"id"=>$id);
+$categorias = $dao->ejecutarConsulta($consulta,$parametros);
+//$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
+//$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
 
 
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
-
+    $dao2 = new DAO();
+    $id2 = $_GET['id'];
+    $pro2 = $_GET['pro'];
+    $consulta2 = "UPDATE categoria SET nombre = :nombre, descripcion=:descripcion"."WHERE id=:idProducto AND tiendaId=:id";
+    $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","idProducto"=>$pro2,"id"=>$id2);
+    $resultados=$dao->insertarConsulta($consulta2,$parametros2);
+    if($resultados>=0){
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
+    }else{
+        echo "error";
+    }
   //Se realiza la actualizacion del registro 
-  updateCAT($id,$_POST['nombre'],$_POST['descripcion']);
+
+  //updateCAT($id,$_POST['nombre'],$_POST['descripcion']);
 
   //Al termino de la actualizacion se redirige a la pagina categoria
-  header("location: categoria.php");
-  
+  //header("location: categoria.php");
 }
 ?>
 
@@ -73,28 +88,28 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../inventario/inventario.php" class="nav-link">
+                            <a href="../inventario/inventario.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php" class="nav-link active">
+                            <a href="../categorias/categoria.php?id=<?php echo $_GET['id']?>" class="nav-link active">
                                 <p>
                                     Categorias
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php" class="nav-link">
+                            <a href="../venta/venta.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
@@ -156,17 +171,12 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                 <form>
                                     <div class="form-group">
                                     <?php echo('<form method="POST" action="editarCategorria.php?id_categoria='.$id.'">');?>
-                                        <label class="form-label" for="id_categoria">
-                                            Id:
-                                        </label>
-
-                                        <input type="text" class="form-control" name="id_categoria" value="<?php echo($r['id'])?>" disabled>
-                                        <br>
+                                    <?php foreach($categorias as $id => $categoria){?>
                                         <label>
                                             Nombre
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($r['nombre'])?>">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($categoria['nombre'])?>">
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -174,12 +184,13 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                             Descripcion
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($r['descripcion'])?>">
+                                        <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($categoria['descripcion'])?>">
                                     </div>
                                     <br>
                                     <div class="btn-group" style="float: right;">
                                         <button type="submit" class="btn btn-block btn-success" style="float: right;" onClick="wait();">Modificar</button>
                                     </div>
+                                    <?php }?>
                                 </form>
                             </div>
                         </div>

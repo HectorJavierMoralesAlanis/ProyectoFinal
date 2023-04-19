@@ -73,14 +73,14 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../inventario/inventario.php" class="nav-link">
+                            <a href="../inventario/inventario.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
@@ -94,7 +94,7 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php" class="nav-link">
+                            <a href="../venta/venta.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
@@ -173,7 +173,7 @@ if(isset($_GET['id'])){
                                         <td><?php echo $categoria['nombre']; ?></td>
                                         <td><?php echo $categoria['descripcion']; ?></td>
                                         <td><?php echo $categoria['fecha']; ?></td>
-                                        <td class="align-middle"><a href="./editarCategorria.php?id=<?php echo($id);?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
+                                        <td class="align-middle"><a href="./editarCategorria.php?id=<?php echo($id)?>&&?pro=<?php echo $categoria['id']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
                                         
                                         <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                         

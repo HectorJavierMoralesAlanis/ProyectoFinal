@@ -1,7 +1,5 @@
 <?php
 include_once('../../PDO/DAO.php');
-echo $_GET['id'];
-echo date('Y-m-d H:i:s');
 
 //Se revisa que las variables se esten recibiendo para continuar con la insercion de los valores ingresados 
 if(isset($_POST['nombre'], $_POST['descripcion'])){
@@ -50,7 +48,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Logo --->
-        <a href="dashboardSA/dashboard.php" class="brand-link">
+        <a href="../../dashboardSA/dashboard.php" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
@@ -79,28 +77,28 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../inventario/inventario.php" class="nav-link">
+                            <a href="../inventario/inventario.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php" class="nav-link active">
+                            <a href="../categorias/categoria.php?id=<?php echo $_GET['id']?>" class="nav-link active">
                                 <p>
                                     Categorias
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php" class="nav-link">
+                            <a href="../venta/venta.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
