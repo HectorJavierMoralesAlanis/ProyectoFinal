@@ -169,21 +169,18 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             <div class="card-body">
                                 <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&?pro=<?php echo $_GET['pro']?>">
                                     <div class="form-group">
-                                    <?php echo('<form method="POST" action="editarCategorria.php?id_categoria='.$id.'">');?>
-                                    <?php foreach($categorias as $id => $categoria){?>
-                                        <label>
-                                            Nombre
-                                        </label>
-                                        <br>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($categoria['nombre'])?>">
-                                    </div>
-                                    <br>
-                                    <div class="form-group">
-                                        <label>
-                                            Descripcion
-                                        </label>
-                                        <br>
-                                        <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($categoria['descripcion'])?>">
+                                        <?php foreach($categorias as $id => $categoria){?>
+                                            <label>
+                                                Nombre
+                                            </label>
+                                            <br>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($categoria['nombre'])?>">
+                                            <br>
+                                            <label>
+                                                Descripcion
+                                            </label>
+                                            <br>
+                                            <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($categoria['descripcion'])?>">
                                     </div>
                                     <br>
                                     <div class="btn-group" style="float: right;">
