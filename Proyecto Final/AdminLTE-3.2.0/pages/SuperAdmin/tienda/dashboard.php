@@ -2,13 +2,9 @@
 include_once('../../PDO/DAO.php');
 
 $id=$_GET['id'];
-
 $dao = new DAO();
-
 $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
-
 $parametros=array("id"=>$id);
-
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 //$inv=$arrcategoria->rowCount();
@@ -156,7 +152,7 @@ if(isset($_GET['id'])){
                             <div class="row">
                                 <div class="col-lg-3 col-6">
                                     <div class="inner">
-                                        <h3><?php echo $inv?></h3>
+                                        <h3>15</h3>
                                         <p>Inventario</p>
                                     </div>
                                     <div class="icon">
