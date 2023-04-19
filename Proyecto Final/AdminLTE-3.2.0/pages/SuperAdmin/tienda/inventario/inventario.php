@@ -1,5 +1,6 @@
 <?php
 include_once('../../PDO/DAO.php');
+/*
 $id=$_GET['id'];
 $dao=new DAO();
 $consulta="SELECT * FROM inventario WHERE tienda=:id";
@@ -10,7 +11,7 @@ if(isset($_GET['id'])){
     //deleteproduc($id);
     header("Location: inventario.php");
 }
-
+*/
 ?>
 
 
