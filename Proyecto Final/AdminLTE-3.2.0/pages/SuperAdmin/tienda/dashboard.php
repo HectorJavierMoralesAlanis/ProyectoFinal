@@ -155,7 +155,6 @@ $inv=count($arrcategorias);
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
