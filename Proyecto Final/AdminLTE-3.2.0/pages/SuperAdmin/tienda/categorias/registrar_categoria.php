@@ -1,11 +1,23 @@
 <?php
-include_once('../../db/utilities.php');
+include_once('../../PDO/DAO.php');
 
 
 //Se revisa que las variables se esten recibiendo para continuar con la insercion de los valores ingresados 
 if(isset($_POST['nombre'], $_POST['descripcion'])){
-  add_cat($_POST['nombre'], $_POST['descripcion']);
-  header("location: categoria.php");
+  //add_cat($_POST['nombre'], $_POST['descripcion']);
+        $dao=new DAO();
+        $fecha=date('Y-m-d H:i:s');
+        $consulta="INSERT INTO categoria (nombre,descripcion,fecha)"."VALUES (:nombre,:descripcion,:fecha)";
+
+        $parametros=array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha);
+
+        $resultado=$dao->insertarConsulta($consulta,$parametros);
+
+        if($resultado>=0){
+            header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php");
+        }else{
+            echo"error";
+        }
 }
 ?>
 

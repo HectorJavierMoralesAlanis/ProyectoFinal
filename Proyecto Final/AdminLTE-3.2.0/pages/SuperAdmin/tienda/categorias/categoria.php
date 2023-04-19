@@ -162,7 +162,7 @@ if(isset($_GET['id'])){
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($arrcategorias as $categoria) { ?>
+                                        <?php foreach ($arrcategorias as $id => $categoria) { ?>
                                         <tr>
                                         <td><?php echo $categoria['nombre_categoria']; ?></td>
                                         <td><?php echo $categoria['descripcion_categoria']; ?></td>
