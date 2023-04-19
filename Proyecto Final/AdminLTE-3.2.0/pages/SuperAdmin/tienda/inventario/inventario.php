@@ -176,7 +176,7 @@ if(isset($_GET['id'])){
                                         <td><?php echo $invetario['precioProducto']; ?></td>
                                         <td><?php echo $invetario['categoria']; ?></td>
                                         <td><?php echo $invetario['stock']; ?></td>
-                                        <td class="align-middle"><a href="editarInventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
+                                        <td class="align-middle"><a href="./editarInventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
                                         <td class="align-middle"><a href="inventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                     </tr>
                                     <?php } ?>
