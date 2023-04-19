@@ -14,6 +14,7 @@ $categorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
+    
     /*
     $dao2 = new DAO();
     $id2 = $_GET['id'];
