@@ -12,7 +12,6 @@ if(isset($_GET['id'])){
     //deletecat($id);
     //header("Location: categoria.php");
 }
-
 ?>
 
 
