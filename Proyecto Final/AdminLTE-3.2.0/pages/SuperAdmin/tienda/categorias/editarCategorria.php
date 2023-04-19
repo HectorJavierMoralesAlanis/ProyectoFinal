@@ -179,6 +179,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <form method="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>">
+                                <?php foreach($resultados as $id => $r){?>
                                         <div class="form-group">
                                                 <label>
                                                     Nombre
@@ -197,6 +198,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                         <div class="btn-group" style="float: right;">
                                             <button type="submit" class="btn btn-block btn-success" style="float: right;" onClick="wait();">Modificar</button>
                                         </div>
+                                <?php }?>
                                 </form>
                             </div>
                         </div>
