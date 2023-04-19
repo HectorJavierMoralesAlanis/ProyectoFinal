@@ -148,6 +148,7 @@ if(isset($_GET['id'])){
                             <div class="card-header">
                                 <h3 class="card-title">Dashboard</h3>
                             </div>
+                            
                             <!-- Caja de inventario-->
                             <div class="row">
                                 <div class="col-lg-3 col-6">
