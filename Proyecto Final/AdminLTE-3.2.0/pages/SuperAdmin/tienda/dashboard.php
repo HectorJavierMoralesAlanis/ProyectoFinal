@@ -160,6 +160,7 @@ if(isset($_GET['id'])){
                                         <i class="fas fa-shopping-cart"></i>
                                     </div>
                                 </div>
+                            
                             </div>
                         </div>
                     </div>
