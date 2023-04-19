@@ -3,9 +3,8 @@ include_once('../../PDO/DAO.php');
 $id2=$_GET['id'];
 //$user_access = fill_sel();   
 $dao2=new DAO();
-$consulta2="SELECT * FROM categorias WHERE tiendaId=:id2";
+$consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
 $parametros2= array("id2"=>$id2);
-
 $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 //Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
