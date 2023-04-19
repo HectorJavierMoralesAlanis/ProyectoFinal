@@ -1,10 +1,10 @@
 <?php
 include_once('../../PDO/DAO.php');
-$dao = new DAO();
-$consulta = "SELECT *FROM tienda";
-$productos=$dao->ejecutarConsulta();
-echo "<h2>$_POST tienda</h2>";
-
+$id=$_GET['id'];
+$dao=new DAO();
+$consulta="SELECT * FROM inventario WHERE tienda=:id";
+$parametros=array("id"=>$id);
+$productos=$dao->ejecutarConsulta($consulta,$parametros);
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     //deleteproduc($id);
@@ -70,28 +70,28 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php" class="nav-link active">
+                            <a href="./inventario.php?id=<?php echo $id?>" class="nav-link active">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php" class="nav-link">
+                            <a href="../venta/venta.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
@@ -145,7 +145,7 @@ if(isset($_GET['id'])){
                                 <h3 class="card-title">Agregar producto</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <a href="./agregarInverntario.php?id=<?php echo($invetario['id_inventario']); ?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
+                                    <a href="./agregarInverntario.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
                                     <br>
                                     <a href="./editarInverntario.php">Editar</a>
                                 </div>
@@ -171,14 +171,14 @@ if(isset($_GET['id'])){
                                     <!-- EXTRAE TODOS LOS DATOS DE LA TABLA EN LA BASE DE DATOS Y LOS MUESTRA AQUI -->
                                     <?php foreach ($productos as $invetario) { ?>
                                     <tr>
-                                        <td><?php echo $invetario['codigo_inventario']; ?></td>
-                                        <td><?php echo $invetario['nombre_producto']; ?></td>
-                                        <td><?php echo $invetario['fechaA_inventario']; ?></td>
-                                        <td><?php echo $invetario['precioProducto_inventario']; ?></td>
-                                        <td><?php echo $invetario['id_categoria_producto']; ?></td>
+                                        <td><?php echo $invetario['codigo']; ?></td>
+                                        <td><?php echo $invetario['nombreo']; ?></td>
+                                        <td><?php echo $invetario['fechaA']; ?></td>
+                                        <td><?php echo $invetario['precioProducto']; ?></td>
+                                        <td><?php echo $invetario['id_categoria']; ?></td>
                                         <td><?php echo $invetario['stock']; ?></td>
-                                        <td class="align-middle"><a href="editarInventario.php?id2=<?php echo($invetario['id_inventario']); ?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="inventario.php?id2=<?php echo($invetario['id_inventario']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
+                                        <td class="align-middle"><a href="editarInventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
+                                        <td class="align-middle"><a href="inventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                     </tr>
                                     <?php } ?>
                                 </table>
