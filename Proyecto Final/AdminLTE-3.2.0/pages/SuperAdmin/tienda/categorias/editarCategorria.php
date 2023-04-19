@@ -166,7 +166,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>">
+                                <form method="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>">
                                         <div class="form-group">
                                                 <label>
                                                     Nombre
