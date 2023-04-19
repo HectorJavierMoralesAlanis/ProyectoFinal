@@ -20,7 +20,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
     
-    $consulta="UPDATE inventario SET codigo=:codigo,nombre=:nombre,fecha=:fecha,precioProducto=:precioProducto,categoria=:categoria,stock=:stock WHERE codigo=:idP";
+    $consulta="UPDATE inventario SET codigo=:codigo, nombre=:nombre, fecha=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE codigo=:idP";
     
     $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","cateogria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
 
@@ -174,12 +174,6 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                 <form method="POST" action="./editarInverntario.php?id=<?php echo $_GET['id']?>">
                                 <?php foreach($inventario as $id => $inv){?>    
                                     <div class="form-group">
-                                        <label>
-                                            Codigo del producto:
-                                        </label>
-                                        <br>
-                                        <input type="text" class="form-control" id="codigo_inventario" name="codigo_inventario" value="<?php echo $inv['codigo']?>">
-                                        <br>
                                         <label>
                                             Nombre:
                                         </label>
