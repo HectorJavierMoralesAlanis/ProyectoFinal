@@ -144,6 +144,7 @@ if(isset($_GET['id'])){
                 <div class="row">
                     <div class="col">
                         <div class="card">
+                            
                             <!-- Header del contenido-->
                             <div class="card-header">
                                 <h3 class="card-title">Dashboard</h3>
@@ -161,7 +162,7 @@ if(isset($_GET['id'])){
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
