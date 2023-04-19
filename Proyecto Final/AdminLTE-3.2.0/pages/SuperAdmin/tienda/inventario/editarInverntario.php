@@ -16,6 +16,7 @@ $user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 }
 //Para Actualizar los datos
 if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
+
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
@@ -25,9 +26,17 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
     $resultados=$dao->insertarConsulta($consulta1,$parametros1);
     
     if($resultados>=0){
+        echo $_POST['nombre_producto'];
+        echo "<br>";
+        echo $_POST['precioProducto_inventario'];
+        echo "<br>";
+        echo $_POST['id_categoria'];
+        echo "<br>";
+        echo $_POST['stock'];
+        /*
         foreach($inventario as $id =>$tie){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
-        }
+        }*/
     }else{
         echo "error";
     }
