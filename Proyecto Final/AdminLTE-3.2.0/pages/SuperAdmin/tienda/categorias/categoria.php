@@ -6,6 +6,7 @@ $id=$_GET['id'];
 $dao = new DAO();
 
 $consulta="SELECT * FROM categoria WHERE tiendaId=:id";
+
 $parametros=array("id"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 if(isset($_GET['id'])){
