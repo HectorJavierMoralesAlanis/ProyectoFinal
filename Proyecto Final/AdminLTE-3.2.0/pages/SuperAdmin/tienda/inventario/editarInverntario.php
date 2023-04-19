@@ -4,7 +4,7 @@ include_once("../../PDO/DAO.php");
 
 $dao=new DAO();
 $id=$_GET['id'];
-$consulta="SELECT * FROM inventario"."WHERE codigo=:id";
+$consulta="SELECT * FROM inventario WHERE codigo=:id";
 $parametros=array("id"=>$id);
 $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 //Para mostrar categorias
