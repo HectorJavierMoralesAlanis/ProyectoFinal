@@ -1,14 +1,18 @@
 <?php
 include_once('../../PDO/DAO.php');
-$id=$_GET['id'];
+$id2=$_GET['id'];
 //$user_access = fill_sel();   
-
+$dao2=new DAO();
+$consulta2="SELECT * FROM categorias WHERE tiendaId=id2";
+$user_access= array("id2"=>$id2);
 //Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
 if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
     $dao = new DAO();
-    $consulta="INSERT INTO inventario (codigo,nombre,fechaA,precioProducto,categoria,stock)"."VALUES (:codigo,:nombre,:precioProducto,:id,:stock)";
+    $fecha=date('Y-m-d H:i:s');
+    $id=$_GET['id'];
+    $consulta="INSERT INTO inventario (codigo,nombre,fechaA,precioProducto,categoria,stock,tiendaId)"."VALUES (:codigo,:nombre,:precioProducto,:id,:stock,:idTienda)";
 
-    $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","precioProducto"=>"$_POST[precioProducto_inventario]","id"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]");
+    $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","precioProducto"=>"$_POST[precioProducto_inventario]","id"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idTienda"=>$id);
 
     $resultados=$dao->insertarConsulta($consulta,$parametros);
     if($resultados>=0){
