@@ -9,7 +9,6 @@ $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 //Para mostrar categorias
 /*
 $id2=$_GET['id'];
-
 $dao2=new DAO();
 $consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
 $parametros2= array("id2"=>$id2);
