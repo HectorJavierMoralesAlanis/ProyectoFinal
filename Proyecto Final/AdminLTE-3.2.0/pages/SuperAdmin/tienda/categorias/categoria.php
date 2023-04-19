@@ -1,6 +1,7 @@
 <?php
 include_once('../../PDO/DAO.php');
 echo $_GET['id'];
+$id=$GET['id'];
 $dao = new DAO();
 $consulta="SELECT * FROM categoria";
 $arrcategorias = $dao->ejecutarConsulta($consulta);
@@ -171,12 +172,12 @@ if(isset($_GET['id'])){
                                         <td><?php echo $categoria['nombre_categoria']; ?></td>
                                         <td><?php echo $categoria['descripcion_categoria']; ?></td>
                                         <td><?php echo $categoria['fecha_categoria']; ?></td>
-                                        <td class="align-middle"><a href="./editarCategorria.php?=<?php echo($_GET['id']);?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
+                                        <td class="align-middle"><a href="./editarCategorria.php?=<?php echo($id);?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
                                         
                                         <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                         
                                         </div>
-                                        
+
                                         </td>
                                     </tr>
                                     <?php } ?>
