@@ -172,7 +172,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form method="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>">
+                                <form method="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&<?php echo $_GET['tie']?>">
                                 <?php foreach($resultados as $id => $r){?>
 
                                         <div class="form-group">
