@@ -174,13 +174,13 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                                     Nombre
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo($categoria['nombre'])?>">
+                                                <input type="text" class="form-control" id="nombre" name="nombre">
                                                 <br>
                                                 <label>
                                                     Descripcion
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo($categoria['descripcion'])?>">
+                                                <input type="text" class="form-control"id="descripcion" name="descripcion">
                                         </div>
                                         <br>
                                         <div class="btn-group" style="float: right;">
