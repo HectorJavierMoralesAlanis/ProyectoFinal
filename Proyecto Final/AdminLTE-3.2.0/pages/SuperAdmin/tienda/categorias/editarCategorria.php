@@ -171,18 +171,17 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                 <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&?pro=<?php echo $_GET['pro']?>">
                                     <?php foreach($categorias as $id => $categoria){?>
                                         <div class="form-group">
-                                            
                                                 <label>
                                                     Nombre
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                                <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $categoria['nombre']?>">
                                                 <br>
                                                 <label>
                                                     Descripcion
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control"id="descripcion" name="descripcion">
+                                                <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo $categoria['descripcion']?>">
                                         </div>
                                         <br>
                                         <div class="btn-group" style="float: right;">
