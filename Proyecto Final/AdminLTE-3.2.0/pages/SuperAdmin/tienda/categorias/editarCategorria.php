@@ -167,7 +167,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form>
+                                <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&?pro=<?php echo $_GET['pro']?>">
                                     <div class="form-group">
                                     <?php echo('<form method="POST" action="editarCategorria.php?id_categoria='.$id.'">');?>
                                     <?php foreach($categorias as $id => $categoria){?>
