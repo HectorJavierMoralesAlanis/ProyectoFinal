@@ -1,5 +1,5 @@
 <?php
-include_once('../../PDO/DAO.php');
+include_once('../PDO/DAO.php');
 
 $id=$_GET['id'];
 $dao = new DAO();
