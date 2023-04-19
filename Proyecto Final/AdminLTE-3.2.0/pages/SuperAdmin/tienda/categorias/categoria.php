@@ -172,7 +172,7 @@ if(isset($_GET['id'])){
                                         <td><?php echo $categoria['nombre_categoria']; ?></td>
                                         <td><?php echo $categoria['descripcion_categoria']; ?></td>
                                         <td><?php echo $categoria['fecha_categoria']; ?></td>
-                                        <td class="align-middle"><a href="./editarCategorria.php?id=<?php echo($id);?>" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
+                                        <td class="align-middle"><a href="./editarCategorria.php?id=<?php echo($id);?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
                                         
                                         <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id_categoria']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                         
