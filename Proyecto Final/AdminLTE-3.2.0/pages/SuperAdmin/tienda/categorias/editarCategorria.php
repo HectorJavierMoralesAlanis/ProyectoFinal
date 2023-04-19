@@ -171,6 +171,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                 <form metho="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&&?pro=<?php echo $_GET['pro']?>">
                                     <?php foreach($categorias as $id => $categoria){?>
                                         <div class="form-group">
+                                            
                                                 <label>
                                                     Nombre
                                                 </label>
