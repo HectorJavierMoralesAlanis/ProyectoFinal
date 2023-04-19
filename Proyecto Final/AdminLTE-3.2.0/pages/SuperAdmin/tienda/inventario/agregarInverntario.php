@@ -208,7 +208,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                         <select id="id_categoria" name="id_categoria" class="custom-select form-control-border">
                                             <option selected>Opciones</option>
                                             <?php foreach($user_access as $row){?>
-                                                <option value="<?php echo $row['nombre']?>"><?php echo $row['nombre']?></option>
+                                                <option value="<?php echo $row['nombre']?>"><?php echo $row['descripcion']?></option>
                                             <?php }?>
                                         </select>
                                     </div>
