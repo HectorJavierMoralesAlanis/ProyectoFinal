@@ -6,13 +6,8 @@ $dao = new DAO();
 $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
 $parametros=array("id"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
-//$inv=$arrcategoria->rowCount();
+$inv=$arrcategoria->rowCount();
 
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    //deletecat($id);
-    //header("Location: categoria.php");
-}
 ?>
 
 
@@ -64,7 +59,7 @@ if(isset($_GET['id'])){
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
                         <li class="nav-item">
-                            <a href="./dashboard.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="./dashboard.php?id=<?php echo $id?>" class="nav-link active">
                                 <p>
                                     Dashboard
                                 </p>
@@ -85,7 +80,7 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link active">
+                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
@@ -150,12 +145,14 @@ if(isset($_GET['id'])){
                             <!-- Caja de inventario-->
                             <div class="row">
                                 <div class="col-lg-3 col-6">
-                                    <div class="inner">
-                                        <h3>15</h3>
-                                        <p>Inventario</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fas fa-shopping-cart"></i>
+                                    <div class="small-box bg-info">
+                                        <div class="inner">
+                                            <h3><?php echo $inv?></h3>
+                                            <p>Inventario</p>
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
