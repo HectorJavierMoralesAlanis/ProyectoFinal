@@ -191,6 +191,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                                 <br>
                                                 <input type="text" class="form-control" id="nombre" name="nombre" value="hola">
                                                 <br>
+                                                
                                                 <label>
                                                     Descripcion
                                                 </label>
