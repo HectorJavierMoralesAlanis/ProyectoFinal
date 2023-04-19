@@ -209,7 +209,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                         </select>
                                     </div>
                                     <div class="btn-group" style="float:right;">
-                                        <button type="button" class="btn btn-block btn-success" style="float: right;">
+                                        <button type="submit" class="btn btn-block btn-success" style="float: right;">
                                         Guardar
                                         </button>
                                     </div>
