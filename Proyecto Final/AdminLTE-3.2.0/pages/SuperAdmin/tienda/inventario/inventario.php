@@ -171,7 +171,7 @@ if(isset($_GET['id'])){
                                     <?php foreach ($productos as $invetario) { ?>
                                     <tr>
                                         <td><?php echo $invetario['codigo']; ?></td>
-                                        <td><?php echo $invetario['nombreo']; ?></td>
+                                        <td><?php echo $invetario['nombre']; ?></td>
                                         <td><?php echo $invetario['fechaA']; ?></td>
                                         <td><?php echo $invetario['precioProducto']; ?></td>
                                         <td><?php echo $invetario['categoria']; ?></td>
