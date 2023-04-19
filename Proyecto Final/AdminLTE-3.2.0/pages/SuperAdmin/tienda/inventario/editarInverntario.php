@@ -21,8 +21,9 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     $id2=$_GET['id'];
     $consulta="UPDATE inventario SET codigo=:codigo,nombre=:nombre,fecha=:fecha,precioProducto=:precioProducto,categoria=:categoria,stock=:stock WHERE codigo=:idP";
     $parametros=array("codigo"=>"$_POST[codigo_inventario]","nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","cateogria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
-    
+
     $resultados=$dao->insertarConsulta($consulta,$parametros);
+    
     if($resultados>=0){
         foreach($resultados as $id =>$tie){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
