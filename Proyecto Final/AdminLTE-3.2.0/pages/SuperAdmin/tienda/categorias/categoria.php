@@ -3,7 +3,7 @@ include_once('../../PDO/DAO.php');
 echo $_GET['id'];
 $id=$GET['id'];
 $dao = new DAO();
-$consulta="SELECT * FROM categoria"."WHERE tiendaId=:id";
+$consulta="SELECT * "."FROM categoria WHERE tiendaId=:id";
 $parametros=array("id"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 //$arrcategorias = getAllCategorias();
@@ -12,7 +12,7 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
     //deletecat($id);
     //header("Location: categoria.php");
-    
+
 }
 ?>
 
