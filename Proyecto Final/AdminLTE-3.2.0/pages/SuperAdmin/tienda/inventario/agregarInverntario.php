@@ -18,6 +18,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
     if($resultados>=0){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$_GET[id]");
     }else{
+        
         echo "error";
     }
     //add_producto($_POST['codigo_inventario'],$_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock']);
