@@ -151,7 +151,6 @@ if(isset($_GET['id'])){
                                     <a href="./agregarInverntario.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
                                     
                                     <br>
-
                                     <a href="./editarInverntario.php">Editar</a>
                                 </div>
                             </div>
