@@ -1,5 +1,6 @@
 <?php
 include_once('../../PDO/DAO.php');
+echo $_POST['tienda'];
 $dao = new DAO();
 $consulta="SELECT * FROM categoria";
 $arrcategorias = $dao->ejecutarConsulta($consulta);
