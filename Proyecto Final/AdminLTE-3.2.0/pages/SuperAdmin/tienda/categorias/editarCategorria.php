@@ -5,8 +5,8 @@ $dao = new DAO();
 
 $id = $_GET['id'];
 $pro = $_GET['pro'];
-$consulta = "SELECT *"."FROM categoria WHERE id=:idProducto";
-$parametros = array("idProducto"=>$pro);
+$consulta = "SELECT *"."FROM categoria WHERE id=:id";
+$parametros = array("id"=>$pro);
 $categorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 //$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
@@ -14,6 +14,7 @@ $categorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
+    /*
     $dao2 = new DAO();
     $id2 = $_GET['id'];
     $pro2 = $_GET['pro'];
@@ -24,7 +25,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
     }else{
         echo "error";
-    }
+    }*/
   //Se realiza la actualizacion del registro 
   //updateCAT($id,$_POST['nombre'],$_POST['descripcion']);
   //Al termino de la actualizacion se redirige a la pagina categoria
@@ -175,7 +176,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                                 </label>
                                                 <br>
                                                 <input type="text" class="form-control" id="nombre" name="nombre" value="<?php foreach($categorias as $id => $categoria){echo $categoria['nombre'];}?>">
-                                                
+
                                                 <br>
                                                 <label>
                                                     Descripcion
