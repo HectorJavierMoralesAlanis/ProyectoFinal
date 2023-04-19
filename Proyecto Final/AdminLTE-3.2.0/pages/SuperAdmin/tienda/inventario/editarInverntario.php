@@ -158,7 +158,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                            
+
                             <!-- Header del contenido-->
                             <div class="card-header">
                                 <h3 class="card-title">Editar producto</h3>
@@ -167,6 +167,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                     <button type="button" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</button>
                                 </div>
                             </div>
+                            
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <form method="POST" action="./editarInverntario.php?id=<?php echo $in['tiendaId']?>">
