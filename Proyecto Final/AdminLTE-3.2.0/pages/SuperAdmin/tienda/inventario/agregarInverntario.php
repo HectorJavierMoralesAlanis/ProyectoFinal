@@ -179,7 +179,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                     <div class="form-group">
 
                                         <label>
-                                            
+
                                             Codigo del producto:
                                         </label>
                                         <br>
@@ -205,13 +205,12 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                     <div class="form-group">
                                     <label class="form-label" for="id_categoria">categoria:</label>
                                         <br>
-                                        <?php 
-                                            echo '<select id="id_categoria" name="id_categoria" class="custom-select form-control-border">';
-                                            foreach ($user_access as $row) {
-                                            echo '<option value="' . $row['nombre'] . '">' . $row['descripcion'] . '</option>';
-                                            }
-                                            echo '</select>';
-                                        ?>
+                                        <select id="id_categoria" name="id_categoria" class="custom-select form-control-border">
+                                            <option selected>Opciones</option>
+                                            <?php foreach($user_access as $row){?>
+                                                <option value="<?php echo $row['nombre']?>"><?php echo $row['nombre']?></option>
+                                            <?php }?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
