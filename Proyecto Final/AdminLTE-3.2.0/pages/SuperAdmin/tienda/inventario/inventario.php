@@ -11,7 +11,7 @@ $productos=$dao->ejecutarConsulta($consulta,$parametros);
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     //deleteproduc($id);
-    header("Location: inventario.php");
+    //header("Location: inventario.php");
 }
 
 ?>
