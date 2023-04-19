@@ -145,10 +145,10 @@ if(isset($_GET['id'])){
                             <!-- Header del contenido-->
                             <div class="card-header">
                                 <h3 class="card-title">Categoria</h3>
-                                
+
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <button type="button" class="btn btn-block btn-success" style="float: right;"  onclick="window.location.href='registrar_categoria.php?id=<?php echo $id?>'">Agregar nueva categoria</button>
+                                    <button type="button" class="btn btn-block btn-success" style="float: right;" onclick="window.location.href='registrar_categoria.php?id=<?php echo $id?>'">Agregar nueva categoria</button>
                                 </div>
                             </div>
                             <!-- Cuerpo de la tabla-->
