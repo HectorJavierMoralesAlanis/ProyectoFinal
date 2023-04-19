@@ -30,8 +30,9 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
     $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"id2"=>$id2);
     $resultados2 = $dao2->insertarConsulta($consulta2,$parametros2);
     if($resultados2>=0){
-        echo $id3;
-        //header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id3");
+        foreach($resultados as $id=> $tie){
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$tie[id]");
+        }
     }else{
         echo "error";
     }
