@@ -189,13 +189,13 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                                     Nombre
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control" id="nombre" name="nombre" values="<?php echo $r['nombre']?>">
+                                                <input type="text" class="form-control" id="nombre" name="nombre" values="hola">
                                                 <br>
                                                 <label>
                                                     Descripcion
                                                 </label>
                                                 <br>
-                                                <input type="text" class="form-control"id="descripcion" name="descripcion" values="<?php echo $r['descripcion']?>">
+                                                <input type="text" class="form-control"id="descripcion" name="descripcion" values="<?php echo ($r['descripcion'])?>">
                                         </div>
                                         <br>
                                         <div class="btn-group" style="float: right;">
