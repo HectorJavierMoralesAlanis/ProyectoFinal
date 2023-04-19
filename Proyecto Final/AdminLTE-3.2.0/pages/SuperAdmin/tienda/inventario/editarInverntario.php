@@ -7,7 +7,6 @@ $id=$_GET['id'];
 $consulta="SELECT * FROM inventario WHERE codigo=:id";
 $parametros=array("id"=>$id);
 $inventario=$dao->ejecutarConsulta($consulta,$parametros);
-
 //Para mostrar categorias
 foreach($inventario as $id => $in){
 $dao2=new DAO();
