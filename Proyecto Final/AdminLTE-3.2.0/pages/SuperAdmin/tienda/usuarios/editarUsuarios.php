@@ -4,20 +4,20 @@ include_once("../../PDO/DAO.php");
 
 $dao=new DAO();
 $id=$_GET['id'];
-$consulta="SELECT * FROM usuario WHERE id=:id";
+$consulta="SELECT * FROM usuarios WHERE id=:id";
 $parametros=array("id"=>$id);
 $inventario=$dao->ejecutarConsulta($consulta,$parametros);
 
 //Para Actualizar los datos
 if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contrasena'],$_POST['correo'])){
 
-    $dao = new DAO();
+    $dao2 = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
     $consulta1="UPDATE usuarios SET nombre=:nombre, apellido=:apellido, usuario=:usuario, contrasena=:contrasena,email=:correo WHERE id=:idP";
     
     $parametros1=array("nombre"=>"$_POST[nombre]","apellido"=>$apellido,"usuario"=>"$_POST[usuario]","contrasena"=>"$_POST[contrasena]","correo"=>"$_POST[email]","idP"=>$id2);
-    $resultados=$dao->insertarConsulta($consulta1,$parametros1);
+    $resultados=$dao2->insertarConsulta($consulta1,$parametros1);
     
     if($resultados>=0){
         foreach($inventario as $id =>$tie){
