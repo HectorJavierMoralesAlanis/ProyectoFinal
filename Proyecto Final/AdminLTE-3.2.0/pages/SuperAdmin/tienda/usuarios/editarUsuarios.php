@@ -4,30 +4,24 @@ include_once("../../PDO/DAO.php");
 
 $dao=new DAO();
 $id=$_GET['id'];
-$consulta="SELECT * FROM inventario WHERE codigo=:id";
+$consulta="SELECT * FROM usuario WHERE id=:id";
 $parametros=array("id"=>$id);
 $inventario=$dao->ejecutarConsulta($consulta,$parametros);
-//Para mostrar categorias
-foreach($inventario as $id => $in){
-$dao2=new DAO();
-$consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
-$parametros2= array("id2"=>$in['tiendaId']);
-$user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
-}
+
 //Para Actualizar los datos
-if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
+if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contrasena'],$_POST['correo'])){
 
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
-    $consulta1="UPDATE inventario SET nombre=:nombre, fechaA=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE codigo=:idP";
+    $consulta1="UPDATE usuarios SET nombre=:nombre, apellido=:apellido, usuario=:usuario, contrasena=:contrasena,email=:correo WHERE id=:idP";
     
-    $parametros1=array("nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","categoria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
+    $parametros1=array("nombre"=>"$_POST[nombre]","apellido"=>$apellido,"usuario"=>"$_POST[usuario]","contrasena"=>"$_POST[contrasena]","correo"=>"$_POST[email]","idP"=>$id2);
     $resultados=$dao->insertarConsulta($consulta1,$parametros1);
     
     if($resultados>=0){
         foreach($inventario as $id =>$tie){
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/usuarios/usuarios2.php?id=$tie[tiendaId]");
         }
     }else{
         echo "error";
@@ -167,31 +161,31 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
                                             Nombre:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="<?php echo $inv['nombre']?>">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $inv['nombre']?>">
                                         <br>
                                         <label>
-                                            Precio:
+                                            Apellido:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo $inv['precioProducto']?>">
+                                        <input type="text" class="form-control" id="apellido" name="apellido" value="<?php echo $inv['apellido']?>">
                                         <br>
                                         <label>
-                                            Stock:
+                                            Usuario:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control" id="stock" name="stock" value="<?php echo $inv['stock']?>">
+                                        <input type="text" class="form-control" id="usuario" name="usuario" value="<?php echo $inv['usuario']?>">
                                         <br>
                                         <label>
-                                            Categoria:
+                                            Contraseña:
                                         </label>
                                         <br>
-
-                                        <select class="custom-select form-control-border" id="id_categoria" name="id_categoria">
-                                            <option value="<?php echo $inv['categoria']?>" selected><?php echo $inv['categoria']?></option>
-                                            <?php foreach($user_access as $id => $row){?>
-                                                <option value="<?php echo $row['descripcion']?>"><?php echo $row['descripcion']?></option>
-                                            <?php }?>
-                                        </select>
+                                        <input type="text" class="form-control" id="contrasena" name="contrasena" value="<?php echo $inv['contrasena']?>">
+                                        <br>
+                                        <label>
+                                            Email:
+                                        </label>
+                                        <br>
+                                        <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $inv['email']?>">
                                     </div>
 
                                     <div class="btn-group" style="float:right;">
