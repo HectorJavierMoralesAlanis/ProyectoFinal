@@ -3,16 +3,25 @@ include_once('../../PDO/DAO.php');
 
 //Se revisa que las variables se esten recibiendo para continuar con la insercion de los valores ingresados 
 if(isset($_POST['nombre'], $_POST['descripcion'])){
-  //add_cat($_POST['nombre'], $_POST['descripcion']);
+        //Variable que permite la conexion a la base de datos
         $dao=new DAO();
+
+        //Varaible que permite saber la fecha de la insercion
         $fecha=date('Y-m-d H:i:s');
+
+        //Variable que guarda el id de la tienda
         $id=$_GET['id'];
+
+        //Variable que guarda la consulta
         $consulta="INSERT INTO categoria (nombre,descripcion,fecha,tiendaId)"."VALUES (:nombre,:descripcion,:fecha,:idTienda)";
 
+        //Variable que guarda los parametros
         $parametros=array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"idTienda"=>$id);
 
+        //Variuable que guarda el resultado de la consulta
         $resultado=$dao->insertarConsulta($consulta,$parametros);
 
+        //Condicional que evalua si resultado 
         if($resultado>=0){
             header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
         }else{
