@@ -176,8 +176,9 @@ if(isset($_POST['borrar'])){
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach($usuarios as $id=>$usuario){?>
                                         <tr>
-                                            <?php foreach($usuarios as $id => $usuario){?>
+                                            
                                                 <th><?php echo $usuario['nombre']?></th>
                                                 <th><?php echo $usuario['apellido']?></th>
                                                 <th><?php echo $usuario['usuario']?></th>
@@ -186,8 +187,8 @@ if(isset($_POST['borrar'])){
                                                 <th><?php echo $usuario['fechaAgregada']?></th>
                                                 <th><a href="./editarUsuarios.php?id=<?php echo $usuario['id']?>" method="POST" class="btn btn-warning btn-block btn-sm">Editar</a></th>
                                                 <th><a href="./usuarios2.php?id=<?php echo$usuario['id']?>" method="POST" class="btn btn-danger btn-block btn-sm">Eliminar</a></th>
-                                                <?php }?>
                                         </tr>
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>
