@@ -1,19 +1,28 @@
 <?php
 include_once('../../PDO/DAO.php');
 
+//Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
+if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['password'], $_POST['correo'])){
+    $dao = new DAO();
+    $fecha=date('Y-m-d H:i:s');
+    $id=$_GET['id'];
+    
+    $consulta="INSERT INTO usuarios (nombre,apellido,usuario,contrasena,email,fechaAgregada,tiendaId)"."VALUES (:nombre,:apellido,:usuario,:contrasena,:email,:fechaAgre,:idTienda)";
+    $parametros=array("nombre"=>"$_POST[nombre]",
+                    "apellido"=>"$_POST[apellido]",
+                    "usuario"=>"$_POST[usuario]",
+                    "contrasena"=>"$_POST[contrasena]",
+                    "email"=>"$_POST[correo]",
+                    "fechaAgre"=>"$fecha",
+                    "idTienda"=>"$id");
 
-$id=$_GET['id'];
-
-$dao=new DAO();
-$consulta="SELECT * FROM inventario WHERE tiendaId=:id";
-$parametros=array("id"=>$id);
-$productos=$dao->ejecutarConsulta($consulta,$parametros);
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    //deleteproduc($id);
-    //header("Location: inventario.php");
+    $resultados=$dao->insertarConsulta($consulta,$parametros);
+    if($resultados>=0){
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/usuarios/Usuario.php?id=$id");
+    }else{
+        echo "error";
+    }
 }
-
 ?>
 
 
@@ -37,14 +46,16 @@ if(isset($_GET['id'])){
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="nav-link">Home</a>
+                <?php foreach($user_access as $id =>$l){?>
+                <a href="../dashboard.php?id=<?echo $l['id']?>" class="nav-link">Home</a>
+                <?php }?>
             </li>
         </ul>
     </nav>
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Logo --->
-        <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="brand-link">
+        <a href="../dashboard.php?id=<?php $_GET['id']?>" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
@@ -65,36 +76,37 @@ if(isset($_GET['id'])){
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
+                    <?php foreach($user_access as $id => $l){?>
                         <li class="nav-item">
-                            <a href="../dashboard.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php?id=<?php echo $id?>" class="nav-link active">
+                            <a href="./inventario.php?id=<?php echo $l['tiendaId']?>" class="nav-link active">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
@@ -108,17 +120,19 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../login.php" class="nav-link">
+                            <a href="../examples/login-v2.html" class="nav-link">
                                 <p>
                                     Cerrar sesion
                                 </p>
                             </a>
                         </li>
+                    <?php }?>
                 </ul>
             </nav>
         </div>
     </aside>
     <!-- Fin del menu lateral -->
+
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -127,13 +141,15 @@ if(isset($_GET['id'])){
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php echo $_GET['id']?>">Home</a></li>
-                            <li class="breadcrumb-item active">Inventario</li>
+                            <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php $_GET['id']?>">Home</a></li>
+                            <li class="breadcrumb-item active">Categorias</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
+    
+
     <!-- Contenido -->
         <section class="content">
             <div class="container-fluid">
@@ -145,42 +161,60 @@ if(isset($_GET['id'])){
                                 <h3 class="card-title">Agregar producto</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
-                                    <br>
-                                    <a href="./editarInverntario.php">Editar</a>
+                                    <button type="button" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</button>
                                 </div>
                             </div>
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Codigo</th>
-                                            <th>Nombre</th>
-                                            <th>Fecha Agregado</th>
-                                            <th>Precio Producto</th>
-                                            <th>Categoria</th>
-                                            <th>Stock</th>
-                                            <th>Editar?</th>
-                                            <th>Eliminar?</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <!-- EXTRAE TODOS LOS DATOS DE LA TABLA EN LA BASE DE DATOS Y LOS MUESTRA AQUI -->
-                                    <?php foreach ($productos as $invetario) { ?>
-                                    <tr>
-                                        <td><?php echo $invetario['codigo']; ?></td>
-                                        <td><?php echo $invetario['nombre']; ?></td>
-                                        <td><?php echo $invetario['fechaA']; ?></td>
-                                        <td><?php echo $invetario['precioProducto']; ?></td>
-                                        <td><?php echo $invetario['categoria'];?></td>
-                                        <td><?php echo $invetario['stock']; ?></td>
-                                        <td class="align-middle"><a href="./editarInverntario.php?id=<?php echo $invetario['codigo']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="./inventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
-                                    </tr>
-                                    <?php }?>
-                                </table>
+                                
+                                <form method="POST" action="agregarInverntario.php?id=<?php echo $_GET['id']?>">
+
+                                    <div class="form-group">
+
+                                        <label>
+                                            Nombre:
+                                        </label>
+                                        <br>
+                                        <input type="text" class="form-control" id="nombre" name="nombre">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label>
+                                            Apellido:
+                                        </label>
+                                        <br>
+                                        <input type="text" class="form-control" id="apellido" name="apellido">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label>
+                                            Usuario:
+                                        </label>
+                                        <br>
+                                        <input type="text" class="form-control" id="usuario" name="usuario">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label>
+                                            Contraseña:
+                                        </label>
+                                        <br>
+                                        <input type="password" class="form-control" id="password" name="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Email:
+                                        </label>
+                                        <br>
+                                        <input type="email" class="form-control" id="correo" name="correo">
+                                    </div>
+                                    <br>
+                                    <div class="btn-group" style="float:right;">
+                                        <button type="submit" class="btn btn-block btn-success" style="float: right;">
+                                        Guardar
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -188,6 +222,7 @@ if(isset($_GET['id'])){
             </div>
         </section>
 </div>
+
     <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../../../../plugins/jquery/jquery.min.js"></script>

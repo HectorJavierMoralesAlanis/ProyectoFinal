@@ -1,22 +1,39 @@
 <?php
-include_once('../../PDO/DAO.php');
-
-
-$id=$_GET['id'];
+include_once("../../PDO/DAO.php");
+//Para mostrar los datos en los campos
 
 $dao=new DAO();
-$consulta="SELECT * FROM inventario WHERE tiendaId=:id";
+$id=$_GET['id'];
+$consulta="SELECT * FROM inventario WHERE codigo=:id";
 $parametros=array("id"=>$id);
-$productos=$dao->ejecutarConsulta($consulta,$parametros);
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    //deleteproduc($id);
-    //header("Location: inventario.php");
+$inventario=$dao->ejecutarConsulta($consulta,$parametros);
+//Para mostrar categorias
+foreach($inventario as $id => $in){
+$dao2=new DAO();
+$consulta2="SELECT * FROM categoria WHERE tiendaId=:id2";
+$parametros2= array("id2"=>$in['tiendaId']);
+$user_access= $dao2->ejecutarConsulta($consulta2,$parametros2);
 }
+//Para Actualizar los datos
+if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST['id_categoria'], $_POST['stock'])){
 
+    $dao = new DAO();
+    $fecha=date('Y-m-d H:i:s');
+    $id2=$_GET['id'];
+    $consulta1="UPDATE inventario SET nombre=:nombre, fechaA=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE codigo=:idP";
+    
+    $parametros1=array("nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","categoria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
+    $resultados=$dao->insertarConsulta($consulta1,$parametros1);
+    
+    if($resultados>=0){
+        foreach($inventario as $id =>$tie){
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
+        }
+    }else{
+        echo "error";
+    }
+}
 ?>
-
-
 <html>
 <head>
     <title>Tiendas</title>
@@ -37,14 +54,16 @@ if(isset($_GET['id'])){
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="nav-link">Home</a>
+                <?php foreach($user_access as $id => $l){?>
+                <a href="../dashboard.php?id=<?echo $l['tiendaId']?>" class="nav-link">Home</a>
+                <?php }?>
             </li>
         </ul>
     </nav>
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Logo --->
-        <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="brand-link">
+        <a href="../dashboard.php<?php $_GET['id']?>" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
@@ -65,36 +84,37 @@ if(isset($_GET['id'])){
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
+                    <?php foreach($user_access as $id => $l){?>
                         <li class="nav-item">
-                            <a href="../dashboard.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php?id=<?php echo $id?>" class="nav-link active">
+                            <a href="./inventario.php?id=<?php echo $l['tiendaId']?>" class="nav-link active">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<? echo $l['tiendaId']?> class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
@@ -108,17 +128,19 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../login.php" class="nav-link">
+                            <a href="../examples/login-v2.html" class="nav-link">
                                 <p>
                                     Cerrar sesion
                                 </p>
                             </a>
                         </li>
+                    <?php }?>
                 </ul>
             </nav>
         </div>
     </aside>
     <!-- Fin del menu lateral -->
+
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -140,47 +162,59 @@ if(isset($_GET['id'])){
                 <div class="row">
                     <div class="col">
                         <div class="card">
+
                             <!-- Header del contenido-->
                             <div class="card-header">
-                                <h3 class="card-title">Agregar producto</h3>
+                                <h3 class="card-title">Editar producto</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
-                                    <br>
-                                    <a href="./editarInverntario.php">Editar</a>
+                                    <button type="button" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</button>
                                 </div>
                             </div>
+
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Codigo</th>
-                                            <th>Nombre</th>
-                                            <th>Fecha Agregado</th>
-                                            <th>Precio Producto</th>
-                                            <th>Categoria</th>
-                                            <th>Stock</th>
-                                            <th>Editar?</th>
-                                            <th>Eliminar?</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <!-- EXTRAE TODOS LOS DATOS DE LA TABLA EN LA BASE DE DATOS Y LOS MUESTRA AQUI -->
-                                    <?php foreach ($productos as $invetario) { ?>
-                                    <tr>
-                                        <td><?php echo $invetario['codigo']; ?></td>
-                                        <td><?php echo $invetario['nombre']; ?></td>
-                                        <td><?php echo $invetario['fechaA']; ?></td>
-                                        <td><?php echo $invetario['precioProducto']; ?></td>
-                                        <td><?php echo $invetario['categoria'];?></td>
-                                        <td><?php echo $invetario['stock']; ?></td>
-                                        <td class="align-middle"><a href="./editarInverntario.php?id=<?php echo $invetario['codigo']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="./inventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
-                                    </tr>
-                                    <?php }?>
-                                </table>
+                                <form method="POST" action="./editarInverntario.php?id=<?php echo $_GET['id']?>">
+                                <?php foreach($inventario as $id => $inv){?>    
+                                    <div class="form-group">
+                                        <label>
+                                            Nombre:
+                                        </label>
+                                        <br>
+                                        <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" value="<?php echo $inv['nombre']?>">
+                                        <br>
+                                        <label>
+                                            Precio:
+                                        </label>
+                                        <br>
+                                        <input type="text" class="form-control" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo $inv['precioProducto']?>">
+                                        <br>
+                                        <label>
+                                            Stock:
+                                        </label>
+                                        <br>
+                                        <input type="text" class="form-control" id="stock" name="stock" value="<?php echo $inv['stock']?>">
+                                        <br>
+                                        <label>
+                                            Categoria:
+                                        </label>
+                                        <br>
+
+                                        <select class="custom-select form-control-border" id="id_categoria" name="id_categoria">
+                                            <option value="<?php echo $inv['categoria']?>" selected><?php echo $inv['categoria']?></option>
+                                            <?php foreach($user_access as $id => $row){?>
+                                                <option value="<?php echo $row['descripcion']?>"><?php echo $row['descripcion']?></option>
+                                            <?php }?>
+                                        </select>
+                                    </div>
+
+                                    <div class="btn-group" style="float:right;">
+                                        <button type="submit" class="btn btn-block btn-success" style="float: right;">
+                                        Guardar
+                                        </button>
+                                    </div>
+                                </form>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -188,6 +222,7 @@ if(isset($_GET['id'])){
             </div>
         </section>
 </div>
+
     <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../../../../plugins/jquery/jquery.min.js"></script>
