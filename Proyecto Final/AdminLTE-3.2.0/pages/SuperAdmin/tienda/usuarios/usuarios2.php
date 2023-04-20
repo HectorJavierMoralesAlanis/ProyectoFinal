@@ -19,6 +19,7 @@ if(isset($_POST['borrar'])){
     }else{
         echo "error";
     }
+    
 }
 ?>
 <html>
