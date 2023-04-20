@@ -14,10 +14,8 @@ $r=$dao->ejecutarConsulta($consulta,$parametros);
 if(isset($_POST['stock'])){
     //Se realiza la actualizacion del registro 
     $dao2=new DAO();
-    $consulta2="UPDATE inventario SET stock=:stock WHERE tiendaid=:idT AND id=:id";
-    foreach($r as $id => $t){
-    $parametros2=array("stock"=>"$_POST[stock]","idT"=>$t['tiendaId'],"id"=>$id);
-    }
+    $consulta2="UPDATE inventario SET stock=:stock WHERE id=:id";
+    $parametros2=array("stock"=>"$_POST[stock]","id"=>$id);
     $resultados=$dao2->insertarConsulta($consulta2,$parametros2);
     //Al termino de la actualizacion se redirige a la pagina categoria
     if($resultados>=0){
