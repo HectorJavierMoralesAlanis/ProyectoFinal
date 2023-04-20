@@ -145,52 +145,48 @@ if(isset($_POST['stock'])){
                                 <!--Div para que el boton este a la derecha--> 
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="agregarInverntario.php" class="form-inline flex-wrap">
-                                    <?php echo('<form method="POST" action="venta.php?id='.$id.'">');?>
+                                <form method="POST" action="./venta.php?id=<?php echo $id?>" class="form-inline flex-wrap">
                                     <?php foreach($r as $id => $res){?>
                                     <div class="form-group mr-1">
                                         <label for="id_inventario">id del producto:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="id_inventario" name="id_inventario" value="<?php echo($res['id'])?>" disabled>
                                     </div>
-                                    
+                                    <br>
                                     <div class="form-group mr-1">
                                         <label for="codigo_inventario">Codigo del producto:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="codigo_inventario" name="codigo_inventario" value="<?php echo($res['codigo'])?>" disabled>
                                     </div>
+                                    <br>
                                     <div class="form-group mr-1">
                                         <label for="nombre_producto">Nombre:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="nombre_producto" name="nombre_producto" value="<?php echo($res['nombre'])?>" disabled>
                                     </div>
-                                    
+                                    <br>
                                     <div class="form-group mr-1">
                                         <label for="precioProducto_inventario">Precio:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo($res['precioProducto'])?>" disabled>
                                     </div>
+                                    <br>
                                     <div class="form-group">
                                         <label for="stock">Stock disponible:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="stock" name="stock" value="<?php echo($res['stock'])?>" disabled>
                                     </div>
-                                    <?php }?>
-                                </form>
-                            </div>
-
+                                    <br>
                                     <div class="card-body">
-                                    <form method="POST" action="venta.php">
                                         <div class="form-group">
-                                        <label>
-                                            Agregar o eliminar Stock:
-                                        </label>
-                                        <br>
-                                        <input type="text" class="form-control form-control-sm" id="stock" name="stock">
+                                            <label>
+                                                Agregar o eliminar Stock:
+                                            </label>
+                                            <br>
+                                            <input type="number" class="form-control form-control-sm" id="stock" name="stock" value=<?php echo $res['stock']?>>
                                         </div>
-                                    </form>
                                     </div>
-
+                                    <?php }?>
                                     <br>
                                     <center>
                                         <label>
@@ -209,8 +205,8 @@ if(isset($_POST['stock'])){
                                         <br>
                                         <br>
                                     </div>
-
-                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
