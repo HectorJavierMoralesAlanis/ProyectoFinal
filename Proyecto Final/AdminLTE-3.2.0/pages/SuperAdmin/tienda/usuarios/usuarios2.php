@@ -140,19 +140,30 @@ $id=$_GET['id'];
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Codigo</th>
                                             <th>Nombre</th>
-                                            <th>Fecha Agregado</th>
-                                            <th>Precio Producto</th>
-                                            <th>Categoria</th>
-                                            <th>Stock</th>
-                                            <th>Editar?</th>
-                                            <th>Eliminar?</th>
-                                            <th></th>
+                                            <th>Apellido</th>
+                                            <th>Usuario</th>
+                                            <th>Contraseña</th>
+                                            <th>Email</th>
+                                            <th>Fecha Agregada</th>
+                                            <th>¿Editar?</th>
+                                            <th>¿Eliminar?</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    
+                                        <tr>
+                                            <?php foreach($usuarios as $id => $usuario){?>
+                                                <th><?php echo $usuario['nombre']?></th>
+                                                <th><?php echo $usuario['apellido']?></th>
+                                                <th><?php echo $usuario['usuario']?></th>
+                                                <th><?php echo $usuario['contrasena']?></th>
+                                                <th><?php echo $usuario['email']?></th>
+                                                <th><?php echo $usuario['fechaAgregada']?></th>
+                                                <th><a href="./editarUsuarios.php?id=<?php echo $usuario['id']?>" method="POST" class="btn btn-warning btn-block btn-sm">Editar</a></th>
+                                                <th><a href="./usuarios2.php?id=<?php echo$usuario['id']?>" method="POST" class="btn btn-danger btn-block btn-sm">Eliminar</a></th>
+                                                <?php }?>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
