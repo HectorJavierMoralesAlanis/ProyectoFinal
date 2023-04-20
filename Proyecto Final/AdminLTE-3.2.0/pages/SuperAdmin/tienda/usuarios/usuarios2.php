@@ -130,7 +130,6 @@ $id=$_GET['id'];
                                 <h3 class="card-title">Agregar producto</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                
                                     <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
                                     <br>
                                     <a href="./editarInverntario.php">Editar</a>
