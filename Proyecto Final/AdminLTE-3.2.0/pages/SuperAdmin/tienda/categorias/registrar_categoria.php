@@ -64,7 +64,6 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                 </div>
             </div>
         
-        
             <!-- Menu lateral-->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
