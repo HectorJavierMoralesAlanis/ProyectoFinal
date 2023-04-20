@@ -142,8 +142,8 @@ if(isset($_POST['stock'])){
                                 <!--Div para que el boton este a la derecha--> 
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="./venta.php?id=<?php echo $id?>" class="form-inline flex-wrap">
-                                    <?php foreach($r as $id => $res){?>
+                                <?php foreach($r as $id =>$res){?>
+                                <form method="POST" action="./venta.php?id=<?php echo $res['tiendaId']?>" class="form-inline flex-wrap">
                                     <div class="form-group mr-1">
                                         <label for="id_inventario">id del producto:</label>
                                         <br>
