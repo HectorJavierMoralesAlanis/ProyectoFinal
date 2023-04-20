@@ -1,6 +1,6 @@
 <?php
 include_once('../../PDO/DAO.php');
-
+$id=$_GET['id'];
 //Se revisa que las variables se esten recibiendo con la insercion de los valores ingresados en la base de datos
 if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['password'], $_POST['correo'])){
     $dao = new DAO();
@@ -76,30 +76,29 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
-                    <?php foreach($user_access as $id => $l){?>
                         <li class="nav-item">
-                            <a href="../dashboard.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php?id=<?php echo $l['tiendaId']?>" class="nav-link active">
+                            <a href="./inventario.php?id=<?php echo $id?>" class="nav-link active">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios2.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
+                            <a href="../usuarios/usuarios2.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
@@ -126,7 +125,6 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
                                 </p>
                             </a>
                         </li>
-                    <?php }?>
                 </ul>
             </nav>
         </div>
