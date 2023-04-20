@@ -74,28 +74,28 @@ $categorias=count($arrcategorias);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario/inventario.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../inventario/inventario.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./venta/venta.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../venta/venta.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
