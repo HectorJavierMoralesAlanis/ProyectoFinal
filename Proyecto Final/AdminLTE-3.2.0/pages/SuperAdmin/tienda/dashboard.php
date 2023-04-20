@@ -169,13 +169,13 @@ $categorias=count($arrcategorias);
                                 </div>
                                 <!-- Caja de categorias -->
                                 <div class="col-lg-3 col-6">
-                                    <div class="small-box bg-info">
+                                    <div class="small-box bg-success">
                                         <div class="inner">
                                             <h2><?php echo $categorias?></h2>
                                             <p>Categorias</p>
                                         </div>
                                         <div class="icon">
-                                            <i class="ion ion-stats-bars"></i>
+                                            <i class="fas fa-chart-pie"></i>
                                         </div>
                                         <a href="./categorias/categoria.php?id=<? echo $_GET['id']?>" class="small-box-footer">
                                         Mostrar <i class="fas fa-arrow-cricle-right"></i>
