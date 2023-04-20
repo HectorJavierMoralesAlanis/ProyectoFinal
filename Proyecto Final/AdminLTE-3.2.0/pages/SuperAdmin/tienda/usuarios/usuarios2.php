@@ -6,6 +6,7 @@ $consulta="SELECT * FROM usuarios WHERE tiendaId=:id";
 $parametros=array("id"=>$id);
 $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
 
+
 if(isset($_POST['borrar'])){
     $dao2=new DAO();
     $consulta2="DELETE FROM usuarios WHERE id=:idU";
