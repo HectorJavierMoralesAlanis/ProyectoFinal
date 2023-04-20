@@ -187,7 +187,6 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
                                         <br>
                                         <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $inv['email']?>">
                                     </div>
-
                                     <div class="btn-group" style="float:right;">
                                         <button type="submit" class="btn btn-block btn-success" style="float: right;">
                                         Guardar
