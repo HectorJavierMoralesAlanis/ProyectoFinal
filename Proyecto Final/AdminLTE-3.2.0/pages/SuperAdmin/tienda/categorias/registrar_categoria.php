@@ -48,7 +48,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Logo --->
-        <a href="../../dashboardSA/dashboard.php" class="brand-link">
+        <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
@@ -70,7 +70,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="./categoria.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
@@ -132,7 +132,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php echo $_GET['id']?>">Home</a></li>
                             <li class="breadcrumb-item active">Categorias</li>
                         </ol>
                     </div>

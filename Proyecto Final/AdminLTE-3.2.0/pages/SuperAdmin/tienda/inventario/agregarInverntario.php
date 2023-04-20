@@ -52,7 +52,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Logo --->
-        <a href="../SuperAdmin/dashboard.php" class="brand-link">
+        <a href="../dashboard.php?id=<?php $_GET['id']?>" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
@@ -64,7 +64,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                     <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Bon</a>
+                    <a class="d-block">Bon</a>
                 </div>
             </div>
         
@@ -73,29 +73,30 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
+                    <?php foreach($user_access as $id => $l){?>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php" class="nav-link active">
+                            <a href="./inventario.php?id=<?php echo $l['tiendaId']?>" class="nav-link active">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./categoria.php" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
@@ -122,6 +123,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                 </p>
                             </a>
                         </li>
+                    <?php }?>
                 </ul>
             </nav>
         </div>
@@ -136,7 +138,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php $_GET['id']?>">Home</a></li>
                             <li class="breadcrumb-item active">Categorias</li>
                         </ol>
                     </div>
