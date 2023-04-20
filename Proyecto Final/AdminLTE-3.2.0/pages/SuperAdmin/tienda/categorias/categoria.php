@@ -65,7 +65,7 @@ if(isset($_GET['id'])){
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
                         <li class="nav-item">
-                            <a href="../dashboard.php?id=<?php echo $l['id']?>" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
