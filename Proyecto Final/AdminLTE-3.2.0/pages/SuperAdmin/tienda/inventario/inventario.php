@@ -148,7 +148,6 @@ $productos=$dao->ejecutarConsulta($consulta,$parametros);
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
                                     <!-- EXTRAE TODOS LOS DATOS DE LA TABLA EN LA BASE DE DATOS Y LOS MUESTRA AQUI -->
                                     <?php foreach ($productos as $invetario) { ?>
                                     <tr>
