@@ -9,7 +9,6 @@ $r=$dao->ejecutarConsulta($consulta,$parametros);
 
 //$r = searchINV($id); //Se realiza una busqueda en la base de datos 
 
-
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['stock'])){
     //Se realiza la actualizacion del registro 
