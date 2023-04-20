@@ -162,7 +162,7 @@ $categorias=count($arrcategorias);
                                         <div class="icon">
                                             <i class="fas fa-shopping-cart"></i>
                                         </div>
-                                        <a href="./inventario/inventario.php<?php echo $_GET['id']?>" class="small-box-footer">
+                                        <a href="./inventario/inventario.php?id=<?php echo $_GET['id']?>" class="small-box-footer">
                                         Mostrar <i class="fas fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
@@ -177,7 +177,7 @@ $categorias=count($arrcategorias);
                                         <div class="icon">
                                             <i class="fas fa-chart-pie"></i>
                                         </div>
-                                        <a href="./categorias/categoria.php?id=<? echo $_GET['id']?>" class="small-box-footer">
+                                        <a href="./categorias/categoria.php?id=<?php echo $_GET['id']?>" class="small-box-footer">
                                         Mostrar <i class="fas fa-arrow-cricle-right"></i>
                                         </a>
                                     </div>
