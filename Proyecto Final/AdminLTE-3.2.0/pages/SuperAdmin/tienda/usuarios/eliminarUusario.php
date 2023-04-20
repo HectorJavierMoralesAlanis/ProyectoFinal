@@ -8,7 +8,7 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
     //
 if(isset($_POST['borrar'])){
     $dao2=new DAO();
-    $consulta2="DELETE FROM usarios WHERE id=:idU";
+    $consulta2="DELETE FROM usuarios WHERE id=:idU";
     $parametros2=array("idU"=>$id);
     $resultados=$dao->insertarConsulta($consulta2,$parametros2);
     if($resultados>=0){
