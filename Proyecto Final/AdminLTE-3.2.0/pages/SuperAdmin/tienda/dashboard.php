@@ -182,6 +182,7 @@ $categorias=count($arrcategorias);
                                         </a>
                                     </div>
                                 </div>
+                                
                                 <!-- Caja de usuarios 
                                 <div class="col-lg-3 col-6">
                                     <div class="small-box bg-warning">
