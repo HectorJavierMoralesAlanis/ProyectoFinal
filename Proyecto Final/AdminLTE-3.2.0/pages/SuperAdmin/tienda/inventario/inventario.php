@@ -80,7 +80,7 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../usuarios/usuarios2.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
