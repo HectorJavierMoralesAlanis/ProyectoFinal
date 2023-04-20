@@ -45,7 +45,9 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../../dashboardSA/dashboard.php" class="nav-link">Home</a>
+                <?php foreach($user_access as $id =>$l){?>
+                <a href="../dashboard.php?id=<?echo $l['id']?>" class="nav-link">Home</a>
+                <?php }?>
             </li>
         </ul>
     </nav>

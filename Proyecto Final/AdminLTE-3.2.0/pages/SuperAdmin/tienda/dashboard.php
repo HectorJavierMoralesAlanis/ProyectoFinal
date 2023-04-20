@@ -39,7 +39,7 @@ $categorias=count($arrcategorias);
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Home</a>
+                <a href="./dashboard.php?id=<?php echo $id?>" class="nav-link">Home</a>
             </li>
         </ul>
     </nav>
