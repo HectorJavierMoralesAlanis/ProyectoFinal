@@ -16,9 +16,14 @@ $consulta2="SELECT * FROM categoria WHERE tiendaId=:id";
 $parametros2=array("id"=>$id);
 $arrcategorias=$dao2->ejecutarConsulta($consulta2,$parametros2);
 $categorias=count($arrcategorias);
+
+//Obtencion de los usuarios
+$dao3=new DAO();
+$consulta3="SELECT * FROM usuarios WHERE tiendaId=:id";
+$parametros3=array("id"=>$id);
+$arrausuarios=$dao3->ejecutarConsulta($consulta3,$parametros3);
+$usuarios=count($arrausuarios);
 ?>
-
-
 <html>
 <head>
     <title>Tiendas</title>
@@ -178,12 +183,12 @@ $categorias=count($arrcategorias);
                                             <i class="fas fa-chart-pie"></i>
                                         </div>
                                         <a href="./categorias/categoria.php?id=<?php echo $_GET['id']?>" class="small-box-footer">
-                                        Mostrar <i class="fas fa-arrow-cricle-right"></i>
+                                        Mostrar <i class="fas fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
                                 </div>
 
-                                <!-- Caja de usuarios 
+                                <!-- Caja de usuarios -->
                                 <div class="col-lg-3 col-6">
                                     <div class="small-box bg-warning">
                                         <div class="inner">
@@ -194,10 +199,10 @@ $categorias=count($arrcategorias);
                                             <i class="fas fa-user-plus"></i>
                                         </div>
                                         <a href="./usuarios/usuarios.php?id=<?echo $_GET['id']?>">
-                                        Mostrar <i class="fas fa-arrow-circle-ricght"></i>
+                                        Mostrar <i class="fas fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
-                                </div>-->
+                                </div>
                             </div>
                         </div>
                     </div>
