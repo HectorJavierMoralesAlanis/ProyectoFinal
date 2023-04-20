@@ -19,7 +19,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
 
     $resultados=$dao->insertarConsulta($consulta,$parametros);
     if($resultados>=0){
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/usuarios/Usuario.php?id=$id");
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/usuarios/usuarios2.php?id=$id");
     }else{
         echo "error";
     }
