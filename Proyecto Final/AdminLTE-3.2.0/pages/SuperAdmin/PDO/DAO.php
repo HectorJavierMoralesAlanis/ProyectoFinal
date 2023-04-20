@@ -1,18 +1,29 @@
 <?php
+    //Se crea la clase DAO
     class DAO{
+        //Se crea la variable conexion
         private $conexion;
+
+        //Se crea la funcion construct
         public function __construct(){
+            //try and cath
             try{
+                //Se guardara la conexion a la base de datos
                 $this->conexion = new PDO("mysql:host=localhost;dbname=proyecto","admin","2e19c301ddae0c83a59446303955909e093fd240fe36561b");
             }catch (Exception $ex){
+                //Mensajen de error
                 echo $ex->getMessage();
             }
         }
 
+        //Funcion para ejecutar la consultas SELECT 
         public function ejecutarConsulta($sql="",$valores=array()){
             if($sql!=""&&strlen($sql)>0){
+                //se crea la variable consulta donde se prepara la consulta
                 $consulta = $this->conexion->prepare($sql);
+                //se ejecuta la consulta
                 $consulta->execute($valores);
+                //si intval da 0 entonces entra y se crea la variable resultados para ordenar los datos y retornarlos si es falso regresa el mensaje de error
                 if(intval($consulta->errorCode())===0){
                     $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC);
                     return $resultados;
@@ -24,12 +35,16 @@
             }
         }
         
+        //Funcion para ejecutar las consultas INSERT,UPDATE,DELETE
         public function insertarConsulta($sql="",$valores=array()){
             if($sql!=""&&strlen($sql)>0){
                 try{
-                    $this->conexion->beginTransaction();
+                    $this->conexion->beginTransaction();//Incia la trasnsaccion para poder hacer las consultas
+                    //Se prepara la consulta en la variable consulta
                     $consulta=$this->conexion->prepare($sql);
+                    //Se ejecuta la consulta
                     $consulta->execute($valores);
+                    //Si intval es igual a 0 entonces entra y se crea la variable resultados para confirmar  la accion y regresar las filas afectadas y si es negativa el rollback regresa al estado antes de que se consultara  
                     if(intval($consulta->errorCode())===0){
                         $this->conexion->commit();//confirma la accion realizada
                         $filasAfectadas=$consulta->rowCount();

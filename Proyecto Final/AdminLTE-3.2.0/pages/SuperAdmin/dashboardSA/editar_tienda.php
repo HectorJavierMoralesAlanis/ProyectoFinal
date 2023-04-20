@@ -7,20 +7,43 @@
 
     //Se obtiene el id de la tienda para que pueda ser utilizado como parametro
     $id=$_GET['id'];
+
+    //Se crea la variable de la consulta donde se guardara la consulta
     $consulta="SELECT * "."FROM tienda WHERE id=:id";
+
+    //Se crea el parametro que se enviara a la consulta
     $parametros = array("id"=>$id);
+
+    //Se crea la variable tienda donde se guardara el resultado de la consulta
     $tienda=$dao->ejecutarConsulta($consulta,$parametros);
 
+    //Condicional donde se si el boton si es valido entrara
     if(isset($_POST['enviar'])){
+
+        //Condicional donde si los POST nombre y estado no estan vacios entrara
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
+
+            //se crea la variable dao que permite la conexion a la base de datos
             $dao2=new DAO();
+
+            //Se obtiene el id de la tienda para que pueda ser utilizada como parametro
             $id2=$_GET['id'];
+            
+            //se crea la varaiable consulta2 donde se guardara la consulta
             $consulta2="UPDATE tienda SET nombre = :nombre, estado = :estado "."WHERE id=:id2";
+
+            //Se crea la variable parametros2 donde se guaradaran los parametros enviados 
             $parametros2= array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]","id2"=>$id2);
+
+            //Se crea la variable resultados donde se guardara el array de respuesta de la consulta
             $resultado=$dao2->insertarConsulta($consulta2,$parametros2);
+
+            //Condicional donde si resultados regresa 0 o mas valores en el array
             if($resultados>=0){
+                //Funcion para cambiar la url 
                 header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
             }else{
+                //Mensaje de error
                 echo "error";
             }
         }
@@ -128,7 +151,8 @@
                                 <form method="POST" action="./editar_tienda.php?id=<?php echo($id)?>">
                                     <?php foreach($tienda as $id => $tiendas){?>
                                         <div class="form-group">
-
+                                            
+                                            <!-- Input para ingresar los datos del nombre -->
                                             <label>
                                                 Nombre
                                             </label>
@@ -138,7 +162,7 @@
                                             <label>
                                                 Estado:
                                             </label>
-
+                                            <!-- Botones radio para la eleccion del estado -->
                                             <div class="custom-control custom-radio">
                                                 <input value="Activo" class="custom-control-input" type="radio" id="activo" name="estado" <?php if($tiendas['estado']=='Activo'){?>checked<?php }?>>
                                                 <label for="activo" class="custom-control-label">ACTIVADA</label>
@@ -151,6 +175,7 @@
                                         </div>
                                     <?php }?>
                                     <div class="btn-group" style="float: right;">
+                                    <!-- Button para enviar los datos-->
                                     <button type="submit" class="btn btn-block btn-success" style="float: right;" name="enviar">ACTUALIZAR</button>
                                     </div>
                             </div>

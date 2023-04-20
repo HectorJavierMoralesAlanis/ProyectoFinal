@@ -1,14 +1,20 @@
 <?php
 include_once('../../PDO/DAO.php');
 
-
+//Se obtiene el id de la tienda
 $id=$_GET['id'];
 
+//Se crea la variable dao que es la conexion al base de datos
 $dao=new DAO();
-$consulta="SELECT * FROM inventario WHERE tiendaId=:id";
-$parametros=array("id"=>$id);
-$productos=$dao->ejecutarConsulta($consulta,$parametros);
 
+//Se crea la variable de la consulta donde se guardara la consulta
+$consulta="SELECT * FROM inventario WHERE tiendaId=:id";
+
+//Se crea el parametro que se enviara a la consulta
+$parametros=array("id"=>$id);
+
+//Se crea la variable productos donde se guardara el resultado de la consulta
+$productos=$dao->ejecutarConsulta($consulta,$parametros);
 ?>
 
 

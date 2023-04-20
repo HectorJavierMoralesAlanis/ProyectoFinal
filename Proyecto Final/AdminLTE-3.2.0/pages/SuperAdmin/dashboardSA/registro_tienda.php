@@ -1,12 +1,18 @@
 <?php
     include_once('../PDO/DAO.php');
 
+    //Condicional donde si el boton si es valido entrara
     if(isset($_POST['enviar'])){
+        //Condicional donde si los PPOST nombre y estado no estan vacios entrara
         if(!empty($_POST['nombre'])&&!empty($_POST['estado'])){
+
+            //Se crea la variable dao que permite la conexion a la base de datos
             $dao=new DAO();
 
+            //Se crea la variable de la consulta donde se guardara la consulta
             $consulta="INSERT INTO tienda (nombre,estado)"."VALUES (:nombre,:estado)";
 
+            //Se crea la variable parametros donde se guaradra el resultado de la consulta
             $parametros=array("nombre"=>"$_POST[nombre]","estado"=>"$_POST[estado]");
 
             $resultado=$dao->insertarConsulta($consulta,$parametros);

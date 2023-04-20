@@ -1,13 +1,18 @@
 <?php
 include_once('../../PDO/DAO.php');
-
+//Se obtiene el id de la tienda
 $id=$_GET['id'];
 
+//Se crea la variable que permite la conexion a la base de datos
 $dao = new DAO();
 
+//Se crea la variable donde se guardara la consulta
 $consulta="SELECT * FROM categoria WHERE tiendaId=:id";
 
+//Se crea la variable en donde se guardara el array de los parametros
 $parametros=array("id"=>$id);
+
+//Se crea la variable donde se guardara el resultado de la consulta
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 ?>
@@ -146,7 +151,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <!-- Extrea todos los datos de la tabla en la base de datos y los muestra aqui-->
                                         <?php foreach ($arrcategorias as $id => $categoria) { ?>
                                             
                                         <tr>

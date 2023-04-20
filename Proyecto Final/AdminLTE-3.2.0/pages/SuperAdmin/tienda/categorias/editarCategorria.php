@@ -1,12 +1,21 @@
 <?php
 include_once('../../PDO/DAO.php');
 
+//Se crea la variable que permite la conexion a la base de datos
 $dao = new DAO();
 
+//Se obtiene el id de la categoria
 $id = $_GET['id'];
+
+//Se crea la variable donde se guardara la consulta
 $consulta="SELECT * FROM categoria WHERE id=:id";
+
+//Se crea la variable donde se guardara los parametros
 $parametros=array("id"=>$id);
+
+//Se crea la variable donde se guardara el resultado de la consulta
 $resultados=$dao->ejecutarConsulta($consulta,$parametros);
+
 /* Comprobacion si regresa resultados la consulta
 if($resultados>=0){
 
@@ -17,27 +26,37 @@ if($resultados>=0){
     echo "error";
 }
 */
-//$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
-//$r = searchCAT($id); //Se realiza una busqueda en la base de datos 
+
 //Se revisa que la variable se encuentre definida
 if(isset($_POST['nombre'],$_POST['descripcion'])){
+    //Se crea la variable que permite la conexion a la base de datos
     $dao2 = new DAO(); 
+
+    //Se crea la variable fecha para guardar la fecha en la que se actualizaran los datos
     $fecha=date('Y-m-d H:i:s');
+
+    //Se obtiene el id del producto
     $id2 = $_GET['id'];
+
+    //Se crea la variable donde se guardara la consulta
     $consulta2 = "UPDATE categoria SET nombre = :nombre, descripcion=:descripcion, fecha=:fecha WHERE id=:id2";
+
+    //Variable donde se guardaran los parametros que utilizara
     $parametros2 = array("nombre"=>"$_POST[nombre]","descripcion"=>"$_POST[descripcion]","fecha"=>$fecha,"id2"=>$id2);
+
+    //Se crea la variable donde se guardara el resultdado de la consulta
     $resultados2 = $dao2->insertarConsulta($consulta2,$parametros2);
+
+    //Condicional donde si resultados regresa 0 o mas valores en el array
     if($resultados2>=0){
+        //foreach para recorrer los valores y obtener el id de la tienda
         foreach($resultados as $id=> $tie){
+        //Funcion para cambiar la url
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$tie[tiendaId]");
         }
     }else{
         echo "error";
     }
-  //Se realiza la actualizacion del registro 
-  //updateCAT($id,$_POST['nombre'],$_POST['descripcion']);
-  //Al termino de la actualizacion se redirige a la pagina categoria
-  //header("location: categoria.php");
 }
 ?>
 
@@ -160,8 +179,8 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <form method="POST" action="./editarCategorria.php?id=<?php echo $_GET['id']?>&?tie=<?php echo $_GET['tie']?>">
+                                <!-- foreach para recorrer resultados y ponerlos en los respectivos inputs y modificar el valor-->
                                 <?php foreach($resultados as $id => $r){?>
-
                                         <div class="form-group">
                                                 <label>
                                                     Nombre
@@ -177,6 +196,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                                                 <input type="text" class="form-control"id="descripcion" name="descripcion" value="<?php echo ($r['descripcion'])?>">
                                         </div>
                                         <br>
+                                        <!-- Boton para enviar los datos-->
                                         <div class="btn-group" style="float: right;">
                                             <button type="submit" class="btn btn-block btn-success" style="float: right;">Modificar</button>
                                         </div>
