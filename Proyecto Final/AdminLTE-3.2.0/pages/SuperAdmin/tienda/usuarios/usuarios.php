@@ -62,7 +62,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link active">
+                            <a href="./usuarios2.php?id=<?php echo $id?>" class="nav-link active">
                                 <p>
                                     Usuarios
                                 </p>
