@@ -7,7 +7,8 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
     $fecha=date('Y-m-d H:i:s');
     $id=$_GET['id'];
     
-    $consulta="INSERT INTO usuarios (nombre,apellido,usuario,contrasena,email,fechaAgregada,tiendaId)"."VALUES (:nombre,:apellido,:usuario,:contrasena,:email,:fechaAgre,:idTienda)";
+    $consulta="INSERT INTO usuarios (nombre,apellido,usuario,contrasena,email,fechaAgregada,tiendaId)".
+                            "VALUES (:nombre,:apellido,:usuario,:contrasena,:email,:fechaAgre,:idTienda)";
     $parametros=array("nombre"=>"$_POST[nombre]",
                     "apellido"=>"$_POST[apellido]",
                     "usuario"=>"$_POST[usuario]",
@@ -165,7 +166,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 
-                                <form method="POST" action="agregarInverntario.php?id=<?php echo $_GET['id']?>">
+                                <form method="POST" action="./agregarUsuarios.php?id=<?php echo $_GET['id']?>">
 
                                     <div class="form-group">
 
