@@ -97,6 +97,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                                 </p>
                             </a>
                         </li>
+                        
                         <li class="nav-item">
                             <a href="../../login.php" class="nav-link">
                                 <p>
