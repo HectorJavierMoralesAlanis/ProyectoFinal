@@ -151,25 +151,25 @@ if(isset($_POST['stock'])){
                                     <div class="form-group mr-1">
                                         <label for="id_inventario">id del producto:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="id_inventario" name="id_inventario" value="<?php echo($r['id_inventario'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="id_inventario" name="id_inventario" value="<?php echo($r['id'])?>" disabled>
                                     </div>
                                     
                                     <div class="form-group mr-1">
                                         <label for="codigo_inventario">Codigo del producto:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="codigo_inventario" name="codigo_inventario" value="<?php echo($r['codigo_inventario'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="codigo_inventario" name="codigo_inventario" value="<?php echo($r['codigo'])?>" disabled>
                                     </div>
                                     
                                     <div class="form-group mr-1">
                                         <label for="nombre_producto">Nombre:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="nombre_producto" name="nombre_producto" value="<?php echo($r['nombre_producto'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="nombre_producto" name="nombre_producto" value="<?php echo($r['nombre'])?>" disabled>
                                     </div>
                                     
                                     <div class="form-group mr-1">
                                         <label for="precioProducto_inventario">Precio:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo($r['precioProducto_inventario'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo($r['precioProducto'])?>" disabled>
                                     </div>
                                     
                                     <div class="form-group">
