@@ -12,7 +12,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
     $parametros=array("nombre"=>"$_POST[nombre]",
                     "apellido"=>"$_POST[apellido]",
                     "usuario"=>"$_POST[usuario]",
-                    "contrasena"=>"$_POST[contrasena]",
+                    "contrasena"=>"$_POST[password]",
                     "email"=>"$_POST[correo]",
                     "fechaAgre"=>"$fecha",
                     "idTienda"=>"$id");
