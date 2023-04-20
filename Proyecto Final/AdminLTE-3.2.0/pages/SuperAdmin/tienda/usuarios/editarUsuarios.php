@@ -15,7 +15,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
     $id2=$_GET['id'];
     $consulta1="UPDATE usuarios SET nombre=:nombre, apellido=:apellido, usuario=:usuario, contrasena=:contrasena,email=:correo WHERE id=:idP";
     
-    $parametros1=array("nombre"=>"$_POST[nombre]","apellido"=>$apellido,"usuario"=>"$_POST[usuario]","contrasena"=>"$_POST[contrasena]","correo"=>"$_POST[email]","idP"=>$id2);
+    $parametros1=array("nombre"=>"$_POST[nombre]","apellido"=>"$_POST[apellido]","usuario"=>"$_POST[usuario]","contrasena"=>"$_POST[contrasena]","correo"=>"$_POST[email]","idP"=>$id2);
     $resultados=$dao2->insertarConsulta($consulta1,$parametros1);
     
     if($resultados>=0){
