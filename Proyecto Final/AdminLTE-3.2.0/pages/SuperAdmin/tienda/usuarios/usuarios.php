@@ -51,35 +51,35 @@ $id=$_GET['id'];
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
                         <li class="nav-item">
-                            <a href="../dashboard.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../inventario/inventario.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../inventario/inventario.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./usuarios2.php?id=<?php echo $id?>" class="nav-link active">
+                            <a href="./usuarios2.php?id=<?php echo $_GET['id']?>" class="nav-link active">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../categorias/categoria.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../venta/venta.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
                                     Realizar Venta
                                 </p>
