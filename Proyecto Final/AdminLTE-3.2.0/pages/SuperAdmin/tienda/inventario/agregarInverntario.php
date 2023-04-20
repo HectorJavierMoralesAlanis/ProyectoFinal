@@ -91,7 +91,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
+                            <a href="../usuarios/Usuarios.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>

@@ -71,7 +71,7 @@ if(isset($_GET['id'])){
                                 </p>
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a href="../inventario/inventario.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
@@ -80,7 +80,7 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>

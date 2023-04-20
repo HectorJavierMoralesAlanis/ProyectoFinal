@@ -81,7 +81,7 @@ $categorias=count($arrcategorias);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./usuarios/usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="./usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>

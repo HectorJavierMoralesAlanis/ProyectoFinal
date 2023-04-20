@@ -73,14 +73,14 @@ if(isset($_GET['id'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php?id=<?php echo $id?>" class="nav-link active">
+                            <a href="./inventario.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link active">
                                 <p>
                                     Usuarios
                                 </p>
@@ -118,7 +118,7 @@ if(isset($_GET['id'])){
             </nav>
         </div>
     </aside>
-    
+
     <!-- Fin del menu lateral -->
     <div class="content-wrapper">
         <div class="content-header">
