@@ -79,7 +79,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
                     <li class="nav-header">Opciones</li>
                     <?php foreach($user_access as $id => $l){?>
                         <li class="nav-item">
-                            <a href="../dashboard.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $l['id']?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
