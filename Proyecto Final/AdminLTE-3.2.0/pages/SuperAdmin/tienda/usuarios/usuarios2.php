@@ -159,7 +159,6 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
                                     <tbody>
                                         <?php foreach($usuarios as $id=>$usuario){?>
                                         <tr>
-
                                                 <th><?php echo $usuario['nombre']?></th>
                                                 <th><?php echo $usuario['apellido']?></th>
                                                 <th><?php echo $usuario['usuario']?></th>
