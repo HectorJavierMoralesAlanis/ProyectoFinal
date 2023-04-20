@@ -193,7 +193,7 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
                                             Stock:
                                         </label>
                                         <br>
-                                        <input type="text" class="form-control" id="stock" name="stock" value="<?php echo $inv['stock']?>">
+                                        <input type="text" class="form-control" id="stock" name="stock" value="<?php echo $inv['stock']?>" disabled>
                                         <br>
                                         <label>
                                             Categoria:

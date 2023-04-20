@@ -147,36 +147,36 @@ if(isset($_POST['stock'])){
                             <div class="card-body">
                                 <form method="POST" action="agregarInverntario.php" class="form-inline flex-wrap">
                                     <?php echo('<form method="POST" action="venta.php?id='.$id.'">');?>
-                                    
+                                    <?php foreach($r as $id => $res){?>
                                     <div class="form-group mr-1">
                                         <label for="id_inventario">id del producto:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="id_inventario" name="id_inventario" value="<?php echo($r['id'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="id_inventario" name="id_inventario" value="<?php echo($res['id'])?>" disabled>
                                     </div>
                                     
                                     <div class="form-group mr-1">
                                         <label for="codigo_inventario">Codigo del producto:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="codigo_inventario" name="codigo_inventario" value="<?php echo($r['codigo'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="codigo_inventario" name="codigo_inventario" value="<?php echo($res['codigo'])?>" disabled>
                                     </div>
                                     
                                     <div class="form-group mr-1">
                                         <label for="nombre_producto">Nombre:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="nombre_producto" name="nombre_producto" value="<?php echo($r['nombre'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="nombre_producto" name="nombre_producto" value="<?php echo($res['nombre'])?>" disabled>
                                     </div>
                                     
                                     <div class="form-group mr-1">
                                         <label for="precioProducto_inventario">Precio:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo($r['precioProducto'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo($res['precioProducto'])?>" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label for="stock">Stock disponible:</label>
                                         <br>
-                                        <input type="text" class="form-control form-control-sm" id="stock" name="stock" value="<?php echo($r['stock'])?>" disabled>
+                                        <input type="text" class="form-control form-control-sm" id="stock" name="stock" value="<?php echo($res['stock'])?>" disabled>
                                     </div>
-                                    
+                                    <?php }?>
                                 </form>
                             </div>
 
