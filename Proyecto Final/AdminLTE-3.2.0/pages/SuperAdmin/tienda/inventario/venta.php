@@ -1,19 +1,33 @@
 <?php
-include_once('../../db/utilities.php');
+include_once('../../PDO/DAO.php');
 
-$id = isset( $_GET['id'] ) ? $_GET['id'] : '';  
+$id =  $_GET['id'] ; 
+$dao = new DAO();
+$consulta ="SELECT * FROM inventario WHERE id=:id";
+$parametros = array("id"=>$id);
+$r=$dao->ejecutarConsulta($consulta,$parametros);
+
 //$r = searchINV($id); //Se realiza una busqueda en la base de datos 
 
 
 //Se revisa que la variable se encuentre definida
-if(isset($_POST['codigo_inventario'],$_POST['nombre_producto'],$_POST['precioProducto_inventario'],$_POST['stock'])){
+if(isset($_POST['stock'])){
+    //Se realiza la actualizacion del registro 
+    $dao2=new DAO();
+    $consulta2="UPDATE inventario SET stock=:stock WHERE tiendaid=:idT AND id=:id";
+    foreach($r as $id => $t){
+    $parametros2=array("stock"=>"$_POST[stock]","idT"=>$t['tiendaId'],"id"=>$id);
+    }
+    $resultados=$dao2->insertarConsulta($consulta2,$parametros2);
+    //Al termino de la actualizacion se redirige a la pagina categoria
+    if($resultados>=0){
+        foreach($r as $id => $tie){
+        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
+        }
+    }else{
+        echo "error";
+    }
 
-  //Se realiza la actualizacion del registro 
-  //updateINV($id,$_POST['codigo_inventario'],$_POST['nombre_producto'],$_POST['precioProducto_inventario'],$_POST['stock']);
-
-  //Al termino de la actualizacion se redirige a la pagina categoria
-  //header("location: inventario.php");
-  
 }
 ?>
 <html>
@@ -64,45 +78,32 @@ if(isset($_POST['codigo_inventario'],$_POST['nombre_producto'],$_POST['precioPro
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
+                    <?php foreach($r as  $id =>$l){?>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="../dashboard.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../inventario/inventario.php" class="nav-link">
+                            <a href="./inventario.php?id=<?php echo $l['tiendaId']?>" class="nav-link active">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php" class="nav-link active">
+                            <a href="../categorias/categoria.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
                                 <p>
-                                    Ventas  
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Realizar Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Historial de Venta
+                                    Categorias  
                                 </p>
                             </a>
                         </li>
@@ -113,6 +114,7 @@ if(isset($_POST['codigo_inventario'],$_POST['nombre_producto'],$_POST['precioPro
                                 </p>
                             </a>
                         </li>
+                    <?php }?>
                 </ul>
             </nav>
         </div>
@@ -144,7 +146,7 @@ if(isset($_POST['codigo_inventario'],$_POST['nombre_producto'],$_POST['precioPro
                             </div>
                             <div class="card-body">
                                 <form method="POST" action="agregarInverntario.php" class="form-inline flex-wrap">
-                                    <?php echo('<form method="POST" action="venta.php?id_inventario='.$id.'">');?>
+                                    <?php echo('<form method="POST" action="venta.php?id='.$id.'">');?>
                                     
                                     <div class="form-group mr-1">
                                         <label for="id_inventario">id del producto:</label>
@@ -202,7 +204,7 @@ if(isset($_POST['codigo_inventario'],$_POST['nombre_producto'],$_POST['precioPro
                                         <br>
                                         <div class="btn-group mx-auto text-center">
                                         <button type="submit" class="btn btn-success">
-                                            <img src="../../db/nuv.png"">
+                                            <img src="../../nvu.png">
                                             <br>
                                             Modificar 
                                         </button>

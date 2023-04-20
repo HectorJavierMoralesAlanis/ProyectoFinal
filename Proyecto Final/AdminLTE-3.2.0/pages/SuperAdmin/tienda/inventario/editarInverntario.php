@@ -4,7 +4,7 @@ include_once("../../PDO/DAO.php");
 
 $dao=new DAO();
 $id=$_GET['id'];
-$consulta="SELECT * FROM inventario WHERE codigo=:id";
+$consulta="SELECT * FROM inventario WHERE id=:id";
 $parametros=array("id"=>$id);
 $inventario=$dao->ejecutarConsulta($consulta,$parametros);
 //Para mostrar categorias
@@ -20,7 +20,7 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
     $dao = new DAO();
     $fecha=date('Y-m-d H:i:s');
     $id2=$_GET['id'];
-    $consulta1="UPDATE inventario SET nombre=:nombre, fechaA=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE codigo=:idP";
+    $consulta1="UPDATE inventario SET nombre=:nombre, fechaA=:fecha, precioProducto=:precioProducto, categoria=:categoria, stock=:stock WHERE id=:idP";
     
     $parametros1=array("nombre"=>"$_POST[nombre_producto]","fecha"=>$fecha,"precioProducto"=>"$_POST[precioProducto_inventario]","categoria"=>"$_POST[id_categoria]","stock"=>"$_POST[stock]","idP"=>$id2);
     $resultados=$dao->insertarConsulta($consulta1,$parametros1);
