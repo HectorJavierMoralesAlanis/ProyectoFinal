@@ -198,7 +198,7 @@ $usuarios=count($arrausuarios);
                                         <div class="icon">
                                             <i class="fas fa-user-plus"></i>
                                         </div>
-                                        <a href="./usuarios/usuarios.php?id=<?echo $_GET['id']?>" class="small-box-footer">
+                                        <a href="./usuarios/usuarios.php?id=<?php echo $_GET['id']?>" class="small-box-footer">
                                         Mostrar <i class="fas fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
