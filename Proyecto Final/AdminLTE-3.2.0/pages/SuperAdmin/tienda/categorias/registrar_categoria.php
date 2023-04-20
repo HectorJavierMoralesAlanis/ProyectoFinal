@@ -98,20 +98,6 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php?id=<?php echo $_GET['id']?>" class="nav-link">
-                                <p>
-                                    Realizar Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Historial de Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="../../login.php" class="nav-link">
                                 <p>
                                     Cerrar sesion

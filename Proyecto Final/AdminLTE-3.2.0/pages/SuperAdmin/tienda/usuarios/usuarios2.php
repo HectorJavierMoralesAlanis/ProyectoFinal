@@ -84,20 +84,6 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../venta/venta.php?id=<?php echo $id?>" class="nav-link">
-                                <p>
-                                    Realizar Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Historial de Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="../../login.php" class="nav-link">
                                 <p>
                                     Cerrar sesion
@@ -119,7 +105,7 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php echo $_GET['id']?>">Home</a></li>
-                            <li class="breadcrumb-item active">Inventario</li>
+                            <li class="breadcrumb-item active">Usuario</li>
                         </ol>
                     </div>
                 </div>
@@ -133,11 +119,11 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
                         <div class="card">
                             <!-- Header del contenido-->
                             <div class="card-header">
-                                <h3 class="card-title">Agregar producto</h3>
+                                <h3 class="card-title">Usuarios</h3>
                                 
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
+                                    <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo Usuario</a>
                                     <br>
                                 </div>
                             </div>

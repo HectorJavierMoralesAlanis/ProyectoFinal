@@ -106,20 +106,6 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Realizar Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Historial de Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="../examples/login-v2.html" class="nav-link">
                                 <p>
                                     Cerrar sesion
