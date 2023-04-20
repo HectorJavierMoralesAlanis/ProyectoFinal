@@ -1,5 +1,6 @@
 <?php
 include_once("../../PDO/DAO.php");
+
 $id=$_GET['id'];
 $dao2=new DAO();
 $consulta2="DELETE FROM usuarios WHERE tiendaId=:idU";
