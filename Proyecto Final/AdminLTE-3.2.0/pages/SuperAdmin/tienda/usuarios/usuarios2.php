@@ -8,7 +8,7 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
 
 
 if(isset($_POST['borrar'])){
-    
+
     $dao2=new DAO();
     $consulta2="DELETE FROM usuarios WHERE id=:idU";
     foreach($usuarios as $id => $usuario){
@@ -22,6 +22,7 @@ if(isset($_POST['borrar'])){
     }
 
 }
+
 ?>
 <html>
 <head>
