@@ -76,6 +76,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                                 </p>
                             </a>
                         </li>
+                        
                         <li class="nav-item">
                             <a href="../inventario/inventario.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
@@ -83,7 +84,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
                                 </p>
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a href="../usuarios/usuarios2.php?id=<?php echo $_GET['id']?>" class="nav-link">
                                 <p>
