@@ -19,7 +19,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="nav-link">Home</a>
+                <a href="../dashboard.php" class="nav-link">Home</a>
             </li>
         </ul>
     </nav>
@@ -62,7 +62,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link active">
+                            <a href="" class="nav-link active">
                                 <p>
                                     Usuarios
                                 </p>
@@ -128,7 +128,7 @@
                                 <h3 class="card-title">Agregar producto</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
+                                    <a href="./agregarUsuarios.php" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
                                     <br>
                                     <a href="./editarInverntario.php">Editar</a>
                                 </div>
