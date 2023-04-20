@@ -21,7 +21,7 @@ if(isset($_POST['stock'])){
     $resultados=$dao2->insertarConsulta($consulta2,$parametros2);
     //Al termino de la actualizacion se redirige a la pagina categoria
     if($resultados>=0){
-        foreach($resultados as $id => $tie){
+        foreach($r as $id => $tie){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
         }
     }else{
