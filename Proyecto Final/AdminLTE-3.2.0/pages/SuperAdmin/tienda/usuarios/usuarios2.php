@@ -134,6 +134,7 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
                             <!-- Header del contenido-->
                             <div class="card-header">
                                 <h3 class="card-title">Agregar producto</h3>
+                                
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
                                     <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
