@@ -1,7 +1,14 @@
 <?php
+    //Se incluye el archivo DAO que contiene la funcion para ejecutar la consulta 
     include_once('../PDO/DAO.php');
+
+    //Se crea la variable dao que permite la conexion a la base de datos
     $dao = new DAO();
+
+    //Consulta para seleccionar todos los valores de la tabla tienda
     $consulta="SELECT * FROM tienda";
+
+    //Se guarda en el arreglo los datos obtenidos
     $tiendas=$dao->ejecutarConsulta($consulta);
 ?>
 <html>
@@ -119,13 +126,14 @@
                                         </thead>
                                         
                                         <tbody>
+                                            <!-- Se utiliza un foreach para recorrer los valores del arreglo y poder imprimirlos en las columans de la tabla-->
                                             <?php foreach($tiendas as $id =>$tienda){?>
                                                 <tr>
                                                     <td><?php echo $tienda['id']?></td>
                                                     <td><?php echo $tienda['nombre']?></td>
                                                     <td><?php echo $tienda['estado']?></td>
                                                     <td><a href="./editar_tienda.php?id=<?php echo($tienda['id']);?>" method="POST" class="btn btn-block btn-warning">Editar</a></td>
-                                                    <td><a class="btn btn-block btn-danger">Eliminar</a></td>
+                                                    <td><a href="./eliminaTienda.php?id=<?php echo($tienda['id']);?>" method="POST" class="btn btn-block btn-danger">Eliminar</a></td>
                                                     <td><a href="../tienda/dashboard.php?id=<?php echo($tienda['id']);?>" method="POST" class="btn btn-block btn-success">Ingresar</a></td>
                                                 </tr>
                                             <?php }?>

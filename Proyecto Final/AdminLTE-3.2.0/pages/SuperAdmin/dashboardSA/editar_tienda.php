@@ -1,6 +1,11 @@
 <?php
+    //Se incluye el archivo DAO que contien la funcion para ejecutar la consulta
     include_once('../PDO/DAO.php');
+
+    //Se crea la variable dao que permite la conexion a la base de datos
     $dao=new DAO();
+
+    //Se obtiene el id de la tienda para que pueda ser utilizado como parametro
     $id=$_GET['id'];
     $consulta="SELECT * "."FROM tienda WHERE id=:id";
     $parametros = array("id"=>$id);

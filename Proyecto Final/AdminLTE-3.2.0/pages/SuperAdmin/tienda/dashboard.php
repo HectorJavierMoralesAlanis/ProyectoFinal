@@ -155,7 +155,7 @@ $usuarios=count($arrausuarios);
                                 <h3 class="card-title">Dashboard</h3>
                             </div>
                             
-                            <!-- Caja de dashboard-->
+                            <!-- Caja de dashboard para mostrar la cantidad usuarios,inventario y categorias-->
                             <div class="row">
                                 <!-- Caja de inventario -->
                                 <div class="col-lg-3 col-6">
