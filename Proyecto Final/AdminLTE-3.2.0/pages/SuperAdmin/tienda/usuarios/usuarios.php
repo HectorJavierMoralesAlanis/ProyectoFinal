@@ -1,20 +1,3 @@
-<?php
-include_once('../../PDO/DAO.php');
-
-
-/*
-$dao=new DAO();
-$consulta="SELECT * FROM inventario WHERE tiendaId=:id";
-$parametros=array("id"=>$id);
-$productos=$dao->ejecutarConsulta($consulta,$parametros);
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    //deleteproduc($id);
-    //header("Location: inventario.php");
-}
-*/
-?>
-
 
 <html>
 <head>
