@@ -19,7 +19,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
                     "apellido"=>"$_POST[apellido]",
                     "usuario"=>"$_POST[usuario]",
                     "contrasena"=>"$_POST[contrasena]",
-                    "correo"=>"$_POST[email]",
+                    "correo"=>"$_POST[correo]",
                     "idP"=>$id2);
     $resultados=$dao2->insertarConsulta($consulta1,$parametros1);
     
