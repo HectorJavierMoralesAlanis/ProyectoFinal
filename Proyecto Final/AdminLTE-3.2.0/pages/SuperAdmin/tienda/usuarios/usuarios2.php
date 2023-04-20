@@ -151,7 +151,7 @@ $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
                                                 <th><?php echo $usuario['contrasena']?></th>
                                                 <th><?php echo $usuario['email']?></th>
                                                 <th><?php echo $usuario['fechaAgregada']?></th>
-                                                <th><a href="./editarUsuarios.php?id=<?php echo $usuario['tiendaId']?>" method="POST" class="btn btn-warning btn-block btn-sm">Editar</a></th>
+                                                <th><a href="./editarUsuarios.php?id=<?php echo $usuario['id']?>" method="POST" class="btn btn-warning btn-block btn-sm">Editar</a></th>
                                                 <th><a href="./eliminarUusario.php?id=<?php echo$usuario['id']?>" method="POST" class="btn btn-danger btn-block btn-sm" name="enviar" id="enviar">Eliminar</a></th>
                                             </tr>
                                         <?php }?>
