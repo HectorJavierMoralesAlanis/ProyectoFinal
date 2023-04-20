@@ -57,14 +57,14 @@ $id=$_GET['id'];
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/Usuarios.php?id=<?php echo $id?>" class="nav-link">
+                            <a href="../inventario/inventario.php?id=<?php echo $id?>" class="nav-link">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link active">
+                            <a href="./usuarios2.php?id=<?php echo $id?>" class="nav-link active">
                                 <p>
                                     Usuarios
                                 </p>
@@ -130,7 +130,7 @@ $id=$_GET['id'];
                                 <h3 class="card-title">Agregar producto</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
-                                    <a href="./agregarUsuarios.php" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
+                                    <a href="./agregarUsuarios.php?id=<?php echo $id?>" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</a>
                                     <br>
                                     <a href="./editarInverntario.php">Editar</a>
                                 </div>
