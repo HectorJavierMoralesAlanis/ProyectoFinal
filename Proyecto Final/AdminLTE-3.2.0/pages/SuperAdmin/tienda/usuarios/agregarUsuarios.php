@@ -143,7 +143,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
                         <div class="card">
                             <!-- Header del contenido-->
                             <div class="card-header">
-                                <h3 class="card-title">Agregar producto</h3>
+                                <h3 class="card-title">Agregar Usuario</h3>
                                 <!--Div para que el boton este a la derecha-->
                                 <div class="btn-group" style="float: right;">
                                     <button type="button" class="btn btn-block btn-success" style="float: right;">Agregar nuevo producto</button>

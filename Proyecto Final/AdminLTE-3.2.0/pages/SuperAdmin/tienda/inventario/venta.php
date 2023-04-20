@@ -21,7 +21,7 @@ if(isset($_POST['stock'])){
     $resultados=$dao2->insertarConsulta($consulta2,$parametros2);
     //Al termino de la actualizacion se redirige a la pagina categoria
     if($resultados>=0){
-        foreach($r as $id => $tie){
+        foreach($resultados as $id => $tie){
         header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
         }
     }else{
@@ -147,25 +147,25 @@ if(isset($_POST['stock'])){
                             <div class="card-body">
                                 <form method="POST" action="./venta.php?id=<?php echo $id?>" class="form-inline flex-wrap">
                                     <?php foreach($r as $id => $res){?>
-                                    <div class="form-group mr-1">
-                                        <label for="id_inventario">id del producto:</label>
-                                        <br>
-                                        <input type="text" class="form-control form-control-sm" id="id_inventario" name="id_inventario" value="<?php echo($res['id'])?>" disabled>
-                                    </div>
+                                        <div class="form-group">
+                                            <label for="id_inventario">id del producto:</label>
+                                            <br>
+                                            <input type="text" class="form-control form-control-sm" id="id_inventario" name="id_inventario" value="<?php echo($res['id'])?>" disabled>
+                                        </div>
                                     <br>
-                                    <div class="form-group mr-1">
+                                    <div class="form-group">
                                         <label for="codigo_inventario">Codigo del producto:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="codigo_inventario" name="codigo_inventario" value="<?php echo($res['codigo'])?>" disabled>
                                     </div>
                                     <br>
-                                    <div class="form-group mr-1">
+                                    <div class="form-group">
                                         <label for="nombre_producto">Nombre:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="nombre_producto" name="nombre_producto" value="<?php echo($res['nombre'])?>" disabled>
                                     </div>
                                     <br>
-                                    <div class="form-group mr-1">
+                                    <div class="form-group">
                                         <label for="precioProducto_inventario">Precio:</label>
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo($res['precioProducto'])?>" disabled>
