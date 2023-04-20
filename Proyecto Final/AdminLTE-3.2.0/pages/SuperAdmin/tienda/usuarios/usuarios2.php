@@ -1,12 +1,13 @@
 <?php 
 include_once("../../PDO/DAO.php");
+
 $id=$_GET['id'];
 $dao =new DAO();
 $consulta="SELECT * FROM usuarios WHERE tiendaId=:id";
 $parametros=array("id"=>$id);
 $usuarios=$dao->ejecutarConsulta($consulta,$parametros);
 
-
+//Funcion para borrar
 if(isset($_POST['borrar'])){
 
     $dao2=new DAO();
