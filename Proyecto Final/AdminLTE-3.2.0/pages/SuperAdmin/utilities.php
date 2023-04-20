@@ -20,6 +20,7 @@
                 echo $l['usuario'];
                 echo "<br>";
                 echo $l['contrasena'];
+                
             }
             //header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
         }else{
