@@ -135,7 +135,6 @@ $id=$_GET['id'];
                                     <a href="./editarInverntario.php">Editar</a>
                                 </div>
                             </div>
-                            
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
                                 <table class="table table-bordered">
