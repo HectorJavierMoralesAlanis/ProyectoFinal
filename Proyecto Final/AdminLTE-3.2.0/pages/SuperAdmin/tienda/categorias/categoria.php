@@ -9,11 +9,7 @@ $consulta="SELECT * FROM categoria WHERE tiendaId=:id";
 
 $parametros=array("id"=>$id);
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    //deletecat($id);
-    //header("Location: categoria.php");
-}
+
 ?>
 
 
@@ -173,7 +169,7 @@ if(isset($_GET['id'])){
                                         <td><?php echo $categoria['descripcion']; ?></td>
                                         <td><?php echo $categoria['fecha']; ?></td>
                                         <td class="align-middle"><a href="./editarCategorria.php?id=<?php echo $categoria['id']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="categoria.php?id=<?php echo($categoria['id']); ?>" class="btn btn-danger btn-block btn-sm"">ELIMINAR</a></td>
+                                        <td class="align-middle"><a href="./eliminarCategoria.php?id=<?php echo($categoria['id']); ?>" class="btn btn-danger btn-block btn-sm"">ELIMINAR</a></td>
                                         </div>
                                         </td>
                                     </tr>
