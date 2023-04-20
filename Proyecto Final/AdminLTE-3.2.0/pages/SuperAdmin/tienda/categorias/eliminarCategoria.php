@@ -13,7 +13,7 @@ $resultados=$dao2->insertarConsulta($consulta2,$parametros2);
 
 if($resultados>=0){
     foreach($usuarios as $id => $l){
-    header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/usuarios/usuarios2.php?id=$l[tiendaId]");
+    header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$l[tiendaId]");
     }
 }else{
     echo "error";

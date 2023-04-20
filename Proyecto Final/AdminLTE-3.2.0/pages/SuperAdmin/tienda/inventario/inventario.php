@@ -8,11 +8,6 @@ $dao=new DAO();
 $consulta="SELECT * FROM inventario WHERE tiendaId=:id";
 $parametros=array("id"=>$id);
 $productos=$dao->ejecutarConsulta($consulta,$parametros);
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    //deleteproduc($id);
-    //header("Location: inventario.php");
-}
 
 ?>
 
@@ -177,7 +172,7 @@ if(isset($_GET['id'])){
                                         <td><?php echo $invetario['categoria'];?></td>
                                         <td><?php echo $invetario['stock']; ?></td>
                                         <td class="align-middle"><a href="./editarInverntario.php?id=<?php echo $invetario['codigo']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="./inventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
+                                        <td class="align-middle"><a href="./eliminarInventario.php?id=<?php echo($invetario['codigo']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                     </tr>
                                     <?php }?>
                                 </table>
