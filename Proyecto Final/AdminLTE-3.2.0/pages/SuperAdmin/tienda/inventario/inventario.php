@@ -158,7 +158,7 @@ $productos=$dao->ejecutarConsulta($consulta,$parametros);
                                         <td><?php echo $invetario['stock']; ?></td>
                                         <td class="align-middle"><a href="./editarInverntario.php?id=<?php echo $invetario['id']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
                                         <td class="align-middle"><a href="./eliminarInventario.php?id=<?php echo($invetario['id']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
-                                        <td class="align-middle"><a href="./venta.php?id=<?php echo $inventario['id']?>" method="POST" class="btn btn-info btn-block btn-sm">Detalles</a></td>
+                                        <td class="align-middle"><a href="./venta.php?id=<?php echo $invetario['id']?>" method="POST" class="btn btn-info btn-block btn-sm">Detalles</a></td>
                                     </tr>
                                     <?php }?>
                                 </table>
