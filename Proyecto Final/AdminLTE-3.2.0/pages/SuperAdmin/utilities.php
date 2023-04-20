@@ -17,13 +17,10 @@
         //Si coincide mas de una 
         if($filas>0){
             foreach($statement as $id => $l){
-                echo $l['usuario'];
-                echo "<br>";
-                echo $l['contrasena'];
+            header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php?id=$l[tiendaId]");
             }
-            //header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
 
-            
+
         }else{
             //header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/login.php");
         }
