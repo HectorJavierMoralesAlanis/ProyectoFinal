@@ -59,7 +59,6 @@ if(isset($_GET['id'])){
                     <a href="#" class="d-block">Bon</a>
                 </div>
             </div>
-        
             <!-- Menu lateral-->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
