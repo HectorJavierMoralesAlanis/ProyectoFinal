@@ -1,4 +1,6 @@
-
+<?php 
+$id=$_GET['id'];
+?>
 <html>
 <head>
     <title>Tiendas</title>
