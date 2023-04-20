@@ -5,7 +5,7 @@ $id=$_GET['id'];
 $dao=new DAO();
 $consulta="SELECT * FROM usuarios WHERE id=:id";
 $parametros=array("id"=>$id);
-$usuarios=$dao->insertarConsulta($consulta,$parametros);
+$usuarios=$dao->ejecutarConsulta($consulta,$parametros);
 $dao2=new DAO();
 $consulta2="DELETE FROM usuarios WHERE id=:idU";
 $parametros2=array("idU"=>$id);
