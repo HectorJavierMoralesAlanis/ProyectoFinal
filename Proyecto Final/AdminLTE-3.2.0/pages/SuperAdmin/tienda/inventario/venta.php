@@ -171,7 +171,6 @@ if(isset($_POST['stock'])){
                                         <br>
                                         <input type="text" class="form-control form-control-sm" id="precioProducto_inventario" name="precioProducto_inventario" value="<?php echo($r['precioProducto'])?>" disabled>
                                     </div>
-                                    
                                     <div class="form-group">
                                         <label for="stock">Stock disponible:</label>
                                         <br>
