@@ -15,7 +15,12 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
     $id2=$_GET['id'];
     $consulta1="UPDATE usuarios SET nombre=:nombre, apellido=:apellido, usuario=:usuario, contrasena=:contrasena,email=:correo WHERE id=:idP";
     
-    $parametros1=array("nombre"=>"$_POST[nombre]","apellido"=>"$_POST[apellido]","usuario"=>"$_POST[usuario]","contrasena"=>"$_POST[contrasena]","correo"=>"$_POST[email]","idP"=>$id2);
+    $parametros1=array("nombre"=>"$_POST[nombre]",
+                    "apellido"=>"$_POST[apellido]",
+                    "usuario"=>"$_POST[usuario]",
+                    "contrasena"=>"$_POST[contrasena]",
+                    "correo"=>"$_POST[email]",
+                    "idP"=>$id2);
     $resultados=$dao2->insertarConsulta($consulta1,$parametros1);
     
     if($resultados>=0){
@@ -77,7 +82,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Opciones</li>
-                    <?php foreach($user_access as $id => $l){?>
+                    <?php foreach($inventario as $id => $l){?>
                         <li class="nav-item">
                             <a href="../dashboard.php?id=<?php echo $l['id']?>" class="nav-link">
                                 <p>
@@ -86,21 +91,21 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./inventario.php?id=<?php echo $l['tiendaId']?>" class="nav-link active">
+                            <a href="./inventario.php?id=<?php echo $l['id']?>" class="nav-link active">
                                 <p>
                                     Inventario
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../usuarios/usuarios.php?id=<?php echo $l['tiendaId']?>" class="nav-link">
+                            <a href="../usuarios/usuarios.php?id=<?php echo $l['id']?>" class="nav-link">
                                 <p>
                                     Usuarios
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../categorias/categoria.php?id=<? echo $l['tiendaId']?> class="nav-link">
+                            <a href="../categorias/categoria.php?id=<? echo $l['id']?> class="nav-link">
                                 <p>
                                     Categorias
                                 </p>
@@ -153,7 +158,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
 
                             <!-- Cuerpo del formulario-->
                             <div class="card-body">
-                                <form method="POST" action="./editarInverntario.php?id=<?php echo $_GET['id']?>">
+                                <form method="POST" action="./editarUsuarios.php?id=<?php echo $_GET['id']?>">
                                 <?php foreach($inventario as $id => $inv){?>    
                                     <div class="form-group">
                                         <label>
