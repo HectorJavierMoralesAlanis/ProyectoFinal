@@ -148,6 +148,7 @@ $productos=$dao->ejecutarConsulta($consulta,$parametros);
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
                                     <!-- EXTRAE TODOS LOS DATOS DE LA TABLA EN LA BASE DE DATOS Y LOS MUESTRA AQUI -->
                                     <?php foreach ($productos as $invetario) { ?>
                                     <tr>
@@ -158,7 +159,7 @@ $productos=$dao->ejecutarConsulta($consulta,$parametros);
                                         <td><?php echo $invetario['categoria'];?></td>
                                         <td><?php echo $invetario['stock']; ?></td>
                                         <td class="align-middle"><a href="./editarInverntario.php?id=<?php echo $invetario['codigo']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="./eliminarInventario.php?id=<?php echo($invetario['codigo']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
+                                        <td class="align-middle"><a href="./eliminarInventario.php?id=<?php echo($invetario['nombre']); ?>" class="btn btn-danger btn-block btn-sm" onClick="wait();">ELIMINAR</a></td>
                                     </tr>
                                     <?php }?>
                                 </table>
