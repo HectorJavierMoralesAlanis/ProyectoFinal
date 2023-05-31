@@ -19,12 +19,12 @@
                 if($l['tiendaId']==0){
                 header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
                 }else{
-                    header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/dashboard.php?id=$l[tiendaId]");
+                    header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/dashboard.php?id=$l[tiendaId]");
                 }
             }
         }else{
             echo "Datos erroneos";
-            header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/login.php");
+            header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/login.php");
         }
     }
 
