@@ -18,7 +18,7 @@
         if($filas>0){
             foreach($statement as $id => $l){
                 if($l['tiendaId']==0){
-                header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
+                header("Location: http://64.225.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
                 }else{
                     header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/dashboard.php?id=$l[tiendaId]");
                 }

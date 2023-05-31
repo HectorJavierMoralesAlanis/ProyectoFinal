@@ -17,7 +17,7 @@
             }
         }
 
-        /*Funcion para ejecutar la consultas SELECT 
+        //Funcion para ejecutar la consultas SELECT 
         public function ejecutarConsulta($sql="",$valores=array()){
             if($sql!=""&&strlen($sql)>0){
                 //se crea la variable consulta donde se prepara la consulta
@@ -63,6 +63,6 @@
             }
         
         }
-    */}
+    }
     
 ?>
