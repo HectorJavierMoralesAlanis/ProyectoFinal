@@ -13,7 +13,6 @@
 
         //Cuenta las filas 
         $filas=$statement->rowCount();
-
         //Si coincide mas de una 
         if($filas>0){
             foreach($statement as $id => $l){
