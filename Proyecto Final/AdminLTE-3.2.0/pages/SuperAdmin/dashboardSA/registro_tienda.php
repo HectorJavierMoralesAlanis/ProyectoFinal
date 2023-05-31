@@ -18,7 +18,7 @@
             $resultado=$dao->insertarConsulta($consulta,$parametros);
 
             if($resultado>=0){
-                header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
+                header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/dashboardSA/dashboard.php");
             }else{
                 echo"error";
             }
