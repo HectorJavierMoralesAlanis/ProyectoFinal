@@ -25,7 +25,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['contra
     
     if($resultados>=0){
         foreach($inventario as $id =>$tie){
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/usuarios/usuarios2.php?id=$tie[tiendaId]");
+        header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/usuarios/usuarios2.php?id=$tie[tiendaId]");
         }
     }else{
         echo "error";

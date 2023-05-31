@@ -23,7 +23,7 @@ if(isset($_POST['nombre'], $_POST['descripcion'])){
 
         //Condicional que evalua si resultado 
         if($resultado>=0){
-            header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
+            header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$id");
         }else{
             echo"error";
         }

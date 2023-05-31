@@ -19,7 +19,7 @@ if(isset($_POST['stock'])){
     //Al termino de la actualizacion se redirige a la pagina categoria
     if($resultados>=0){
         foreach($r as $id => $tie){
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
+        header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/inventario/inventario.php?id=$tie[tiendaId]");
         }
     }else{
         echo "error";

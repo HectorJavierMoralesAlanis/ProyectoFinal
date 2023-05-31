@@ -52,7 +52,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
         //foreach para recorrer los valores y obtener el id de la tienda
         foreach($resultados as $id=> $tie){
         //Funcion para cambiar la url
-        header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$tie[tiendaId]");
+        header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$tie[tiendaId]");
         }
     }else{
         echo "error";

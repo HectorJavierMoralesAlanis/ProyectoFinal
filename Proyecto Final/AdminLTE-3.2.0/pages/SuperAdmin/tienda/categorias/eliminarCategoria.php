@@ -33,7 +33,7 @@ if($resultados>=0){
     //Bucle para recorrer los valores de usuarios
     foreach($usuarios as $id => $l){
         //Funcion para cambiar el url
-    header("Location: http://134.122.77.182/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$l[tiendaId]");
+    header("Location: http://64.226.114.50/Proyecto%20Final/AdminLTE-3.2.0/pages/SuperAdmin/tienda/categorias/categoria.php?id=$l[tiendaId]");
     }
 }else{
     //Mensaje de error
