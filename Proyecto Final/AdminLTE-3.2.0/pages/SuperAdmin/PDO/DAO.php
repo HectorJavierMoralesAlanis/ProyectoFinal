@@ -9,14 +9,14 @@
             //try and cath
             try{
                 //Se guardara la conexion a la base de datos
-                $this->conexion = new PDO("mysql:host=localhost;dbname=proyecto","admin","2e19c301ddae0c83a59446303955909e093fd240fe36561b");
+                $this->conexion = new PDO("mysql:host=localhost;dbname=proyecto","admin","51f22d5a340ca74312b5e2e53a6ee3997d024c445932a066");
             }catch (Exception $ex){
                 //Mensajen de error
                 echo $ex->getMessage();
             }
         }
 
-        //Funcion para ejecutar la consultas SELECT 
+        /*Funcion para ejecutar la consultas SELECT 
         public function ejecutarConsulta($sql="",$valores=array()){
             if($sql!=""&&strlen($sql)>0){
                 //se crea la variable consulta donde se prepara la consulta
@@ -60,7 +60,8 @@
             }else{
                 return 0;
             }
+        
         }
-    }
+    */}
     
 ?>
