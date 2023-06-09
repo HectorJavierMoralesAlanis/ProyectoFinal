@@ -179,7 +179,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                                 <option value="<?php echo $row['nombre']?>"><?php echo $row['descripcion']?></option>
                                             <?php }?>
                                         </select>
-                                        <a href="./agregarInverntario.php?id=<?php echo $id2?>">Agregar Categoria</a>
+                                        <a href="../categorias/registrar_categoria.php?id=<?php echo $id2?>">Agregar Categoria</a>
                                     </div>
                                     <div class="form-group">
                                         <label>
