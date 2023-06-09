@@ -62,7 +62,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
 
 <html>
 <head>
-    <title>Tiendas</title>
+    <title>Editar Categoria</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -80,7 +80,7 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../dashboard.php?id=<?php echo $_GET['id']?>" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Editar Categoria</a>
             </li>
         </ul>
     </nav>
@@ -93,17 +93,6 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
         </a>
         <!-- Sidebar -->
         <div class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a class="d-block">Bon</a>
-                </div>
-            </div>
-        
-        
             <!-- Menu lateral-->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -158,7 +147,8 @@ if(isset($_POST['nombre'],$_POST['descripcion'])){
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php echo $_GET['id']?>">Home</a></li>
-                            <li class="breadcrumb-item active">Categorias</li>
+                            <li class="breadcrumb-item">Categorias</li>
+                            <li class="breadcrumb-item active">Editar Categorias</li>
                         </ol>
                     </div>
                 </div>

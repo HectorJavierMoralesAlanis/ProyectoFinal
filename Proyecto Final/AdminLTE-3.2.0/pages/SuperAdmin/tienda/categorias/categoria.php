@@ -37,11 +37,9 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
-            <center>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <center><a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Categoria</a></center>
+                    <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Categoria</a>
                 </li>
-            </center> 
         </ul>
     </nav>
 
@@ -153,7 +151,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                                         <td><?php echo $categoria['descripcion']; ?></td>
                                         <td><?php echo $categoria['fecha']; ?></td>
                                         <td class="align-middle"><a href="./editarCategorria.php?id=<?php echo $categoria['id']?>" method="POST" class="btn btn-warning btn-block btn-sm" >EDITAR</a></td>
-                                        <td class="align-middle"><a href="./eliminarCategoria.php?id=<?php echo($categoria['id']); ?>" class="btn btn-danger btn-block btn-sm"">ELIMINAR</a></td>
+                                        <td class="align-middle"><a href="./eliminarCategoria.php?id=<?php echo($categoria['id']); ?>" class="btn btn-danger btn-block btn-sm">ELIMINAR</a></td>
                                         </div>
                                         </td>
                                     </tr>
