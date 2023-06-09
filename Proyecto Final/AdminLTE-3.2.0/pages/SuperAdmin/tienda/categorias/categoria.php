@@ -9,7 +9,7 @@ $dao = new DAO();
 //Se crea la variable donde se guardara la consulta
 $consulta="SELECT * FROM categoria WHERE tiendaId=:id";
 
-$consulta2="SELECT usuario FROM usuario WHERE tiendaId=:id";
+$consulta2="SELECT usuario FROM usuarios WHERE tiendaId=:id";
 //Se crea la variable en donde se guardara el array de los parametros
 $parametros=array("id"=>$id);
 $parametros2=array("id"=>$id);
