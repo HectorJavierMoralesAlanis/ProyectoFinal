@@ -155,7 +155,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                                         </div>
                                         </td>
                                     </tr>
-                                    <?php } ?>
+                                    <?php }?>
                                 </table>
                             </div>
                         </div>
