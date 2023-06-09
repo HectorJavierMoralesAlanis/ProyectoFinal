@@ -115,7 +115,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php $_GET['id']?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php echo $_GET['id']?>">Home</a></li>
                             <li class="breadcrumb-item">Inventario</li>
                             <li class="breadcrumb-item active">Registrar Inventario</li>
                         </ol>
