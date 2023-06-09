@@ -41,7 +41,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                 <li class="nav-item d-none d-sm-inline-block">
                     <center><a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Categoria</a></center>
                 </li>
-            </center>
+            </center> 
         </ul>
     </nav>
 
