@@ -9,11 +9,14 @@ $dao = new DAO();
 //Se crea la variable donde se guardara la consulta
 $consulta="SELECT * FROM categoria WHERE tiendaId=:id";
 
+$consulta2="SELECT usuario FROM usuario WHERE tiendaId=:id";
 //Se crea la variable en donde se guardara el array de los parametros
 $parametros=array("id"=>$id);
+$parametros2=array("id"=>$id);
 
 //Se crea la variable donde se guardara el resultado de la consulta
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
+$arrnombres = $dao->ejecutarConsulta($consulta2,$parametros2);
 
 ?>
 
@@ -57,7 +60,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                     <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?php echo $arrcategorias['nombre']?></a>
+                    <a href="#" class="d-block"><?php echo $arrnombres['nombre']?></a>
                 </div>
             </div>
             <!-- Menu lateral-->
