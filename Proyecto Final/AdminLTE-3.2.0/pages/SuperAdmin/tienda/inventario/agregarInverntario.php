@@ -178,6 +178,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                             <?php foreach($user_access as $row){?>
                                                 <option value="<?php echo $row['nombre']?>"><?php echo $row['descripcion']?></option>
                                             <?php }?>
+                                            <option><a href="./agregarInverntario.php?id=<?php echo $id?>">Agregar Categoria</a></option>
 
                                         </select>
                                     </div>
