@@ -17,7 +17,7 @@ $parametros2=array("id"=>$id);
 //Se crea la variable donde se guardara el resultado de la consulta
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 $arrnombres = $dao->ejecutarConsulta($consulta2,$parametros2);
-echo $arrnombres;
+echo '<p aling:left>$arrnombres<p>';
 ?>
 
 
