@@ -29,7 +29,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
 
 <html>
 <head>
-    <title>Tiendas</title>
+    <title>Reegistrar Usuario</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -48,7 +48,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <?php foreach($user_access as $id =>$l){?>
-                <a href="../dashboard.php?id=<?echo $l['id']?>" class="nav-link">Home</a>
+                <a href="../dashboard.php?id=<?echo $l['id']?>" class="nav-link">Registrar Usuario</a>
                 <?php }?>
             </li>
         </ul>
@@ -62,17 +62,6 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
         </a>
         <!-- Sidebar -->
         <div class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a class="d-block">Bon</a>
-                </div>
-            </div>
-        
-        
             <!-- Menu lateral-->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -127,7 +116,7 @@ if(isset($_POST['nombre'], $_POST['apellido'], $_POST['usuario'], $_POST['passwo
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="../dashboard.php?id=<?php $_GET['id']?>">Home</a></li>
-                            <li class="breadcrumb-item active">Categorias</li>
+                            <li class="breadcrumb-item active">Registrar Usuario</li>
                         </ol>
                     </div>
                 </div>
