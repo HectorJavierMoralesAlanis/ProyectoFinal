@@ -60,7 +60,7 @@ $arrnombres = $dao->ejecutarConsulta($consulta2,$parametros2);
                     <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?php echo $arrnombres['nombre']?></a>
+                    <a href="#" class="d-block"><?php echo $arrnombres['nombre'];?></a>
                 </div>
             </div>
             <!-- Menu lateral-->
