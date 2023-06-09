@@ -20,7 +20,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
 
 <html>
 <head>
-    <title>Tiendas</title>
+    <title>Categorias</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -38,7 +38,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Home</a>
+                <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Categoria</a>
             </li>
         </ul>
     </nav>
@@ -57,7 +57,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                     <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Bon</a>
+                    <a href="#" class="d-block"><?php echo $arrcategorias['nombre']?></a>
                 </div>
             </div>
             <!-- Menu lateral-->
