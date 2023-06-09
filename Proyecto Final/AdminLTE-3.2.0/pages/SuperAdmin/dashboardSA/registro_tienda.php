@@ -45,8 +45,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../dashboardSA/dashboard.php" class="nav-link">Dahsboard Tiendas</a>
-                <a href="#" class="nav-link">Registro Tiendas</a>
+                <a href="../dashboardSA/registro_tienda.php" class="nav-link">Registro Tiendas</a>
             </li>
         </ul>
     </nav>
