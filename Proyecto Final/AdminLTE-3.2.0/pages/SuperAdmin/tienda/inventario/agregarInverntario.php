@@ -46,7 +46,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <?php foreach($user_access as $id =>$l){?>
-                <a href="../dashboard.php?id=<?echo $l['id']?>" class="nav-link">Registrar Inventario</a>
+                <a href="#" class="nav-link">Registrar Inventario</a>
                 <?php }?>
             </li>
         </ul>
@@ -179,8 +179,7 @@ if(isset($_POST['codigo_inventario'], $_POST['nombre_producto'], $_POST['precioP
                                                 <option value="<?php echo $row['nombre']?>"><?php echo $row['descripcion']?></option>
                                             <?php }?>
                                         </select>
-                                        <a href="./agregarInverntario.php?id=<?php echo $_GET['id']?>">Agregar Categoria</a>
-
+                                        <a href="./agregarInverntario.php?id=<?php echo $id2?>">Agregar Categoria</a>
                                     </div>
                                     <div class="form-group">
                                         <label>
