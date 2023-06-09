@@ -9,15 +9,12 @@ $dao = new DAO();
 //Se crea la variable donde se guardara la consulta
 $consulta="SELECT * FROM categoria WHERE tiendaId=:id";
 
-$consulta2="SELECT usuario FROM usuarios WHERE tiendaId=:id";
 //Se crea la variable en donde se guardara el array de los parametros
 $parametros=array("id"=>$id);
-$parametros2=array("id"=>$id);
 
 //Se crea la variable donde se guardara el resultado de la consulta
 $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
-$arrnombres = $dao->ejecutarConsulta($consulta2,$parametros2);
-echo $arrnombres;
+
 ?>
 
 
@@ -41,7 +38,7 @@ echo $arrnombres;
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link">Categoria</a>
+                <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link" aling:center>Categoria</a>
             </li>
         </ul>
     </nav>
@@ -54,15 +51,6 @@ echo $arrnombres;
         </a>
         <!-- Sidebar -->
         <div class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block"><?php foreach($arrnombres as $id) {$inventario['usuario'];}?></a>
-                </div>
-            </div>
             <!-- Menu lateral-->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
