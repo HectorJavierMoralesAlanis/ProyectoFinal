@@ -19,7 +19,7 @@ $resultados=$dao->ejecutarConsulta($consulta,$parametros);
 /* Comprobacion si regresa resultados la consulta
 if($resultados>=0){
 
-    echo "si";
+    echo "si"; 
     
     echo $resultados[0];
 }else{
