@@ -60,7 +60,7 @@ echo $arrnombres;
                     <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?php echo $arrnombres ?></a>
+                    <a href="#" class="d-block"><?php echo $arrnombres['usuario'] ?></a>
                 </div>
             </div>
             <!-- Menu lateral-->
