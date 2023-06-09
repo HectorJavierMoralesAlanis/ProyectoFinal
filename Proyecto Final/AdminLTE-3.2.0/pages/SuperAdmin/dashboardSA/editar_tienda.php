@@ -53,7 +53,7 @@
 
 <html>
 <head>
-    <title>Tiendas</title>
+    <title>Editar Tiendas</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -71,7 +71,8 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../dashboardSA/dashboard.php" class="nav-link">Home</a>
+                <a href="../dashboardSA/dashboard.php" class="nav-link">Dahsboard Tienda</a>
+                <a href="#" class="nav-link">Editar Tienda</a>
             </li>
         </ul>
     </nav>
@@ -80,21 +81,10 @@
         <!-- Logo --->
         <a href="../dashboardSA/dashboard.php" class="brand-link">
             <img src="./lemur.png"  class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Admin</span>
+            <span class="brand-text font-weight-light">SuperAdmin</span>
         </a>
         <!-- Sidebar -->
         <div class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="./lemur.png" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block">Bon</a>
-                </div>
-            </div>
-        
-        
             <!-- Menu lateral-->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
