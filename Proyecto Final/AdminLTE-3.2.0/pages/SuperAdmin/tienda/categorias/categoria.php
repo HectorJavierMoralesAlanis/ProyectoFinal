@@ -38,7 +38,7 @@ $arrcategorias = $dao->ejecutarConsulta($consulta,$parametros);
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link" align:center >Categoria</a>
+                <center><a href="../categorias/categoria.php?id=<?php echo $id?>" class="nav-link" >Categoria</a></center>
             </li>
         </ul>
     </nav>
