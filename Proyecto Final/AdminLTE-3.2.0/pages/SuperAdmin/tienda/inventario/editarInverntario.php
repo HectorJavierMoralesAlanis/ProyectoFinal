@@ -103,20 +103,6 @@ if(isset($_POST['nombre_producto'], $_POST['precioProducto_inventario'], $_POST[
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Realizar Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <p>
-                                    Historial de Venta
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="../examples/login-v2.html" class="nav-link">
                                 <p>
                                     Cerrar sesion
