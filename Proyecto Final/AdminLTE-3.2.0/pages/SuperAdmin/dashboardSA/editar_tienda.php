@@ -71,7 +71,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="../dashboardSA/editar_tienda.php" class="nav-link">Editar Tienda</a>
+                <a href="#" class="nav-link">Editar Tienda</a>
             </li>
         </ul>
     </nav>
